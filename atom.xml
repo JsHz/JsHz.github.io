@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jshz.github.io/"/>
-  <updated>2019-02-07T05:26:43.983Z</updated>
+  <updated>2019-02-07T05:44:11.751Z</updated>
   <id>https://jshz.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>优化与美化</title>
+    <link href="https://jshz.github.io/2019/02/07/%E4%BC%98%E5%8C%96%E4%B8%8E%E7%BE%8E%E5%8C%96/"/>
+    <id>https://jshz.github.io/2019/02/07/优化与美化/</id>
+    <published>2019-02-07T05:37:16.000Z</published>
+    <updated>2019-02-07T05:44:11.751Z</updated>
+    
+    <content type="html"><![CDATA[<center><font face="黑体" color="#000000" size="6">优化与美化</font><br></center><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>总所周知，网站浏览度在于看的人多不多，网站美化好了，自然多人来看。</p><h4 id="美化过程"><a href="#美化过程" class="headerlink" title="美化过程"></a>美化过程</h4><p> 1. </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;center&gt;&lt;font face=&quot;黑体&quot; color=&quot;#000000&quot; size=&quot;6&quot;&gt;优化与美化&lt;/font&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://jshz.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://jshz.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>初创博客经验</title>
