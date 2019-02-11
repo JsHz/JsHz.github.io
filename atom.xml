@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jshz.github.io/"/>
-  <updated>2019-02-10T07:45:53.931Z</updated>
+  <updated>2019-02-10T17:10:39.898Z</updated>
   <id>https://jshz.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://jshz.github.io/2019/02/07/%E4%BC%98%E5%8C%96%E4%B8%8E%E7%BE%8E%E5%8C%96/"/>
     <id>https://jshz.github.io/2019/02/07/优化与美化/</id>
     <published>2019-02-07T05:37:16.000Z</published>
-    <updated>2019-02-10T07:45:53.931Z</updated>
+    <updated>2019-02-10T17:10:39.898Z</updated>
     
-    <content type="html"><![CDATA[<center><font face="黑体" color="#000000" size="6">优化与美化</font><br></center><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>总所周知，网站浏览度在于看的人多不多，网站美化好了，自然多人来看。<br><a id="more"></a></p><h4 id="这里借鉴了几个例子"><a href="#这里借鉴了几个例子" class="headerlink" title="这里借鉴了几个例子"></a>这里借鉴了几个例子</h4><ul><li><h6 id="Alvabill-NexT博客全优化与美化"><a href="#Alvabill-NexT博客全优化与美化" class="headerlink" title="Alvabill-NexT博客全优化与美化"></a><strong><a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">Alvabill-NexT博客全优化与美化</a></strong></h6></li><li><h6 id="wenbo星空–NexT主题美化"><a href="#wenbo星空–NexT主题美化" class="headerlink" title="wenbo星空–NexT主题美化"></a><strong><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">wenbo星空–NexT主题美化</a></strong></h6>(我的主题使用了wenbo几个美化)</li><li><h6 id="yalia主题优化与美化"><a href="#yalia主题优化与美化" class="headerlink" title="yalia主题优化与美化"></a><strong><a href="https://www.jianshu.com/p/f389ad8c49bd" target="_blank" rel="noopener">yalia主题优化与美化</a></strong></h6></li><li><h6 id="yalia主题添加阅读量"><a href="#yalia主题添加阅读量" class="headerlink" title="yalia主题添加阅读量"></a><strong><a href="https://www.yanchezuo.com/hexo-2.html" target="_blank" rel="noopener">yalia主题添加阅读量</a></strong></h6></li></ul><h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><p>总配置是blog\_config,而主题配置在blog\themes\主题\_config!</p><hr><p>个人觉得yalia主题很好看，自己的博客稀里糊涂的使用了NexT主题搭建，到时候应该也会改成yalia主题的！</p>]]></content>
+    <content type="html"><![CDATA[<center><font face="黑体" color="#000000" size="6">优化与美化</font><br></center><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>总所周知，网站浏览度在于看的人多不多，网站美化好了，自然多人来看。<br><a id="more"></a></p><h4 id="这里借鉴了几个例子"><a href="#这里借鉴了几个例子" class="headerlink" title="这里借鉴了几个例子"></a>这里借鉴了几个例子</h4><ul><li><h6 id="Alvabill-NexT博客全优化与美化"><a href="#Alvabill-NexT博客全优化与美化" class="headerlink" title="Alvabill-NexT博客全优化与美化"></a><strong><a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">Alvabill-NexT博客全优化与美化</a></strong></h6></li><li><h6 id="个性化NexT主题美化"><a href="#个性化NexT主题美化" class="headerlink" title="个性化NexT主题美化"></a><strong><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">个性化NexT主题美化</a></strong></h6></li><li><h6 id="wenbo星空–NexT主题美化"><a href="#wenbo星空–NexT主题美化" class="headerlink" title="wenbo星空–NexT主题美化"></a><strong><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">wenbo星空–NexT主题美化</a></strong></h6>(我的主题NexT的美化)</li><li><h6 id="yalia主题优化与美化"><a href="#yalia主题优化与美化" class="headerlink" title="yalia主题优化与美化"></a><strong><a href="https://www.jianshu.com/p/f389ad8c49bd" target="_blank" rel="noopener">yalia主题优化与美化</a></strong></h6></li><li><h6 id="yalia主题添加阅读量"><a href="#yalia主题添加阅读量" class="headerlink" title="yalia主题添加阅读量"></a><strong><a href="https://www.yanchezuo.com/hexo-2.html" target="_blank" rel="noopener">yalia主题添加阅读量</a></strong></h6></li><li><h6 id="NexT主题添加背景动态线条"><a href="#NexT主题添加背景动态线条" class="headerlink" title="NexT主题添加背景动态线条"></a><strong><a href="http://shenzekun.cn/hexo%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF.html" target="_blank" rel="noopener">NexT主题添加背景动态线条</a></strong></h6></li></ul><h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><p>总配置是blog\_config,而主题配置在blog\themes\主题\_config!</p><hr><p>个人觉得yalia主题很好看，自己的博客稀里糊涂的使用了NexT主题搭建，到时候应该也会改成yalia主题的！</p>]]></content>
     
     <summary type="html">
     
