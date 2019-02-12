@@ -186,7 +186,7 @@
 <meta property="og:site_name" content="JsHz&#39;s Blog">
 <meta property="og:description" content="前言此文章为本学校的题目，故只于同学观看。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-12T08:39:04.837Z">
+<meta property="og:updated_time" content="2019-02-12T08:47:08.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql攻防与加固">
 <meta name="twitter:description" content="前言此文章为本学校的题目，故只于同学观看。">
@@ -307,7 +307,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Accueil</a>
 
   </li>
         
@@ -324,7 +324,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
 
@@ -412,14 +412,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-02-12 15:12:12 / Updated at: 16:39:04" itemprop="dateCreated datePublished" datetime="2019-02-12T15:12:12+08:00">2019-02-12</time>
+              <time title="Post created: 2019-02-12 15:12:12 / Updated at: 16:47:08" itemprop="dateCreated datePublished" datetime="2019-02-12T15:12:12+08:00">2019-02-12</time>
             
 
             
@@ -438,7 +438,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
@@ -484,67 +484,6 @@
 
       
         <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>此文章为本学校的题目，故只于同学观看。<br><a id="more"></a></p>
-<h5 id="实验机器用户与密码如下"><a href="#实验机器用户与密码如下" class="headerlink" title="实验机器用户与密码如下"></a>实验机器用户与密码如下</h5><p>H-Xcilent–2主机<br>==用户:root 密码:123456==<br>H-Xserver-mysql–1主机<br>==用户:root 密码:123456==</p>
-<h5 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a>实验要求：</h5><p>第一步、 进入拓扑<br>ip地址可以通过拓扑获得，获得不了的话，可以进入系统使用ifconfig 获得。<br>第二步、启动xserver-mysql，xclient.进入xserver-mysql,开始实验，实验步骤如下:</p>
-<ol>
-<li><p><strong>进入xserver-mysql，加固mysql 服务器，使得所有的访问能审计，要求通过对mysqld 的启动项进行加固，把加固部分截屏</strong></p>
-</li>
-<li><p><strong>配置linux-mysql 防火墙，允许mysql服务器能够被访问，要求规则中只包含端口项，防火墙规则列表截屏</strong></p>
-</li>
-<li><p><strong>进入xserver-mysql， 查看所有用户及权限，找到可以从任何IP地址访问的用户</strong></p>
-</li>
-<li><p><strong>对上述漏洞进行加固，设定该用户只能从学生机访问，用grants 命令进行管理，并将加固过程截屏</strong></p>
-</li>
-<li><p><strong>检查xserver-mysql中的是否存在匿名用户，如果存在匿名用户，则加固删除，将执行加固命令截屏</strong></p>
-</li>
-<li><p><strong>改变默认mysql管理员的名称，将系统的默认管理员从root改为admin.防止被列举，将执行加固命令截屏</strong></p>
-</li>
-<li><p><strong>数据库安全加固操作：禁止Mysql对本地文件存取，对mysqld 的启动项进行加固，把加固部分截屏</strong></p>
-</li>
-<li><p><strong>数据库安全加固操作：限制一般用户浏览其他用户数据库，对mysqld 的启动项惊醒加固，把加固部分截屏</strong></p>
-</li>
-<li><p><strong>提交实验报告，内容包含以上个操作步骤的相关证据文件。</strong></p>
-</li>
-</ol>
-<p>第三步、实验结束，关闭虚拟机</p>
-<hr>
-<h5 id="实验答案"><a href="#实验答案" class="headerlink" title="实验答案"></a>实验答案</h5><ul>
-<li>进入xserver-mysql,加固mysql 服务器，使得所有的访问能审计，要求通过对mysqld 的启动项进行加固，把加固部分截屏。</li>
-</ul>
-<p>在xserver-mysql主机上，进入/etc目录，编辑my.cnf文件，添加内容如下</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">old_passwords</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">log</span>=/var/log/mysql/access.log //新写入的</span><br><span class="line"><span class="section">[mysql.server]</span></span><br></pre></td></tr></table></figure>
-<p> 1.<strong>重启mysqld</strong><br> 2.<strong>配置linux-mysql 防火墙，允许Mysql服务能够被访问，要求规则中之包含端口项，防火墙规则列表截屏</strong></p>
-<p> <strong>解答步骤</strong>：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">L</span> <span class="keyword">INPUT</span></span><br><span class="line">iptables -I <span class="keyword">INPUT</span> -p tcp --dport 3306 -j ACCEPT</span><br></pre></td></tr></table></figure>
-<p>3.<strong>进入xserver-mysql，查看所有用户及权限，找到可以从任何IP地址访问的用户</strong></p>
-<p><strong>解答步骤</strong>：</p>
-<p>用mysql命令登陆mysql数据库，然后用use mysql，选定mysql数据库，然后再用命令select host,user from user；查看哪个用户可以从任何地方连接到数据库。</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql</span><br><span class="line">use mysql;</span><br><span class="line">selece host,<span class="keyword">user</span> <span class="title">from</span> user;</span><br></pre></td></tr></table></figure>
-<p>可以看出， test用户可以从任何地方连接到数据库。</p>
-<p>4.<strong>对上述漏洞惊醒加固，设定该用户只能从学生机访问，用grants命令进行管理，并将加固过程截屏。</strong></p>
-<p><strong>解答步骤</strong>：</p>
-<p>查看学生机的IP地址，打开学生机的cmd命令窗口，用<code>ipconfig</code>查看IP。</p>
-<p>在xserver-mysql主机，添加策略规则，只允许test用户从学生机上访问mysql数据库。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql</span><br><span class="line"><span class="keyword">use</span> mysql;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="keyword">test</span>@IP identfied <span class="keyword">by</span> <span class="string">""</span>;</span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br></pre></td></tr></table></figure>
-<p>5.<strong>检查xserver-mysql中的是否存在匿名用户，如果存在匿名用户，则加固删除，将执行加固命令截屏</strong></p>
-<p><strong>解答步骤</strong>：</p>
-<p>检查是否存在匿名用户</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> host,<span class="keyword">user</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">""</span>;</span><br></pre></td></tr></table></figure>
-<p>可以看出，有两个匿名用户。</p>
-<p>然后删除匿名用户。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">user</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">""</span>;</span><br><span class="line">selece host,user from user where user="";</span><br></pre></td></tr></table></figure>
-<p>6.<strong>改变默认mysql管理员的名称，将系统的默认管理员从root 改为admin， 防止被列举，将执行加固命令截屏</strong></p>
-<p>进入mysql数据库，执行命令将root改成admin。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql</span><br><span class="line"><span class="keyword">use</span> mysql；</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">use</span> <span class="keyword">set</span> <span class="keyword">user</span>=“<span class="keyword">admin</span>” <span class="keyword">where</span> <span class="keyword">user</span>=“root“；</span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>；</span><br></pre></td></tr></table></figure>
-<p>7.<strong>数据库安全加固操作：禁止MySQL对本地文件存取，对mysqld 的启动项进行加固，把加固部分截屏</strong></p>
-<p><strong>解答步骤</strong>：</p>
-<p>进入xserver-mysql主机的/etc目录，编辑my.cnf，如下：</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">old_paaawords=</span>1</span><br><span class="line"><span class="string">log=</span>/<span class="string">var/</span><span class="string">log/</span><span class="string">mysql/</span><span class="string">access.</span><span class="string">log</span></span><br><span class="line"><span class="string">set-</span><span class="string">variable=</span><span class="string">local-infile=</span>0 //新写入的</span><br></pre></td></tr></table></figure>
-<p>重启mysqld服务</p>
-<p>8.<strong>数据库安全加固操作：限制一般用户浏览其他用户的数据库，对mysqld的启动项进行加固，把加固部分截屏</strong></p>
-<p>进入xserver-mysql主机的/etc 目录， 编辑my.cnf， 如下：</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">old_paaawords=</span>1</span><br><span class="line"><span class="string">log=</span>/<span class="string">var/</span><span class="string">log/</span><span class="string">mysql/</span><span class="string">access.</span><span class="string">log</span></span><br><span class="line"><span class="string">set-</span><span class="string">variable=</span><span class="string">local-infile=</span>0</span><br><span class="line"><span class="string">skip-show-</span><span class="string">database </span>//新写入的</span><br></pre></td></tr></table></figure>
-<p>最后，重启mysqld服务</p>
 
       
     </div>
@@ -711,10 +650,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Ensemble
           </li>
         </ul>
       
@@ -737,7 +676,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-name">articles</span>
                   </a>
                 </div>
               
@@ -752,7 +691,7 @@
                       
                     
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">Kategorien</span>
+                    <span class="site-state-item-name">categories</span>
                   
                 </div>
               
@@ -771,7 +710,7 @@
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">Tags</span>
+                    <span class="site-state-item-name">tags</span>
                   
                 </div>
               
@@ -842,7 +781,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#实验机器用户与密码如下"><span class="nav-number">1.1.</span> <span class="nav-text">实验机器用户与密码如下</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实验要求："><span class="nav-number">1.2.</span> <span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实验答案"><span class="nav-number">1.3.</span> <span class="nav-text">实验答案</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
             
 
           </div>
@@ -890,7 +829,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -898,14 +837,14 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+  <div class="theme-info">Thème – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
 
 
 
 -->
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2k字</span>
+  <span class="post-count">博客全站共885字</span>
 </div></script>
         
 <div class="busuanzi-count">
