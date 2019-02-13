@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jshz.github.io/"/>
-  <updated>2019-02-10T17:10:39.898Z</updated>
+  <updated>2019-02-13T07:46:46.333Z</updated>
   <id>https://jshz.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux系统管理</title>
+    <link href="https://jshz.github.io/2019/02/13/Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    <id>https://jshz.github.io/2019/02/13/Linux文件管理/</id>
+    <published>2019-02-13T06:27:54.000Z</published>
+    <updated>2019-02-13T07:46:46.333Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在linux中的每一个文件或目录都包括有访问权限，这些访问权限决定了谁能访问和如何访问这些文件和目录。<br><a id="more"></a></p><h5 id="0x1-过程"><a href="#0x1-过程" class="headerlink" title="0x1 过程"></a>0x1 过程</h5><p>r(Read - 读取)：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目录的权限<br>w(Write - 写入)：对文件而言，具有新增、修改文件内容的权限；对目录来说，具有删除、移动目录内文件的权限。<br>x(eXecute - 执行)：对文件而言，具有执行文件的权限；对目录来说该用户具有进入目录的权限。</p><p>  <strong>-(表示不具有该项的权限)</strong></p><h6 id="0x2-权限举例"><a href="#0x2-权限举例" class="headerlink" title="0x2 权限举例"></a>0x2 权限举例</h6><p>-rwx——：文件所有这对文件具有读取、写入和执行的权限。<br>-rw-rw-r-x：文件所有这与同组用户对文件具有读写的权限，而其他用户仅具有读取和执行的权限。<br>drwx–x–x：目录所有着具有读写与进入目录的权限、其他用户可以进入该目录，却无法读取任何数据。<br>Drwx——：除了目录所有者具有完整的权限之外，其他用户对该目录完全没有任何权限。</p><h6 id="0x3-特殊权限"><a href="#0x3-特殊权限" class="headerlink" title="0x3 特殊权限"></a>0x3 特殊权限</h6><p>文件目录权限不止这些，还有所谓的特殊权限。由于特殊权限会拥有一些“特权”，因为用户若无特殊需求，不应该启用这些权限，避免安全方面出现严重漏洞，造成黑客入侵，甚至摧毁系统！！！</p><ul><li><p>s或S(SUID, Set UID)：可执行的文件搭配这个权限，便能获得特权，任意获取该文件的所有者能使用的全部系统资源。所以请注意拥有SUID权限的文件，<strong>SUID配root</strong>，那就是黑客的<strong>任意门</strong></p></li><li><p>s或S(SGID, Set GIT)：设置在文件上面，<strong>其效果与SUID相同</strong>，只不过将文件所有者换成用户组，该文件就可以任意存取整个用户组所能使用的系统资源。</p></li><li><p>t或T(Sticky)：/tmp和/var/tmp目录共所有用户暂时存取文件，就是<strong>每位用户皆拥有完整的权限</strong>进入该目录，去浏览、删除和移动文件。</p></li></ul><p>对于特殊权限，最好不要设置，不然会带来很严重的安全问题。<br>当然，在这里你也可以改变文件和目录的所有者和所有属。</p><h6 id="0x4-详细权限说明"><a href="#0x4-详细权限说明" class="headerlink" title="0x4 详细权限说明"></a>0x4 详细权限说明</h6><p>文件和目录的权限表示，使用rwx这三个字符来代表所有者、用户组和其他用户的权限。有时候，字符似乎过于麻烦，因此还有另外一种方法就是以数学来表示权限，而且仅需三个数字。</p><blockquote><p>r：对应数值4<br>w：对应数值2<br>x：对应数值1<br>-：对应数值0</p></blockquote><p>数字设定的关键是mode的取值，一开始许多初学者会被搞糊涂，其实很简单，我们将rwx看成<strong>二进制数</strong>，如果有则有1表示，没有则有0表示，那么rwx r-x r–则可以表示成为：<br>111 101 100<br>再将其每三位转换成为一个十进制数，就是754.<br>例如，我们想让a.txt这个文件的权限为：</p><blockquote><p>自己 同组用户 其他用户<br>可读 是 是 是<br>可写 是 是<br>可执行</p></blockquote><p>那么，我们先根据上表得到权限串为：rw-rw-r–， 那么转换成二进制数就是110 110 100， 再每三位转换成为一个十进制数，就得到664，因此我们执行命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost~]# chmod 666 a.txt</span><br></pre></td></tr></table></figure><p>按照上面的规则，rwx合起来就是4 + 2 + 1 = 7，一个rwxrwxrwx权限全开放的文件，数值表示为777；而完全不开放权限的文件 “- - - - - - - - -“ 其数字表示为000。</p><hr><h5 id="教程转载panyun-有修改"><a href="#教程转载panyun-有修改" class="headerlink" title="教程转载panyun(有修改)"></a>教程转载panyun(有修改)</h5><p><strong>若有侵权，请<a href="&quot;http://wpa.qq.com/msgrd?v=3&amp;uin=1391299672&amp;site=qq&amp;menu=yes">联系我</a>，我会立刻删除</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;在linux中的每一个文件或目录都包括有访问权限，这些访问权限决定了谁能访问和如何访问这些文件和目录。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://jshz.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Linux chmod" scheme="https://jshz.github.io/tags/Linux-chmod/"/>
+    
+  </entry>
   
   <entry>
     <title>优化与美化</title>
