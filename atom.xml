@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>JsHz&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://jshz.github.io/"/>
+  <updated>2019-02-18T06:52:37.929Z</updated>
+  <id>https://jshz.github.io/</id>
+  
+  <author>
+    <name>JsHz</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo本地服务器创建</title>
+    <link href="https://jshz.github.io/2019/02/18/%E5%86%85%E7%BD%91hexo/"/>
+    <id>https://jshz.github.io/2019/02/18/内网hexo/</id>
+    <published>2019-02-18T02:53:35.000Z</published>
+    <updated>2019-02-18T06:52:37.929Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>想方便的设置局域网的个人博客嘛，比设置公网的个人博客简单实用，但还是放个链接吧👇<br><a href="https://blog.jshz.top/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/" target="_blank" rel="noopener">设置公网个人博客</a><a id="more"></a></p><h5 id="0x1-需要的软件"><a href="#0x1-需要的软件" class="headerlink" title="0x1 需要的软件"></a>0x1 需要的软件</h5><blockquote><p>需要使用的工具:<br><br><a target="self" href="http://nodejs.cn/download">node.js</a><br><br><a target="self" href="http://www.git-scm.com/download">git bash</a><br><br>Hexo</p></blockquote><h5 id="0x2-创建过程"><a href="#0x2-创建过程" class="headerlink" title="0x2 创建过程"></a>0x2 创建过程</h5><p>打开GitBash，进入你想要存放博客的文件夹，安装Hexo插件:<code>npm install hexo -g</code></p><p>然后初始化文件夹:<code>hexo init</code></p><p>开始下载yilia的主题(主题可选，都行的)：<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>，然后打开站点根目录的_config.yml，找到theme，把原来的主题修改成yilia。</p><p>输入<code>hexo clean</code>清楚内存、<code>hexo g</code>更新本地、<code>hexo server -i IP</code>设置你的局域网IP<br>完成。</p><p>创建文章：打开GitBash，进入你的站点根目录，输入：<code>hexo new page</code>，就会新建一篇文章，也可以自己在站点根目录文件夹打开source，然后进入_posts新建一个page.md写入文章。</p><h4 id="0x03-番外篇"><a href="#0x03-番外篇" class="headerlink" title="0x03 番外篇"></a>0x03 番外篇</h4><p>个人推荐编写文章的编译器:<a href="http://markdownpad.com/" target="_blank" rel="noopener">Markdown</a>    、<a href="http://markdown.xiaoshujiang.com/" target="_blank" rel="noopener">小书匠</a></p><p>优化与美化可以看<a href="https://www.jianshu.com/p/f389ad8c49bd" target="_blank" rel="noopener">DevinZ的</a>，这里就不介绍了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;想方便的设置局域网的个人博客嘛，比设置公网的个人博客简单实用，但还是放个链接吧👇&lt;br&gt;&lt;a href=&quot;https://blog.jshz.top/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;设置公网个人博客&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="Blog" scheme="https://jshz.github.io/categories/Blog/"/>
+    
+    
+      <category term="Hexo" scheme="https://jshz.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统管理</title>
+    <link href="https://jshz.github.io/2019/02/13/Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    <id>https://jshz.github.io/2019/02/13/Linux文件管理/</id>
+    <published>2019-02-13T06:27:54.000Z</published>
+    <updated>2019-02-13T07:46:46.333Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在linux中的每一个文件或目录都包括有访问权限，这些访问权限决定了谁能访问和如何访问这些文件和目录。<br><a id="more"></a></p><h5 id="0x1-过程"><a href="#0x1-过程" class="headerlink" title="0x1 过程"></a>0x1 过程</h5><p>r(Read - 读取)：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目录的权限<br>w(Write - 写入)：对文件而言，具有新增、修改文件内容的权限；对目录来说，具有删除、移动目录内文件的权限。<br>x(eXecute - 执行)：对文件而言，具有执行文件的权限；对目录来说该用户具有进入目录的权限。</p><p>  <strong>-(表示不具有该项的权限)</strong></p><h6 id="0x2-权限举例"><a href="#0x2-权限举例" class="headerlink" title="0x2 权限举例"></a>0x2 权限举例</h6><p>-rwx——：文件所有这对文件具有读取、写入和执行的权限。<br>-rw-rw-r-x：文件所有这与同组用户对文件具有读写的权限，而其他用户仅具有读取和执行的权限。<br>drwx–x–x：目录所有着具有读写与进入目录的权限、其他用户可以进入该目录，却无法读取任何数据。<br>Drwx——：除了目录所有者具有完整的权限之外，其他用户对该目录完全没有任何权限。</p><h6 id="0x3-特殊权限"><a href="#0x3-特殊权限" class="headerlink" title="0x3 特殊权限"></a>0x3 特殊权限</h6><p>文件目录权限不止这些，还有所谓的特殊权限。由于特殊权限会拥有一些“特权”，因为用户若无特殊需求，不应该启用这些权限，避免安全方面出现严重漏洞，造成黑客入侵，甚至摧毁系统！！！</p><ul><li><p>s或S(SUID, Set UID)：可执行的文件搭配这个权限，便能获得特权，任意获取该文件的所有者能使用的全部系统资源。所以请注意拥有SUID权限的文件，<strong>SUID配root</strong>，那就是黑客的<strong>任意门</strong></p></li><li><p>s或S(SGID, Set GIT)：设置在文件上面，<strong>其效果与SUID相同</strong>，只不过将文件所有者换成用户组，该文件就可以任意存取整个用户组所能使用的系统资源。</p></li><li><p>t或T(Sticky)：/tmp和/var/tmp目录共所有用户暂时存取文件，就是<strong>每位用户皆拥有完整的权限</strong>进入该目录，去浏览、删除和移动文件。</p></li></ul><p>对于特殊权限，最好不要设置，不然会带来很严重的安全问题。<br>当然，在这里你也可以改变文件和目录的所有者和所有属。</p><h6 id="0x4-详细权限说明"><a href="#0x4-详细权限说明" class="headerlink" title="0x4 详细权限说明"></a>0x4 详细权限说明</h6><p>文件和目录的权限表示，使用rwx这三个字符来代表所有者、用户组和其他用户的权限。有时候，字符似乎过于麻烦，因此还有另外一种方法就是以数学来表示权限，而且仅需三个数字。</p><blockquote><p>r：对应数值4<br>w：对应数值2<br>x：对应数值1<br>-：对应数值0</p></blockquote><p>数字设定的关键是mode的取值，一开始许多初学者会被搞糊涂，其实很简单，我们将rwx看成<strong>二进制数</strong>，如果有则有1表示，没有则有0表示，那么rwx r-x r–则可以表示成为：<br>111 101 100<br>再将其每三位转换成为一个十进制数，就是754.<br>例如，我们想让a.txt这个文件的权限为：</p><blockquote><p>自己 同组用户 其他用户<br>可读 是 是 是<br>可写 是 是<br>可执行</p></blockquote><p>那么，我们先根据上表得到权限串为：rw-rw-r–， 那么转换成二进制数就是110 110 100， 再每三位转换成为一个十进制数，就得到664，因此我们执行命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost~]# chmod 666 a.txt</span><br></pre></td></tr></table></figure><p>按照上面的规则，rwx合起来就是4 + 2 + 1 = 7，一个rwxrwxrwx权限全开放的文件，数值表示为777；而完全不开放权限的文件 “- - - - - - - - -“ 其数字表示为000。</p><hr><h5 id="教程转载panyun-有修改"><a href="#教程转载panyun-有修改" class="headerlink" title="教程转载panyun(有修改)"></a>教程转载panyun(有修改)</h5><p><strong>若有侵权，请<a href="&quot;http://wpa.qq.com/msgrd?v=3&amp;uin=1391299672&amp;site=qq&amp;menu=yes">联系我</a>，我会立刻删除</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;在linux中的每一个文件或目录都包括有访问权限，这些访问权限决定了谁能访问和如何访问这些文件和目录。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://jshz.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Linux chmod" scheme="https://jshz.github.io/tags/Linux-chmod/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>优化与美化</title>
+    <link href="https://jshz.github.io/2019/02/07/%E4%BC%98%E5%8C%96%E4%B8%8E%E7%BE%8E%E5%8C%96/"/>
+    <id>https://jshz.github.io/2019/02/07/优化与美化/</id>
+    <published>2019-02-07T05:37:16.000Z</published>
+    <updated>2019-02-10T17:10:39.898Z</updated>
+    
+    <content type="html"><![CDATA[<center><font face="黑体" color="#000000" size="6">优化与美化</font><br></center><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>总所周知，网站浏览度在于看的人多不多，网站美化好了，自然多人来看。<br><a id="more"></a></p><h4 id="这里借鉴了几个例子"><a href="#这里借鉴了几个例子" class="headerlink" title="这里借鉴了几个例子"></a>这里借鉴了几个例子</h4><ul><li><h6 id="Alvabill-NexT博客全优化与美化"><a href="#Alvabill-NexT博客全优化与美化" class="headerlink" title="Alvabill-NexT博客全优化与美化"></a><strong><a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">Alvabill-NexT博客全优化与美化</a></strong></h6></li><li><h6 id="个性化NexT主题美化"><a href="#个性化NexT主题美化" class="headerlink" title="个性化NexT主题美化"></a><strong><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">个性化NexT主题美化</a></strong></h6></li><li><h6 id="wenbo星空–NexT主题美化"><a href="#wenbo星空–NexT主题美化" class="headerlink" title="wenbo星空–NexT主题美化"></a><strong><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">wenbo星空–NexT主题美化</a></strong></h6>(我的主题NexT的美化)</li><li><h6 id="yalia主题优化与美化"><a href="#yalia主题优化与美化" class="headerlink" title="yalia主题优化与美化"></a><strong><a href="https://www.jianshu.com/p/f389ad8c49bd" target="_blank" rel="noopener">yalia主题优化与美化</a></strong></h6></li><li><h6 id="yalia主题添加阅读量"><a href="#yalia主题添加阅读量" class="headerlink" title="yalia主题添加阅读量"></a><strong><a href="https://www.yanchezuo.com/hexo-2.html" target="_blank" rel="noopener">yalia主题添加阅读量</a></strong></h6></li><li><h6 id="NexT主题添加背景动态线条"><a href="#NexT主题添加背景动态线条" class="headerlink" title="NexT主题添加背景动态线条"></a><strong><a href="http://shenzekun.cn/hexo%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF.html" target="_blank" rel="noopener">NexT主题添加背景动态线条</a></strong></h6></li></ul><h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><p>总配置是blog\_config,而主题配置在blog\themes\主题\_config!</p><hr><p>个人觉得yalia主题很好看，自己的博客稀里糊涂的使用了NexT主题搭建，到时候应该也会改成yalia主题的！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;&lt;font face=&quot;黑体&quot; color=&quot;#000000&quot; size=&quot;6&quot;&gt;优化与美化&lt;/font&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;总所周知，网站浏览度在于看的人多不多，网站美化好了，自然多人来看。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://jshz.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://jshz.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初创博客经验</title>
+    <link href="https://jshz.github.io/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/"/>
+    <id>https://jshz.github.io/2018/01/20/创建博客踩坑经验/</id>
+    <published>2018-01-20T12:41:08.000Z</published>
+    <updated>2019-02-11T06:55:21.114Z</updated>
+    
+    <content type="html"><![CDATA[<center><font face="黑体" color="#000000" size="6">初创博客</font><br></center>    <font face="黑体" color="#000000" size="5">前言</font><p>很久之前，就打算开始弄一个与搭档的博客，由于技术问题，一直鸽了很久<s>(但后来还是上线了嘛)</s></p><a id="more"></a><font face="黑体" color="#000000" size="5">博客创建过程(windows)</font><p>本咸鱼是使用hexo + github搭建的博客,踩坑过多，故出此与记。</p><p>(会的大佬可以直接跳过)</p><blockquote><p>需要使用的工具:<br><br><a target="self" href="http://nodejs.cn/download">node.js</a><br><br><a target="self" href="http://www.git-scm.com/download">git bash</a><br><br>Hexo</p></blockquote><h4 id="大概过程"><a href="#大概过程" class="headerlink" title="大概过程"></a>大概过程</h4><ol><li>注册github账号，然后创建仓库</li><li>获得ssh，并且使用github账号连接上ssh</li><li>安装hexo,并创建hexo init目录,</li><li>设置hexo与github关联</li><li>上线博客</li></ol><p><strong>注册githut账号，创建仓库</strong><br>(图不一样，仅供参考)</p><p>进入<a target="self" href="https://www.github.com">github</a>官网,注册与登陆账号后，新建一个仓库 <code>create a repository</code><br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/新建仓库.png" alt="enter description here"><br>仓库名字要和用户名正确,例如我的是jshz,仓库名字就是<code>jshz.github.io</code><br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/新建仓库1.png" alt="enter description here"></p><h6 id="gitbash设置Github账号、邮箱、ssh-key连接"><a href="#gitbash设置Github账号、邮箱、ssh-key连接" class="headerlink" title="gitbash设置Github账号、邮箱、ssh key连接"></a><strong>gitbash设置Github账号、邮箱、ssh key连接</strong></h6><h5 id="账号、邮箱"><a href="#账号、邮箱" class="headerlink" title="账号、邮箱"></a>账号、邮箱</h5><p>打开Git Bash,填写账号信息,输入 <code>git config --global user.name &quot;yourname&quot;</code>(xxx代表你的用户名)<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/登陆账号.png" alt="enter description here"></p><p>接下来输入<code>git config --global uesr.email &quot;yourname@example.com&quot;</code>(填写你注册时候的邮箱)![enter <img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/登陆邮箱.png" alt="enter description here"></p><h5 id="ssh-key"><a href="#ssh-key" class="headerlink" title="ssh key"></a>ssh key</h5><p>查看C:\Users\用户 是否有 <code>.ssh</code>，如果有，就备份后删除。</p><p>打开GitBash输入<code>ssh key-gen -t rsa -C &quot;yourname@example.com&quot;</code> 生成密钥，后面出现的三个问题都回车。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/创建ssh密钥.png" alt="enter description here"></p><p>后面得到两个文件: id_rsa和id_rsa.pub, 打开id_rsa.pub文件, 复制里面的内容。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/创建ssh密钥1.png" alt="enter description here"></p><p>打开<a href="https://www.github.com" target="_blank" rel="noopener">github</a>, 登陆你的账号，点击右上角的下箭头，选择<strong>setting</strong>,找到<strong>SSH and GPG keys</strong>,点击<strong>New SSH key</strong>。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/设置sshkey.png" alt="enter description here"><br><strong>提示</strong>:添加ssh后，如果不知道ssh是否添加，可以在Git bash使用<code>ssh -t git@github.com</code>测试ssh是否成功添加,如果显示Hi,则代表你成功添加。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/验证ssh是否成功.png" alt="enter description here"></p><blockquote><p><strong>waring!!</strong><br>如果没有显示这则消息，那得重新弄一遍了。<br>在这之前，先把C:\User\用户 的.ssh删除。<br>github上的ssh密钥也需要清除。<br>接下来回到第二步–&gt;ssh</p></blockquote><h5 id="安装、创建hexo目录、上线博客"><a href="#安装、创建hexo目录、上线博客" class="headerlink" title="安装、创建hexo目录、上线博客"></a>安装、创建hexo目录、上线博客</h5><p>打开Git Bash, 进入你想要创建博客的文件夹位置, 例如 <code>cd d:/blog</code>,输入<code>npm install hexo -g</code>，开始安装hexo(这里本机已有hexo),输入 <code>hexo init</code>,开始初始化文件夹。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/%E5%88%9D%E5%88%9B%E5%8D%9A%E5%AE%A2/%E5%88%9B%E5%BB%BAhexo.png" alt="enter description here"></p><p>完事之后，安装部署扩展 <code>npm install hexo-deployer-git --save</code><br>打开<code>d:\blog\_config</code>(配置文件)，找到deploy，修改配置如下:</p><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line"><span class="attribute">type</span>: git</span><br><span class="line"><span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:Luxonext/LwJ.git<span class="comment">//这个看下面</span></span><br><span class="line"><span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure><p>repo不用写入上面那行，因为这个是别人的，要填写应该填写你自己的仓库地址。(个人推荐ssh，但需要你的本机ssh与github账户连接才行！)<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/自己的repo.png" alt="enter description here"></p><p>填写好后，我们可以先预览一下博客<code>hexo s</code>，没有大碍后可以写入public <code>hexo g</code></p><p>然后上线博客<code>hexo d</code><br><strong>优化与美化</strong>会在下一篇写出。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;&lt;font face=&quot;黑体&quot; color=&quot;#000000&quot; size=&quot;6&quot;&gt;初创博客&lt;/font&gt;&lt;br&gt;&lt;/center&gt;    
+
+&lt;font face=&quot;黑体&quot; color=&quot;#000000&quot; size=&quot;5&quot;&gt;前言&lt;/font&gt;
+
+&lt;p&gt;很久之前，就打算开始弄一个与搭档的博客，由于技术问题，一直鸽了很久&lt;s&gt;(但后来还是上线了嘛)&lt;/s&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://jshz.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://jshz.github.io/tags/Hexo/"/>
+    
+      <category term="NexT" scheme="https://jshz.github.io/tags/NexT/"/>
+    
+  </entry>
+  
+</feed>
