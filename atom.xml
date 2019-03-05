@@ -39,6 +39,28 @@
   </entry>
   
   <entry>
+    <title>工作组和域的Net命令</title>
+    <link href="https://blog.jshz.top/2019/03/04/%E5%B7%A5%E4%BD%9C%E7%BB%84%E5%92%8C%E5%9F%9F%E7%9A%84%20Net%20%E5%91%BD%E4%BB%A4/"/>
+    <id>https://blog.jshz.top/2019/03/04/工作组和域的 Net 命令/</id>
+    <published>2019-03-04T02:06:09.000Z</published>
+    <updated>2019-03-05T03:10:24.994Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>记录Net命令的学习过程<br><a id="more"></a></p><h4 id="0x1-Net命令介绍"><a href="#0x1-Net命令介绍" class="headerlink" title="0x1 Net命令介绍"></a>0x1 Net命令介绍</h4><p>Net 命令是一种基于网络的命令，包括了管理网络环境、服务、用户、登陆等大部分重要的管理功能。常见的 <strong>Net</strong> 子命令有 <strong>net view、net user、net use、net start、net stop、net share</strong>等，下面来一一介绍嗷。</p><h4 id="1x1-net-view"><a href="#1x1-net-view" class="headerlink" title="1x1 net view"></a>1x1 net view</h4><p>作用：显示域列表、计算机列表或指定计算机的共享资源列表。<br>命令格式：<code>net view [\\ComputerName] [/domain[:DomainName]]</code></p><blockquote><p>\\Computer: 指定要查看其共享资源的计算机名称。<br>/domain[:Domainname]: 指定要查看其可用计算机的域</p></blockquote><p>输入不带参数的 net view，就会显示当前域的计算机列表。<br>实例:<code>net view 127.0.0.1</code></p><h4 id="1x2-net-user"><a href="#1x2-net-user" class="headerlink" title="1x2 net user"></a>1x2 net user</h4><p>作用：添加或更改用户账号或显示用户账号信息。该命令也可以写为 net users。<br>命令格式：net user Administrator Administrator 修改已有账号信息<br>输入不带参数的 net user:查看计算机上的用户账号列表。</p><h4 id="1x3-net-use"><a href="#1x3-net-use" class="headerlink" title="1x3 net use"></a>1x3 net use</h4><p>作用：连接计算机或者断开计算机的共享资源连接，或显示计算机的连接方式</p><p>参数介绍：输入不带参数的 net use 查看网络连接</p><h4 id="1x4-net-start"><a href="#1x4-net-start" class="headerlink" title="1x4 net start"></a>1x4 net start</h4><p>作用：启动服务或显示已启动服务的列表<br>实例：net start server<br>不带参数则显示已启动服务</p><h4 id="1x5-net-stop"><a href="#1x5-net-stop" class="headerlink" title="1x5 net stop"></a>1x5 net stop</h4><p>作用与上面的 net start 相反</p><h4 id="1x6-net-share"><a href="#1x6-net-share" class="headerlink" title="1x6 net share"></a>1x6 net share</h4><p>作用：创建、删除或显示共享资源。<br>不带任何参数的 net share 命令： 显示本地计算机上所有共享资源的信息<br>详细请看下面👇<br>Sharename: 共享资源的网络名称<br>drive:path: 指定共享目录的绝对路径。<br>/user:number: 设置可以同时访问共享资源的最大用户数。<br>/unlimited: 不限制同时访问共享资源的用户数。<br>/remark:”test”: 添加关于资源的注释，注释文字用引号引住。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;记录Net命令的学习过程&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Blog" scheme="https://blog.jshz.top/categories/Blog/"/>
+    
+    
+      <category term="net" scheme="https://blog.jshz.top/tags/net/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo本地服务器创建</title>
     <link href="https://blog.jshz.top/2019/02/18/%E5%86%85%E7%BD%91hexo/"/>
     <id>https://blog.jshz.top/2019/02/18/内网hexo/</id>
