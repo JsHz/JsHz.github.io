@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://jshz.github.io/"/>
+  <link href="https://blog.jshz.top/"/>
   <updated>2019-03-04T03:16:13.888Z</updated>
-  <id>https://jshz.github.io/</id>
+  <id>https://blog.jshz.top/</id>
   
   <author>
     <name>JsHz</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Netstat</title>
-    <link href="https://jshz.github.io/2019/03/04/Netstat%E8%AE%B0%E5%BD%95/"/>
-    <id>https://jshz.github.io/2019/03/04/Netstat记录/</id>
+    <link href="https://blog.jshz.top/2019/03/04/Netstat%E8%AE%B0%E5%BD%95/"/>
+    <id>https://blog.jshz.top/2019/03/04/Netstat记录/</id>
     <published>2019-03-04T02:06:09.000Z</published>
     <updated>2019-03-04T03:16:13.888Z</updated>
     
@@ -31,39 +31,39 @@
     
     </summary>
     
-      <category term="Blog" scheme="https://jshz.github.io/categories/Blog/"/>
+      <category term="Blog" scheme="https://blog.jshz.top/categories/Blog/"/>
     
     
-      <category term="TCP/IP" scheme="https://jshz.github.io/tags/TCP-IP/"/>
+      <category term="TCP/IP" scheme="https://blog.jshz.top/tags/TCP-IP/"/>
     
   </entry>
   
   <entry>
     <title>Hexo本地服务器创建</title>
-    <link href="https://jshz.github.io/2019/02/18/%E5%86%85%E7%BD%91hexo/"/>
-    <id>https://jshz.github.io/2019/02/18/内网hexo/</id>
+    <link href="https://blog.jshz.top/2019/02/18/%E5%86%85%E7%BD%91hexo/"/>
+    <id>https://blog.jshz.top/2019/02/18/内网hexo/</id>
     <published>2019-02-18T02:53:35.000Z</published>
     <updated>2019-02-18T06:52:37.929Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>想方便的设置局域网的个人博客嘛，比设置公网的个人博客简单实用，但还是放个链接吧👇<br><a href="https://blog.jshz.top/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/" target="_blank" rel="noopener">设置公网个人博客</a><a id="more"></a></p><h5 id="0x1-需要的软件"><a href="#0x1-需要的软件" class="headerlink" title="0x1 需要的软件"></a>0x1 需要的软件</h5><blockquote><p>需要使用的工具:<br><br><a target="self" href="http://nodejs.cn/download">node.js</a><br><br><a target="self" href="http://www.git-scm.com/download">git bash</a><br><br>Hexo</p></blockquote><h5 id="0x2-创建过程"><a href="#0x2-创建过程" class="headerlink" title="0x2 创建过程"></a>0x2 创建过程</h5><p>打开GitBash，进入你想要存放博客的文件夹，安装Hexo插件:<code>npm install hexo -g</code></p><p>然后初始化文件夹:<code>hexo init</code></p><p>开始下载yilia的主题(主题可选，都行的)：<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>，然后打开站点根目录的_config.yml，找到theme，把原来的主题修改成yilia。</p><p>输入<code>hexo clean</code>清楚内存、<code>hexo g</code>更新本地、<code>hexo server -i IP</code>设置你的局域网IP<br>完成。</p><p>创建文章：打开GitBash，进入你的站点根目录，输入：<code>hexo new page</code>，就会新建一篇文章，也可以自己在站点根目录文件夹打开source，然后进入_posts新建一个page.md写入文章。</p><h4 id="0x03-番外篇"><a href="#0x03-番外篇" class="headerlink" title="0x03 番外篇"></a>0x03 番外篇</h4><p>个人推荐编写文章的编译器:<a href="http://markdownpad.com/" target="_blank" rel="noopener">Markdown</a>    、<a href="http://markdown.xiaoshujiang.com/" target="_blank" rel="noopener">小书匠</a></p><p>优化与美化可以看<a href="https://www.jianshu.com/p/f389ad8c49bd" target="_blank" rel="noopener">DevinZ的</a>，这里就不介绍了。</p>]]></content>
+    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>想方便的设置局域网的个人博客嘛，比设置公网的个人博客简单实用，但还是放个链接吧👇<br><a href="https://blog.jshz.top/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/">设置公网个人博客</a><a id="more"></a></p><h5 id="0x1-需要的软件"><a href="#0x1-需要的软件" class="headerlink" title="0x1 需要的软件"></a>0x1 需要的软件</h5><blockquote><p>需要使用的工具:<br><br><a target="self" href="http://nodejs.cn/download">node.js</a><br><br><a target="self" href="http://www.git-scm.com/download">git bash</a><br><br>Hexo</p></blockquote><h5 id="0x2-创建过程"><a href="#0x2-创建过程" class="headerlink" title="0x2 创建过程"></a>0x2 创建过程</h5><p>打开GitBash，进入你想要存放博客的文件夹，安装Hexo插件:<code>npm install hexo -g</code></p><p>然后初始化文件夹:<code>hexo init</code></p><p>开始下载yilia的主题(主题可选，都行的)：<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>，然后打开站点根目录的_config.yml，找到theme，把原来的主题修改成yilia。</p><p>输入<code>hexo clean</code>清楚内存、<code>hexo g</code>更新本地、<code>hexo server -i IP</code>设置你的局域网IP<br>完成。</p><p>创建文章：打开GitBash，进入你的站点根目录，输入：<code>hexo new page</code>，就会新建一篇文章，也可以自己在站点根目录文件夹打开source，然后进入_posts新建一个page.md写入文章。</p><h4 id="0x03-番外篇"><a href="#0x03-番外篇" class="headerlink" title="0x03 番外篇"></a>0x03 番外篇</h4><p>个人推荐编写文章的编译器:<a href="http://markdownpad.com/" target="_blank" rel="noopener">Markdown</a>    、<a href="http://markdown.xiaoshujiang.com/" target="_blank" rel="noopener">小书匠</a></p><p>优化与美化可以看<a href="https://www.jianshu.com/p/f389ad8c49bd" target="_blank" rel="noopener">DevinZ的</a>，这里就不介绍了。</p>]]></content>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;想方便的设置局域网的个人博客嘛，比设置公网的个人博客简单实用，但还是放个链接吧👇&lt;br&gt;&lt;a href=&quot;https://blog.jshz.top/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;设置公网个人博客&lt;/a&gt;
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;想方便的设置局域网的个人博客嘛，比设置公网的个人博客简单实用，但还是放个链接吧👇&lt;br&gt;&lt;a href=&quot;https://blog.jshz.top/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/&quot;&gt;设置公网个人博客&lt;/a&gt;
     
     </summary>
     
-      <category term="Blog" scheme="https://jshz.github.io/categories/Blog/"/>
+      <category term="Blog" scheme="https://blog.jshz.top/categories/Blog/"/>
     
     
-      <category term="Hexo" scheme="https://jshz.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.jshz.top/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Linux系统管理</title>
-    <link href="https://jshz.github.io/2019/02/13/Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    <id>https://jshz.github.io/2019/02/13/Linux文件管理/</id>
+    <link href="https://blog.jshz.top/2019/02/13/Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    <id>https://blog.jshz.top/2019/02/13/Linux文件管理/</id>
     <published>2019-02-13T06:27:54.000Z</published>
     <updated>2019-02-19T01:21:59.042Z</updated>
     
@@ -75,17 +75,17 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://jshz.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.jshz.top/categories/Hexo/"/>
     
     
-      <category term="Linux" scheme="https://jshz.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://blog.jshz.top/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>优化与美化</title>
-    <link href="https://jshz.github.io/2019/02/07/%E4%BC%98%E5%8C%96%E4%B8%8E%E7%BE%8E%E5%8C%96/"/>
-    <id>https://jshz.github.io/2019/02/07/优化与美化/</id>
+    <link href="https://blog.jshz.top/2019/02/07/%E4%BC%98%E5%8C%96%E4%B8%8E%E7%BE%8E%E5%8C%96/"/>
+    <id>https://blog.jshz.top/2019/02/07/优化与美化/</id>
     <published>2019-02-07T05:37:16.000Z</published>
     <updated>2019-02-19T02:27:05.792Z</updated>
     
@@ -97,17 +97,17 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://jshz.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.jshz.top/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://jshz.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.jshz.top/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>初创博客经验</title>
-    <link href="https://jshz.github.io/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/"/>
-    <id>https://jshz.github.io/2018/01/20/创建博客踩坑经验/</id>
+    <link href="https://blog.jshz.top/2018/01/20/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C/"/>
+    <id>https://blog.jshz.top/2018/01/20/创建博客踩坑经验/</id>
     <published>2018-01-20T12:41:08.000Z</published>
     <updated>2019-02-19T02:27:38.396Z</updated>
     
@@ -119,12 +119,12 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://jshz.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.jshz.top/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://jshz.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.jshz.top/tags/Hexo/"/>
     
-      <category term="NexT" scheme="https://jshz.github.io/tags/NexT/"/>
+      <category term="NexT" scheme="https://blog.jshz.top/tags/NexT/"/>
     
   </entry>
   
