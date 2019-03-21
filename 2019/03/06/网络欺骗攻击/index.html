@@ -184,7 +184,7 @@
 <meta property="og:description" content="前言计算机系统及网络的信息安全在越来越先进的社会中越来越凸显地位，在我国，这一问题已引起各方面的高度重视，在与入侵者周旋的过程中，有一种有效的信息安全技术正渐渐进入人们的视野中，这就是网络安全欺骗。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/web/arp.png">
-<meta property="og:updated_time" content="2019-03-08T00:36:44.585Z">
+<meta property="og:updated_time" content="2019-03-21T08:35:56.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络欺骗攻击">
 <meta name="twitter:description" content="前言计算机系统及网络的信息安全在越来越先进的社会中越来越凸显地位，在我国，这一问题已引起各方面的高度重视，在与入侵者周旋的过程中，有一种有效的信息安全技术正渐渐进入人们的视野中，这就是网络安全欺骗。">
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2019-03-08 08:36:44" itemprop="dateModified" datetime="2019-03-08T08:36:44+08:00">2019-03-08</time>
+                <time title="Updated at: 2019-03-21 16:35:56" itemprop="dateModified" datetime="2019-03-21T16:35:56+08:00">2019-03-21</time>
               
             
           </span>
@@ -498,22 +498,22 @@
 <h4 id="0x1-ARP欺骗"><a href="#0x1-ARP欺骗" class="headerlink" title="0x1 ARP欺骗"></a>0x1 ARP欺骗</h4><p>ARP（地址解析协议）是在仅知道主机的IP地址是确定其物理地址的一种协议。局域网的网络流通不是根据IP进行，而是按照MAC地址进行传输。</p>
 <p>比如局域网内 </p>
 <p><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/web/arp.png" alt="Diagram"></p>
-<h5 id="1x1（单向欺骗）"><a href="#1x1（单向欺骗）" class="headerlink" title="1x1（单向欺骗）"></a>1x1（单向欺骗）</h5><p><strong>A的地址为</strong>[IP：10.164.27.30 MAC：AA-AA-AA-AA-AA-AA]<br><strong>B的地址为</strong>[IP：10.164.27.40 MAC：BB-BB-BB-BB-BB-BB]<br><strong>C的地址为</strong>[IP：10.164.27.50 MAC：CC-CC-CC-CC-CC-CC]</p>
+<h5 id="0x1-1（单向欺骗）"><a href="#0x1-1（单向欺骗）" class="headerlink" title="0x1.1（单向欺骗）"></a>0x1.1（单向欺骗）</h5><p><strong>A的地址为</strong>[IP：10.164.27.30 MAC：AA-AA-AA-AA-AA-AA]<br><strong>B的地址为</strong>[IP：10.164.27.40 MAC：BB-BB-BB-BB-BB-BB]<br><strong>C的地址为</strong>[IP：10.164.27.50 MAC：CC-CC-CC-CC-CC-CC]</p>
 <p>A与C进行通信，但是B向A发送了一个自己伪造的 <strong>ARP应答</strong>，而这个应答中的数据为发送方，IP是 10.164.27.50（C的IP），MAC是BB-BB-BB-BB-BB-BB。（C的MAC本来是CC-CC-CC-CC-CC-CC，这里被伪造了）。当A接收到B的伪ARP应答是，就会更新本地缓存了（A就被欺骗了），B也变成 “C” 了。<br>A与C之间通信的数据就会经过B，B完全可以知道他们之间说了什么，这就是<strong>ARP</strong>欺骗过程。</p>
 <p>掐断A与C之间的通信：<br>B向A发送一条ARP数据包，内容为：C的地址是00:00:00:00:00:00（一个错误的地址），但要注意了，这里只是 A发送给C中断了，C发送给A并没有中断，所以这个叫单向欺骗。</p>
-<h4 id="1x2（双向欺骗）"><a href="#1x2（双向欺骗）" class="headerlink" title="1x2（双向欺骗）"></a>1x2（双向欺骗）</h4><p>A与C正常通信，然后B对A说我才是 C，又对C说我才是 A，这样把A和C的ARP缓存表全部修改了。以后的通信过程就是A把数据发给B，B再发送给C；C数据发送给B，B再发送给A。</p>
-<h4 id="1x3-怎么应对ARP欺骗主机的情况？"><a href="#1x3-怎么应对ARP欺骗主机的情况？" class="headerlink" title="1x3 怎么应对ARP欺骗主机的情况？"></a>1x3 怎么应对ARP欺骗主机的情况？</h4><p>我们可以使用ARPkiller 的 “Sniffer 杀手” 扫描整个局域网IP段，然后查找处于 “混杂” 模式下的计算机，就可以发现对方了。<br>检测完成后，如果相应的IP是绿帽子图标，说明整个IP处于正常模式，如果是红帽子图标，则说明网卡处于混杂模式，它就是我们的目标，也就是他在用网络执法官捣乱。</p>
-<h4 id="0x2-DNS欺骗"><a href="#0x2-DNS欺骗" class="headerlink" title="0x2 DNS欺骗"></a>0x2 DNS欺骗</h4><p>如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，用户上网就只能看到攻击者的主页，而不是自己想要取得的网页的主页了，这就是DNS欺骗的基本原理。DNS欺骗其实并不是真的“黑掉”了对方的网站，只是冒名顶替，招摇撞骗罢了。</p>
+<h4 id="0x1-2（双向欺骗）"><a href="#0x1-2（双向欺骗）" class="headerlink" title="0x1.2（双向欺骗）"></a>0x1.2（双向欺骗）</h4><p>A与C正常通信，然后B对A说我才是 C，又对C说我才是 A，这样把A和C的ARP缓存表全部修改了。以后的通信过程就是A把数据发给B，B再发送给C；C数据发送给B，B再发送给A。</p>
+<h4 id="0x1-3-怎么应对ARP欺骗主机的情况？"><a href="#0x1-3-怎么应对ARP欺骗主机的情况？" class="headerlink" title="0x1.3 怎么应对ARP欺骗主机的情况？"></a>0x1.3 怎么应对ARP欺骗主机的情况？</h4><p>我们可以使用ARPkiller 的 “Sniffer 杀手” 扫描整个局域网IP段，然后查找处于 “混杂” 模式下的计算机，就可以发现对方了。<br>检测完成后，如果相应的IP是绿帽子图标，说明整个IP处于正常模式，如果是红帽子图标，则说明网卡处于混杂模式，它就是我们的目标，也就是他在用网络执法官捣乱。</p>
+<h4 id="0x1-4-DNS欺骗"><a href="#0x1-4-DNS欺骗" class="headerlink" title="0x1.4 DNS欺骗"></a>0x1.4 DNS欺骗</h4><p>如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，用户上网就只能看到攻击者的主页，而不是自己想要取得的网页的主页了，这就是DNS欺骗的基本原理。DNS欺骗其实并不是真的“黑掉”了对方的网站，只是冒名顶替，招摇撞骗罢了。</p>
 <p>把攻击这的计算机设成目标域名的代理服务器。这样，外界进入目标的计算机的数据流在黑客的监视之下，黑客可以任意窃听甚至修改数据流里的数据，从而收集大量信息，和IP欺骗相似。</p>
 <p>DNS无法在Internet上实现欺骗，只在局域网上有效果。</p>
-<h4 id="0x3-Web欺骗"><a href="#0x3-Web欺骗" class="headerlink" title="0x3 Web欺骗"></a>0x3 Web欺骗</h4><p>Web是一种电子信息欺骗，也算障眼法，攻击者复制一个相似的网页与域名，如果眼神不好，在一个相似的网页输入隐私信息与个人账户和密码，就会被后台的黑客所截获到，从而信息泄露。</p>
+<h4 id="0x1-5-Web欺骗"><a href="#0x1-5-Web欺骗" class="headerlink" title="0x1.5 Web欺骗"></a>0x1.5 Web欺骗</h4><p>Web是一种电子信息欺骗，也算障眼法，攻击者复制一个相似的网页与域名，如果眼神不好，在一个相似的网页输入隐私信息与个人账户和密码，就会被后台的黑客所截获到，从而信息泄露。</p>
 <p>通常使用这种手段的有引诱，障眼，推荐链接。</p>
 <p>实例:<br><strong>引诱</strong><br><a href="https://www.bilibili.com/" target="_blank" rel="noopener">全国最大交友网站，快，顶不住了！</a><br>填写你的信息,以获得大礼包一份<br>姓名：[    ]<br>性别：[    ]<br>住址：[    ]</p>
 <p>不要轻易相信这些奇怪的字眼与网站</p>
 <p><strong>障眼</strong><br>本来是 <a href="https://www.bing.com" target="_blank" rel="noopener">https://www.bing.com</a> 的域名，黑客可能会改成<a href="http://www.bing.top" target="_blank" rel="noopener">www.bing.top</a> 、 <a href="http://www.bimg.com" target="_blank" rel="noopener">www.bimg.com</a> 复制网页一份然后造成障眼，从而获取信息</p>
 <p>在进入网页的时候要看到左下角的 js 提示网页，在进入网页的时候要注意有没有输错。</p>
 <p><strong>推荐链接</strong><br>推荐链接一般来自好友之间和邮件</p>
-<h4 id="0x4-网络钓鱼攻击的预防"><a href="#0x4-网络钓鱼攻击的预防" class="headerlink" title="0x4 网络钓鱼攻击的预防"></a>0x4 网络钓鱼攻击的预防</h4><p>在日常中预防钓鱼攻击，我们应该做到如下几点：</p>
+<h4 id="0x1-6-网络钓鱼攻击的预防"><a href="#0x1-6-网络钓鱼攻击的预防" class="headerlink" title="0x1.6 网络钓鱼攻击的预防"></a>0x1.6 网络钓鱼攻击的预防</h4><p>在日常中预防钓鱼攻击，我们应该做到如下几点：</p>
 <ol>
 <li>不轻易在<strong>网上</strong>留下自己身份的任何资料，包括手<strong>机号码、身份号、银行号</strong></li>
 <li>不要通过<strong>网络</strong>传输自己的隐私资料，包括<strong>手机号码、身份号、银行号</strong></li>
@@ -554,7 +554,7 @@
   <p><span>本文标题:</span><a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a></p>
   <p><span>文章作者:</span><a href="jshz.github.io" title="访问JsHz的个人博客">JsHz</a></p>
   <p><span>发布时间:</span>2019年03月06日 - 20:03</p>
-  <p><span>最后更新:</span>2019年03月08日 - 08:03</p>
+  <p><span>最后更新:</span>2019年03月21日 - 16:03</p>
   <p><span>原始链接:</span><a href="/2019/03/06/网络欺骗攻击/" title="网络欺骗攻击">https://blog.jshz.top/2019/03/06/网络欺骗攻击/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.jshz.top/2019/03/06/网络欺骗攻击/" aria-label="复制成功！"></i></span>
   </p>
@@ -835,7 +835,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0x1-ARP欺骗"><span class="nav-number">1.1.</span> <span class="nav-text">0x1 ARP欺骗</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1x1（单向欺骗）"><span class="nav-number">1.1.1.</span> <span class="nav-text">1x1（单向欺骗）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1x2（双向欺骗）"><span class="nav-number">1.2.</span> <span class="nav-text">1x2（双向欺骗）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1x3-怎么应对ARP欺骗主机的情况？"><span class="nav-number">1.3.</span> <span class="nav-text">1x3 怎么应对ARP欺骗主机的情况？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0x2-DNS欺骗"><span class="nav-number">1.4.</span> <span class="nav-text">0x2 DNS欺骗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0x3-Web欺骗"><span class="nav-number">1.5.</span> <span class="nav-text">0x3 Web欺骗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0x4-网络钓鱼攻击的预防"><span class="nav-number">1.6.</span> <span class="nav-text">0x4 网络钓鱼攻击的预防</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0x1-ARP欺骗"><span class="nav-number">1.1.</span> <span class="nav-text">0x1 ARP欺骗</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#0x1-1（单向欺骗）"><span class="nav-number">1.1.1.</span> <span class="nav-text">0x1.1（单向欺骗）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0x1-2（双向欺骗）"><span class="nav-number">1.2.</span> <span class="nav-text">0x1.2（双向欺骗）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0x1-3-怎么应对ARP欺骗主机的情况？"><span class="nav-number">1.3.</span> <span class="nav-text">0x1.3 怎么应对ARP欺骗主机的情况？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0x1-4-DNS欺骗"><span class="nav-number">1.4.</span> <span class="nav-text">0x1.4 DNS欺骗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0x1-5-Web欺骗"><span class="nav-number">1.5.</span> <span class="nav-text">0x1.5 Web欺骗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0x1-6-网络钓鱼攻击的预防"><span class="nav-number">1.6.</span> <span class="nav-text">0x1.6 网络钓鱼攻击的预防</span></a></li></ol></li></ol></div>
             
 
           </div>
