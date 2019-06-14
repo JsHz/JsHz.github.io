@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Jshz">
+    
+    <meta name="description" content="JsHz博客，分享网络安全经验与经历。">
+    
+    
+    
+    
+    
+    
+    <title>day02(基本数据类型1) | JsHz&#39;s Blog</title>
+    <link href="”https://blog.jshz.top“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.png'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg,preview9.jpg,preview10.jpg,preview11.jpg,preview12.jpg,preview13.jpg,preview14.jpg,preview15.jpg,preview16.jpg,preview17.jpg,preview18.jpg,preview19.jpg,preview20.jpg,preview21.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://blog.jshz.top" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://blog.jshz.top">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">JsHz&#39;s Blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class>
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class>
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/Hexo/">Hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/Blog/">Blog</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/TCP-IP/">TCP/IP</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/regedit/">regedit</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class>
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://blog.jshz.top">JsHz&#39;s Blog</a>
+        >
+        <span>day02(基本数据类型1)</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/python/">python</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-06-14
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-06-14
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/python/">python</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><h4 id="一、基本数据类型"><a href="#一、基本数据类型" class="headerlink" title="一、基本数据类型"></a>一、基本数据类型</h4><p>​    python的基本数据类型有：</p>
+<p>整数、布尔值、字符串、列表、元组、字典、集合</p>
+<ul>
+<li>int</li>
+<li>bool</li>
+<li>str</li>
+<li>list</li>
+<li>tuple</li>
+<li>dict</li>
+<li>set</li>
+</ul>
+<hr>
+<h3 id="1-基本操作"><a href="#1-基本操作" class="headerlink" title="1. 基本操作"></a>1. 基本操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">temp = <span class="string">'hello'</span></span><br><span class="line">t = type(temp)</span><br><span class="line">print(t)</span><br><span class="line">str <span class="comment">#👈 ctrl+左键 点击查看更多</span></span><br><span class="line">help(type(temp)) <span class="comment">#可使用的命令具体显示</span></span><br><span class="line">d = dir(temp) <span class="comment">#可使用的命令显示</span></span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+<p>​    2.整型（int）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 整型int</span></span><br><span class="line">a = <span class="number">88</span>  <span class="comment"># 十进制       # a的数据类型是： &lt;class 'int'&gt;</span></span><br><span class="line">b = <span class="number">0b1110</span>  <span class="comment"># 二进制</span></span><br><span class="line">c = <span class="number">0o57</span>    <span class="comment"># 八进制</span></span><br><span class="line">d = <span class="number">0xa5c</span>   <span class="comment"># 十六进制</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f'a的数据类型是： <span class="subst">&#123;type(a)&#125;</span>\nb的数据类型是： <span class="subst">&#123;type(b)&#125;</span>\nc的数据类型是： <span class="subst">&#123;type(a)&#125;</span>\nd的数据类型是： <span class="subst">&#123;type(a)&#125;</span>\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#tips: 32位机器：-2**31~2**31-1；64位：-2**63~2**63-1</span></span><br></pre></td></tr></table></figure>
+<p>整数类型，理论取值范围[-无穷，+无穷], 实际取值范围受限于运行的计算机的内存大小。</p>
+<h3 id><a href="#" class="headerlink" title=" "></a> </h3><h3 id="3-浮点数（float）"><a href="#3-浮点数（float）" class="headerlink" title="3.浮点数（float）"></a>3.浮点数（float）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0.0</span></span><br><span class="line">b = <span class="number">75.</span></span><br><span class="line">c = <span class="number">-3.1415926</span></span><br><span class="line">d = <span class="number">9.8e-2</span></span><br><span class="line">s = <span class="number">0.1</span> + <span class="number">0.2</span></span><br><span class="line">print(s)    <span class="comment"># 0.30000000000000004</span></span><br><span class="line">print(<span class="string">f's的类型是：<span class="subst">&#123;type(s)&#125;</span>\n'</span>)</span><br><span class="line">print(<span class="string">f'a的数据类型是： <span class="subst">&#123;type(a)&#125;</span>\nb的数据类型是： <span class="subst">&#123;type(b)&#125;</span>\nc的数据类型是： <span class="subst">&#123;type(a)&#125;</span>\nd的数据类型是： <span class="subst">&#123;type(a)&#125;</span>\n'</span>)</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<p>课外扩展</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># decimal 3.141592696532441*1.23456789</span></span><br><span class="line"><span class="keyword">import</span> decimal</span><br><span class="line"></span><br><span class="line">a = decimal.Decimal(<span class="number">3.141592696532441</span>)</span><br><span class="line">b = decimal.Decimal(<span class="number">1.23456789</span>)</span><br><span class="line">decimal.getcontext().prec = <span class="number">20</span>  <span class="comment"># 精确位数</span></span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;a * b&#125;</span>\n'</span>)    <span class="comment"># 3.8785094665974659284</span></span><br></pre></td></tr></table></figure>
+<h3 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h3><h3 id="4-复数（complex）"><a href="#4-复数（complex）" class="headerlink" title="4.复数（complex）"></a>4.复数（complex）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">12.3</span> + <span class="number">4j</span></span><br><span class="line">print(<span class="string">'a的数据类型是：'</span>, type(a))</span><br><span class="line">print(a.real) <span class="comment">#实数</span></span><br><span class="line">print(a.imag) <span class="comment">#虚数</span></span><br><span class="line">print(<span class="string">'='</span>*<span class="number">20</span>)</span><br><span class="line">print(<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="int-float-complex的互相转换"><a href="#int-float-complex的互相转换" class="headerlink" title="int, float, complex的互相转换"></a><strong>int, float, complex</strong>的互相转换</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">3.14</span></span><br><span class="line">c = <span class="string">'2'</span></span><br><span class="line">print(<span class="string">f'a的类型是： <span class="subst">&#123;type(a)&#125;</span>\nb的类型是： <span class="subst">&#123;type(b)&#125;</span>\nc的类型是： <span class="subst">&#123;type(c)&#125;</span>\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转化为整数</span></span><br><span class="line">d = int(b)</span><br><span class="line">e = int(c)</span><br><span class="line">print(d)</span><br><span class="line">print(e)</span><br><span class="line">print(<span class="string">f'd的类型是：<span class="subst">&#123;type(d)&#125;</span>\ne的类型是：<span class="subst">&#123;type(e)&#125;</span>\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转化为浮点数</span></span><br><span class="line">f = float(a)</span><br><span class="line">g = float(c)</span><br><span class="line">print(f)</span><br><span class="line">print(g)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换复数</span></span><br><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">3.14</span></span><br><span class="line">c = <span class="string">'2'</span></span><br><span class="line"></span><br><span class="line">h = complex(a, b) <span class="comment"># 两个参数时，前后都不允许有字符串，否则包错</span></span><br><span class="line">i = complex(b, c) </span><br><span class="line">j = complex(c) <span class="comment"># 只有单个参数时，才可以使用字符串类型的数字</span></span><br><span class="line">print(h) <span class="comment"># (2 + 3.14j)</span></span><br><span class="line">print(i) <span class="comment"># (3.14+2j)</span></span><br><span class="line">print(j) <span class="comment"># (2+0j)</span></span><br><span class="line">print(type(h))</span><br></pre></td></tr></table></figure>
+<h3 id="5-布尔值-bool-True-和-False"><a href="#5-布尔值-bool-True-和-False" class="headerlink" title="5.布尔值 bool: True 和 False"></a>5.布尔值 bool: True 和 False</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 变量初始化</span></span><br><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">3.14</span></span><br><span class="line">c = <span class="string">'5'</span></span><br><span class="line">d = <span class="number">0</span></span><br><span class="line">e = <span class="string">""</span></span><br><span class="line">f = <span class="literal">False</span></span><br><span class="line">g = <span class="literal">None</span></span><br><span class="line">print(<span class="string">f'a的布尔值是： <span class="subst">&#123;bool(a)&#125;</span>\nb的布尔值是： <span class="subst">&#123;bool(b)&#125;</span>\nc的布尔值是： <span class="subst">&#123;bool(c)&#125;</span>\nd的布尔值是： <span class="subst">&#123;bool(d)&#125;</span>\n'</span></span><br><span class="line">      <span class="string">f'e的布尔值是： <span class="subst">&#123;bool(e)&#125;</span>\nf的布尔值是： <span class="subst">&#123;bool(f)&#125;</span>\ng的布尔值是： <span class="subst">&#123;bool(g)&#125;</span>\n'</span></span><br><span class="line">      <span class="string">f'h的布尔值是： <span class="subst">&#123;bool(h)&#125;</span>\ni的布尔值是： <span class="subst">&#123;bool(i)&#125;</span>\nj的布尔值是： <span class="subst">&#123;bool(j)&#125;</span>\n'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="6-字符串str"><a href="#6-字符串str" class="headerlink" title="6.字符串str"></a>6.字符串str</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">字符串str</span><br><span class="line"><span class="comment"># 变量初始化</span></span><br><span class="line">a = <span class="string">'你好'</span></span><br><span class="line">b = <span class="string">"hello,world"</span></span><br><span class="line">c = <span class="string">'''hello,TZ'''</span></span><br><span class="line">d = <span class="string">"""hello,FF"""</span></span><br><span class="line">e = <span class="string">"""</span></span><br><span class="line"><span class="string">    红豆生南国，</span></span><br><span class="line"><span class="string">    春来发几枝？</span></span><br><span class="line"><span class="string">    愿君多采撷，</span></span><br><span class="line"><span class="string">    此物最相思。</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">f = <span class="string">'''</span></span><br><span class="line"><span class="string">    床前明月光，</span></span><br><span class="line"><span class="string">    疑是地上霜。</span></span><br><span class="line"><span class="string">    举头望明月，</span></span><br><span class="line"><span class="string">    低头思故乡。</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f'a： <span class="subst">&#123;a&#125;</span>\nb： <span class="subst">&#123;b&#125;</span>\n'</span></span><br><span class="line">      <span class="string">f'c： <span class="subst">&#123;c&#125;</span>\nd： <span class="subst">&#123;d&#125;</span>\n'</span></span><br><span class="line">      <span class="string">f'e： <span class="subst">&#123;e&#125;</span>\nf： <span class="subst">&#123;f&#125;</span>\n'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="7-（capitalize，center，count，索引，len，切片）"><a href="#7-（capitalize，center，count，索引，len，切片）" class="headerlink" title="7.（capitalize，center，count，索引，len，切片）"></a>7.（capitalize，center，count，索引，len，切片）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'a的数据类型：'</span>, type(a))</span><br><span class="line">print(b.capitalize()) <span class="comment">#开头大写</span></span><br><span class="line">print(a.center(<span class="number">20</span>, <span class="string">'*'</span>)) <span class="comment">#居中，若有空白就是用 * 填充</span></span><br><span class="line"><span class="comment"># S.count(sub[, start[, end]]) -&gt; int</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">"hello,world"</span></span><br><span class="line">print(b.count(<span class="string">"l"</span>))     <span class="comment"># 3 是在整个字符串里面有 3 个 l</span></span><br><span class="line">print(b.count(<span class="string">'l'</span>, <span class="number">3</span>))  <span class="comment"># 2 是在前三个数（0 - 3)里面找 l ， 有 2 个</span></span><br><span class="line">print(b.count(<span class="string">'l'</span>, <span class="number">3</span>, <span class="number">8</span>))   <span class="comment"># 1 在(4 - 8）找 l , 有一个</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引取值</span></span><br><span class="line">s = <span class="string">'hello,TZ'</span> <span class="comment">#h(0) e(1) l(2) l(3) o(4) ,(5) T(6) Z(7)</span></span><br><span class="line">print(s[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 长度len()</span></span><br><span class="line">print(len(s))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切片</span></span><br><span class="line"><span class="comment"># 切片：变量[头下标：尾下标]，不包含尾下标（包头不包尾）</span></span><br><span class="line">print(s[<span class="number">0</span>:<span class="number">2</span>]) <span class="comment">#he</span></span><br><span class="line">print(s[<span class="number">1</span>:<span class="number">4</span>]) <span class="comment">#ell</span></span><br><span class="line">print(<span class="string">'这里是：'</span>, s[<span class="number">4</span>:<span class="number">1</span>])   <span class="comment"># 不能交叉取值， 所以为空值</span></span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get" action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Jshz
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.png" width="140" height="140" alt="个人头像" class="author-image">
+            <p class="author-description"></p><p>JsHz博客，分享网络安全经验与经历。</p>
+<p></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/01/20/创建博客踩坑经验/">初创博客经验</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/01/20/创建博客踩坑经验/">初创博客经验</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/06/14/day2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/06/14/day2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/06/14/day2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 15.118185043660684px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/TCP-IP/" style="font-size: 8.182625405655832px;" class="tag-cloud-link">TCP/IP</a>
+    
+    <a href="/tags/regedit/" style="font-size: 8.930093299437505px;" class="tag-cloud-link">regedit</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 13.155370746671007px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/NexT/" style="font-size: 18.374637852437623px;" class="tag-cloud-link">NexT</a>
+    
+    <a href="/tags/Web/" style="font-size: 13.517188405963761px;" class="tag-cloud-link">Web</a>
+    
+    <a href="/tags/net/" style="font-size: 10.55646760458513px;" class="tag-cloud-link">net</a>
+    
+    <a href="/tags/python/" style="font-size: 8.192537214220483px;" class="tag-cloud-link">python</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.jshz.top" target="_blank">jshz</a>
+    </li>
+    
+    <li>
+        <a href="https://www.mmgal.com" target="_blank">忧郁的弟弟</a>
+    </li>
+    
+    <li>
+        <a href="https://www.bilibili.com" target="_blank">蔡徐坤nmsl❤</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/jshz/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://space.bilibili.com/88458949" target="_blank">Bilibili</a>
+    </li>
+    
+    <li>
+        <a href="/" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Jshz Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'png',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+
+</html>
