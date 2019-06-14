@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Jshz">
+    
+    <meta name="description" content="JsHz博客，分享网络安全经验与经历。">
+    
+    
+    
+    
+    
+    
+    <title>Linux系统管理 | JsHz&#39;s Blog</title>
+    <link href="”https://blog.jshz.top“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.png'
+        var previews = 'http://pt2upb5u4.bkt.clouddn.com/preview1.jpg,http://pt2upb5u4.bkt.clouddn.com/preview2.jpg,http://pt2upb5u4.bkt.clouddn.com/preview3.jpg,http://pt2upb5u4.bkt.clouddn.com/preview4.jpg,http://pt2upb5u4.bkt.clouddn.com/preview5.jpg,http://pt2upb5u4.bkt.clouddn.com/preview6.jpg,http://pt2upb5u4.bkt.clouddn.com/preview7.jpg,http://pt2upb5u4.bkt.clouddn.com/preview8.jpg,http://pt2upb5u4.bkt.clouddn.com/preview9.jpg,http://pt2upb5u4.bkt.clouddn.com/preview10.jpg,http://pt2upb5u4.bkt.clouddn.com/preview11.jpg,http://pt2upb5u4.bkt.clouddn.com/preview12.jpg,http://pt2upb5u4.bkt.clouddn.com/preview13.jpg,http://pt2upb5u4.bkt.clouddn.com/preview14.jpg,http://pt2upb5u4.bkt.clouddn.com/preview15.jpg,http://pt2upb5u4.bkt.clouddn.com/preview16.jpg,http://pt2upb5u4.bkt.clouddn.com/preview17.jpg,http://pt2upb5u4.bkt.clouddn.com/preview18.jpg,http://pt2upb5u4.bkt.clouddn.com/preview19.jpg,http://pt2upb5u4.bkt.clouddn.com/preview20.jpg,http://pt2upb5u4.bkt.clouddn.com/preview21.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://blog.jshz.top" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://blog.jshz.top">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">JsHz&#39;s Blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class>
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class>
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/Hexo/">Hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/Blog/">Blog</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/TCP-IP/">TCP/IP</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/python/">python</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class>
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://blog.jshz.top">JsHz&#39;s Blog</a>
+        >
+        <span>Linux系统管理</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Linux/">Linux</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-02-13
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-02-13
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Linux/">Linux</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在linux中的每一个文件或目录都包括有访问权限，这些访问权限决定了谁能访问和如何访问这些文件和目录。<br><a id="more"></a></p>
+<h5 id="0x1-过程"><a href="#0x1-过程" class="headerlink" title="0x1 过程"></a>0x1 过程</h5><p>r(Read - 读取)：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目录的权限<br>w(Write - 写入)：对文件而言，具有新增、修改文件内容的权限；对目录来说，具有删除、移动目录内文件的权限。<br>x(eXecute - 执行)：对文件而言，具有执行文件的权限；对目录来说该用户具有进入目录的权限。</p>
+<p>  <strong>-(表示不具有该项的权限)</strong></p>
+<h6 id="0x2-权限举例"><a href="#0x2-权限举例" class="headerlink" title="0x2 权限举例"></a>0x2 权限举例</h6><p>-rwx——：文件所有这对文件具有读取、写入和执行的权限。<br>-rw-rw-r-x：文件所有这与同组用户对文件具有读写的权限，而其他用户仅具有读取和执行的权限。<br>drwx–x–x：目录所有着具有读写与进入目录的权限、其他用户可以进入该目录，却无法读取任何数据。<br>Drwx——：除了目录所有者具有完整的权限之外，其他用户对该目录完全没有任何权限。</p>
+<h6 id="0x3-特殊权限"><a href="#0x3-特殊权限" class="headerlink" title="0x3 特殊权限"></a>0x3 特殊权限</h6><p>文件目录权限不止这些，还有所谓的特殊权限。由于特殊权限会拥有一些“特权”，因为用户若无特殊需求，不应该启用这些权限，避免安全方面出现严重漏洞，造成黑客入侵，甚至摧毁系统！！！</p>
+<ul>
+<li><p>s或S(SUID, Set UID)：可执行的文件搭配这个权限，便能获得特权，任意获取该文件的所有者能使用的全部系统资源。所以请注意拥有SUID权限的文件，<strong>SUID配root</strong>，那就是黑客的<strong>任意门</strong></p>
+</li>
+<li><p>s或S(SGID, Set GIT)：设置在文件上面，<strong>其效果与SUID相同</strong>，只不过将文件所有者换成用户组，该文件就可以任意存取整个用户组所能使用的系统资源。</p>
+</li>
+<li><p>t或T(Sticky)：/tmp和/var/tmp目录共所有用户暂时存取文件，就是<strong>每位用户皆拥有完整的权限</strong>进入该目录，去浏览、删除和移动文件。</p>
+</li>
+</ul>
+<p>对于特殊权限，最好不要设置，不然会带来很严重的安全问题。<br>当然，在这里你也可以改变文件和目录的所有者和所有属。</p>
+<h6 id="0x4-详细权限说明"><a href="#0x4-详细权限说明" class="headerlink" title="0x4 详细权限说明"></a>0x4 详细权限说明</h6><p>文件和目录的权限表示，使用rwx这三个字符来代表所有者、用户组和其他用户的权限。有时候，字符似乎过于麻烦，因此还有另外一种方法就是以数学来表示权限，而且仅需三个数字。</p>
+<blockquote>
+<p>r：对应数值4<br>w：对应数值2<br>x：对应数值1<br>-：对应数值0</p>
+</blockquote>
+<p>数字设定的关键是mode的取值，一开始许多初学者会被搞糊涂，其实很简单，我们将rwx看成<strong>二进制数</strong>，如果有则有1表示，没有则有0表示，那么rwx r-x r–则可以表示成为：<br>111 101 100<br>再将其每三位转换成为一个十进制数，就是754.<br>例如，我们想让a.txt这个文件的权限为：</p>
+<blockquote>
+<p>自己 同组用户 其他用户<br>可读 是 是 是<br>可写 是 是<br>可执行</p>
+</blockquote>
+<p>那么，我们先根据上表得到权限串为：rw-rw-r–， 那么转换成二进制数就是110 110 100， 再每三位转换成为一个十进制数，就得到664，因此我们执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost~]# chmod 666 a.txt</span><br></pre></td></tr></table></figure>
+<p>按照上面的规则，rwx合起来就是4 + 2 + 1 = 7，一个rwxrwxrwx权限全开放的文件，数值表示为777；而完全不开放权限的文件 “- - - - - - - - -“ 其数字表示为000。</p>
+<hr>
+<h5 id="教程转载panyun-有修改"><a href="#教程转载panyun-有修改" class="headerlink" title="教程转载panyun(有修改)"></a>教程转载panyun(有修改)</h5><p><strong>若有侵权，请<a href="&quot;http://wpa.qq.com/msgrd?v=3&amp;uin=1391299672&amp;site=qq&amp;menu=yes">联系我</a>，我会立刻删除</strong></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get" action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Jshz
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.png" width="140" height="140" alt="个人头像" class="author-image">
+            <p class="author-description"></p><p>JsHz博客，分享网络安全经验与经历。</p>
+<p></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/01/20/创建博客踩坑经验/">初创博客经验</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/01/20/创建博客踩坑经验/">初创博客经验</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/02/13/Linux文件管理/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/02/13/Linux文件管理/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/02/13/Linux文件管理/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 11.055339780666422px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/TCP-IP/" style="font-size: 9.589463830805528px;" class="tag-cloud-link">TCP/IP</a>
+    
+    <a href="/tags/python/" style="font-size: 16.65372881507818px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 9.434587771500068px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/regedit/" style="font-size: 19.01699472210954px;" class="tag-cloud-link">regedit</a>
+    
+    <a href="/tags/net/" style="font-size: 11.453717445989149px;" class="tag-cloud-link">net</a>
+    
+    <a href="/tags/Web/" style="font-size: 18.92143226317156px;" class="tag-cloud-link">Web</a>
+    
+    <a href="/tags/NexT/" style="font-size: 8.713383790672843px;" class="tag-cloud-link">NexT</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.jshz.top" target="_blank">jshz</a>
+    </li>
+    
+    <li>
+        <a href="https://www.mmgal.com" target="_blank">忧郁的弟弟</a>
+    </li>
+    
+    <li>
+        <a href="https://www.bilibili.com" target="_blank">蔡徐坤nmsl❤</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/jshz/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://space.bilibili.com/88458949" target="_blank">Bilibili</a>
+    </li>
+    
+    <li>
+        <a href="/" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Jshz Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'http://pt2upb5u4.bkt.clouddn.com/background(1-6).png',
+      ext: 'png',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Jshz">
+    
+    <meta name="description" content="JsHz博客，分享网络安全经验与经历。">
+    
+    
+    
+    
+    
+    
+    <title>网络欺骗攻击 | JsHz&#39;s Blog</title>
+    <link href="”https://blog.jshz.top“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.png'
+        var previews = 'http://pt2upb5u4.bkt.clouddn.com/preview1.jpg,http://pt2upb5u4.bkt.clouddn.com/preview2.jpg,http://pt2upb5u4.bkt.clouddn.com/preview3.jpg,http://pt2upb5u4.bkt.clouddn.com/preview4.jpg,http://pt2upb5u4.bkt.clouddn.com/preview5.jpg,http://pt2upb5u4.bkt.clouddn.com/preview6.jpg,http://pt2upb5u4.bkt.clouddn.com/preview7.jpg,http://pt2upb5u4.bkt.clouddn.com/preview8.jpg,http://pt2upb5u4.bkt.clouddn.com/preview9.jpg,http://pt2upb5u4.bkt.clouddn.com/preview10.jpg,http://pt2upb5u4.bkt.clouddn.com/preview11.jpg,http://pt2upb5u4.bkt.clouddn.com/preview12.jpg,http://pt2upb5u4.bkt.clouddn.com/preview13.jpg,http://pt2upb5u4.bkt.clouddn.com/preview14.jpg,http://pt2upb5u4.bkt.clouddn.com/preview15.jpg,http://pt2upb5u4.bkt.clouddn.com/preview16.jpg,http://pt2upb5u4.bkt.clouddn.com/preview17.jpg,http://pt2upb5u4.bkt.clouddn.com/preview18.jpg,http://pt2upb5u4.bkt.clouddn.com/preview19.jpg,http://pt2upb5u4.bkt.clouddn.com/preview20.jpg,http://pt2upb5u4.bkt.clouddn.com/preview21.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://blog.jshz.top" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://blog.jshz.top">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">JsHz&#39;s Blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class>
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class>
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/Hexo/">Hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/Blog/">Blog</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/TCP-IP/">TCP/IP</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/python/">python</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class>
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://blog.jshz.top">JsHz&#39;s Blog</a>
+        >
+        <span>网络欺骗攻击</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Web/">Web</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-03-06
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-03-06
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Web/">Web</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>计算机系统及网络的信息安全在越来越先进的社会中越来越凸显地位，在我国，这一问题已引起各方面的高度重视，在与入侵者周旋的过程中，有一种有效的信息安全技术正渐渐进入人们的视野中，这就是网络安全欺骗。<br><a id="more"></a></p>
+<h4 id="0x1-ARP欺骗"><a href="#0x1-ARP欺骗" class="headerlink" title="0x1 ARP欺骗"></a>0x1 ARP欺骗</h4><p>ARP（地址解析协议）是在仅知道主机的IP地址是确定其物理地址的一种协议。局域网的网络流通不是根据IP进行，而是按照MAC地址进行传输。</p>
+<p>比如局域网内 </p>
+<p><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/web/arp.png" alt="Diagram"></p>
+<h5 id="0x1-1（单向欺骗）"><a href="#0x1-1（单向欺骗）" class="headerlink" title="0x1.1（单向欺骗）"></a>0x1.1（单向欺骗）</h5><p><strong>A的地址为</strong>[IP：10.164.27.30 MAC：AA-AA-AA-AA-AA-AA]<br><strong>B的地址为</strong>[IP：10.164.27.40 MAC：BB-BB-BB-BB-BB-BB]<br><strong>C的地址为</strong>[IP：10.164.27.50 MAC：CC-CC-CC-CC-CC-CC]</p>
+<p>A与C进行通信，但是B向A发送了一个自己伪造的 <strong>ARP应答</strong>，而这个应答中的数据为发送方，IP是 10.164.27.50（C的IP），MAC是BB-BB-BB-BB-BB-BB。（C的MAC本来是CC-CC-CC-CC-CC-CC，这里被伪造了）。当A接收到B的伪ARP应答是，就会更新本地缓存了（A就被欺骗了），B也变成 “C” 了。<br>A与C之间通信的数据就会经过B，B完全可以知道他们之间说了什么，这就是<strong>ARP</strong>欺骗过程。</p>
+<p>掐断A与C之间的通信：<br>B向A发送一条ARP数据包，内容为：C的地址是00:00:00:00:00:00（一个错误的地址），但要注意了，这里只是 A发送给C中断了，C发送给A并没有中断，所以这个叫单向欺骗。</p>
+<h4 id="0x1-2（双向欺骗）"><a href="#0x1-2（双向欺骗）" class="headerlink" title="0x1.2（双向欺骗）"></a>0x1.2（双向欺骗）</h4><p>A与C正常通信，然后B对A说我才是 C，又对C说我才是 A，这样把A和C的ARP缓存表全部修改了。以后的通信过程就是A把数据发给B，B再发送给C；C数据发送给B，B再发送给A。</p>
+<h4 id="0x1-3-怎么应对ARP欺骗主机的情况？"><a href="#0x1-3-怎么应对ARP欺骗主机的情况？" class="headerlink" title="0x1.3 怎么应对ARP欺骗主机的情况？"></a>0x1.3 怎么应对ARP欺骗主机的情况？</h4><p>我们可以使用ARPkiller 的 “Sniffer 杀手” 扫描整个局域网IP段，然后查找处于 “混杂” 模式下的计算机，就可以发现对方了。<br>检测完成后，如果相应的IP是绿帽子图标，说明整个IP处于正常模式，如果是红帽子图标，则说明网卡处于混杂模式，它就是我们的目标，也就是他在用网络执法官捣乱。</p>
+<h4 id="0x1-4-DNS欺骗"><a href="#0x1-4-DNS欺骗" class="headerlink" title="0x1.4 DNS欺骗"></a>0x1.4 DNS欺骗</h4><p>如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，用户上网就只能看到攻击者的主页，而不是自己想要取得的网页的主页了，这就是DNS欺骗的基本原理。DNS欺骗其实并不是真的“黑掉”了对方的网站，只是冒名顶替，招摇撞骗罢了。</p>
+<p>把攻击这的计算机设成目标域名的代理服务器。这样，外界进入目标的计算机的数据流在黑客的监视之下，黑客可以任意窃听甚至修改数据流里的数据，从而收集大量信息，和IP欺骗相似。</p>
+<p>DNS无法在Internet上实现欺骗，只在局域网上有效果。</p>
+<h4 id="0x1-5-Web欺骗"><a href="#0x1-5-Web欺骗" class="headerlink" title="0x1.5 Web欺骗"></a>0x1.5 Web欺骗</h4><p>Web是一种电子信息欺骗，也算障眼法，攻击者复制一个相似的网页与域名，如果眼神不好，在一个相似的网页输入隐私信息与个人账户和密码，就会被后台的黑客所截获到，从而信息泄露。</p>
+<p>通常使用这种手段的有引诱，障眼，推荐链接。</p>
+<p>实例:<br><strong>引诱</strong><br><a href="https://www.bilibili.com/" target="_blank" rel="noopener">全国最大交友网站，快，顶不住了！</a><br>填写你的信息,以获得大礼包一份<br>姓名：[    ]<br>性别：[    ]<br>住址：[    ]</p>
+<p>不要轻易相信这些奇怪的字眼与网站</p>
+<p><strong>障眼</strong><br>本来是 <a href="https://www.bing.com" target="_blank" rel="noopener">https://www.bing.com</a> 的域名，黑客可能会改成<a href="http://www.bing.top" target="_blank" rel="noopener">www.bing.top</a> 、 <a href="http://www.bimg.com" target="_blank" rel="noopener">www.bimg.com</a> 复制网页一份然后造成障眼，从而获取信息</p>
+<p>在进入网页的时候要看到左下角的 js 提示网页，在进入网页的时候要注意有没有输错。</p>
+<p><strong>推荐链接</strong><br>推荐链接一般来自好友之间和邮件</p>
+<h4 id="0x1-6-网络钓鱼攻击的预防"><a href="#0x1-6-网络钓鱼攻击的预防" class="headerlink" title="0x1.6 网络钓鱼攻击的预防"></a>0x1.6 网络钓鱼攻击的预防</h4><p>在日常中预防钓鱼攻击，我们应该做到如下几点：</p>
+<ol>
+<li>不轻易在<strong>网上</strong>留下自己身份的任何资料，包括手<strong>机号码、身份号、银行号</strong></li>
+<li>不要通过<strong>网络</strong>传输自己的隐私资料，包括<strong>手机号码、身份号、银行号</strong></li>
+<li>不要轻易相信<strong>网上</strong>的信息，除非得到了权威的证明。否则千万不要相信别人所传播的谣言</li>
+<li>不要在<strong>网站</strong>注册时透露自己的真实资料，例如，住址、电话、自己的银行卡号</li>
+<li>如果涉及<strong>金钱交易和商业合同</strong>，不要仅仅通过<strong>网络</strong>完成，有心的骗子可能通过这种途径了解用户的资料。</li>
+<li>不要轻易相信电子邮箱、<strong>网络论坛</strong>等发布的中奖信息、促销信息等，除非得到了另外途径的证明。因为正规的公司一般不会通过电子邮件给用户发送中奖信息和促销信息的。</li>
+<li>对电脑进行<strong>网络安全</strong>防范措施。一是安装防火墙和防病毒软件，并经常升级。二是给系统打补丁，三是禁止浏览器运行<strong>Javascript 和 Active 代码</strong>，四是不要从网上下载<strong>未知来源的软件</strong>等。五是提高自我保护意识，不轻易连接公共场所的wifi和商业服务。</li>
+</ol>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get" action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Jshz
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.png" width="140" height="140" alt="个人头像" class="author-image">
+            <p class="author-description"></p><p>JsHz博客，分享网络安全经验与经历。</p>
+<p></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/01/20/创建博客踩坑经验/">初创博客经验</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/01/20/创建博客踩坑经验/">初创博客经验</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/03/06/网络欺骗攻击/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/03/06/网络欺骗攻击/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/03/06/网络欺骗攻击/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 12.251974187970463px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/TCP-IP/" style="font-size: 13.030791894930502px;" class="tag-cloud-link">TCP/IP</a>
+    
+    <a href="/tags/python/" style="font-size: 13.84878733106629px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 17.66283067815334px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/regedit/" style="font-size: 17.873376569141573px;" class="tag-cloud-link">regedit</a>
+    
+    <a href="/tags/net/" style="font-size: 19.24605992143303px;" class="tag-cloud-link">net</a>
+    
+    <a href="/tags/Web/" style="font-size: 12.745260282923688px;" class="tag-cloud-link">Web</a>
+    
+    <a href="/tags/NexT/" style="font-size: 14.54352721633158px;" class="tag-cloud-link">NexT</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.jshz.top" target="_blank">jshz</a>
+    </li>
+    
+    <li>
+        <a href="https://www.mmgal.com" target="_blank">忧郁的弟弟</a>
+    </li>
+    
+    <li>
+        <a href="https://www.bilibili.com" target="_blank">蔡徐坤nmsl❤</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/jshz/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://space.bilibili.com/88458949" target="_blank">Bilibili</a>
+    </li>
+    
+    <li>
+        <a href="/" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Jshz Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'http://pt2upb5u4.bkt.clouddn.com/background(1-6).png',
+      ext: 'png',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+
+</html>
