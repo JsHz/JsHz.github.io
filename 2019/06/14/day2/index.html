@@ -164,7 +164,7 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/python/">python</a>
+                            <a href="/tags/regedit/">regedit</a>
                         </li>
                         
                         
@@ -247,7 +247,7 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><a id="more"></a>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>python基础学习第二天<br><a id="more"></a></p>
 <h4 id="一、基本数据类型"><a href="#一、基本数据类型" class="headerlink" title="一、基本数据类型"></a>一、基本数据类型</h4><p>​    python的基本数据类型有：</p>
 <p>整数、布尔值、字符串、列表、元组、字典、集合</p>
 <ul>
@@ -273,6 +273,10 @@
 <h3 id="5-布尔值-bool-True-和-False"><a href="#5-布尔值-bool-True-和-False" class="headerlink" title="5.布尔值 bool: True 和 False"></a>5.布尔值 bool: True 和 False</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 变量初始化</span></span><br><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">3.14</span></span><br><span class="line">c = <span class="string">'5'</span></span><br><span class="line">d = <span class="number">0</span></span><br><span class="line">e = <span class="string">""</span></span><br><span class="line">f = <span class="literal">False</span></span><br><span class="line">g = <span class="literal">None</span></span><br><span class="line">print(<span class="string">f'a的布尔值是： <span class="subst">&#123;bool(a)&#125;</span>\nb的布尔值是： <span class="subst">&#123;bool(b)&#125;</span>\nc的布尔值是： <span class="subst">&#123;bool(c)&#125;</span>\nd的布尔值是： <span class="subst">&#123;bool(d)&#125;</span>\n'</span></span><br><span class="line">      <span class="string">f'e的布尔值是： <span class="subst">&#123;bool(e)&#125;</span>\nf的布尔值是： <span class="subst">&#123;bool(f)&#125;</span>\ng的布尔值是： <span class="subst">&#123;bool(g)&#125;</span>\n'</span></span><br><span class="line">      <span class="string">f'h的布尔值是： <span class="subst">&#123;bool(h)&#125;</span>\ni的布尔值是： <span class="subst">&#123;bool(i)&#125;</span>\nj的布尔值是： <span class="subst">&#123;bool(j)&#125;</span>\n'</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="6-字符串str"><a href="#6-字符串str" class="headerlink" title="6.字符串str"></a>6.字符串str</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">字符串str</span><br><span class="line"><span class="comment"># 变量初始化</span></span><br><span class="line">a = <span class="string">'你好'</span></span><br><span class="line">b = <span class="string">"hello,world"</span></span><br><span class="line">c = <span class="string">'''hello,TZ'''</span></span><br><span class="line">d = <span class="string">"""hello,FF"""</span></span><br><span class="line">e = <span class="string">"""</span></span><br><span class="line"><span class="string">    红豆生南国，</span></span><br><span class="line"><span class="string">    春来发几枝？</span></span><br><span class="line"><span class="string">    愿君多采撷，</span></span><br><span class="line"><span class="string">    此物最相思。</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">f = <span class="string">'''</span></span><br><span class="line"><span class="string">    床前明月光，</span></span><br><span class="line"><span class="string">    疑是地上霜。</span></span><br><span class="line"><span class="string">    举头望明月，</span></span><br><span class="line"><span class="string">    低头思故乡。</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f'a： <span class="subst">&#123;a&#125;</span>\nb： <span class="subst">&#123;b&#125;</span>\n'</span></span><br><span class="line">      <span class="string">f'c： <span class="subst">&#123;c&#125;</span>\nd： <span class="subst">&#123;d&#125;</span>\n'</span></span><br><span class="line">      <span class="string">f'e： <span class="subst">&#123;e&#125;</span>\nf： <span class="subst">&#123;f&#125;</span>\n'</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="7-（capitalize，center，count，索引，len，切片）"><a href="#7-（capitalize，center，count，索引，len，切片）" class="headerlink" title="7.（capitalize，center，count，索引，len，切片）"></a>7.（capitalize，center，count，索引，len，切片）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'a的数据类型：'</span>, type(a))</span><br><span class="line">print(b.capitalize()) <span class="comment">#开头大写</span></span><br><span class="line">print(a.center(<span class="number">20</span>, <span class="string">'*'</span>)) <span class="comment">#居中，若有空白就是用 * 填充</span></span><br><span class="line"><span class="comment"># S.count(sub[, start[, end]]) -&gt; int</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">"hello,world"</span></span><br><span class="line">print(b.count(<span class="string">"l"</span>))     <span class="comment"># 3 是在整个字符串里面有 3 个 l</span></span><br><span class="line">print(b.count(<span class="string">'l'</span>, <span class="number">3</span>))  <span class="comment"># 2 是在前三个数（0 - 3)里面找 l ， 有 2 个</span></span><br><span class="line">print(b.count(<span class="string">'l'</span>, <span class="number">3</span>, <span class="number">8</span>))   <span class="comment"># 1 在(4 - 8）找 l , 有一个</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引取值</span></span><br><span class="line">s = <span class="string">'hello,TZ'</span> <span class="comment">#h(0) e(1) l(2) l(3) o(4) ,(5) T(6) Z(7)</span></span><br><span class="line">print(s[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 长度len()</span></span><br><span class="line">print(len(s))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切片</span></span><br><span class="line"><span class="comment"># 切片：变量[头下标：尾下标]，不包含尾下标（包头不包尾）</span></span><br><span class="line">print(s[<span class="number">0</span>:<span class="number">2</span>]) <span class="comment">#he</span></span><br><span class="line">print(s[<span class="number">1</span>:<span class="number">4</span>]) <span class="comment">#ell</span></span><br><span class="line">print(<span class="string">'这里是：'</span>, s[<span class="number">4</span>:<span class="number">1</span>])   <span class="comment"># 不能交叉取值， 所以为空值</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串-功能集"><a href="#字符串-功能集" class="headerlink" title="字符串-功能集"></a>字符串-功能集</h3><p><img src="http://pt2upb5u4.bkt.clouddn.com/%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%8A%9F%E8%83%BD%E9%9B%86%20%281%29.png" alt="enter description here"></p>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%8A%9F%E8%83%BD%E9%9B%86%20%283%29.png" alt="enter description here"></p>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%8A%9F%E8%83%BD%E9%9B%86%20%282%29.png" alt="enter description here"></p>
+
     </div>
 </article>
 
@@ -420,12 +424,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
                 </span>
             </li>
@@ -450,19 +448,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/01/20/创建博客踩坑经验/">初创博客经验</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
                 </span>
             </li>
             
@@ -495,21 +499,21 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/TCP-IP/" style="font-size: 19.435273188372793px;" class="tag-cloud-link">TCP/IP</a>
+    <a href="/tags/TCP-IP/" style="font-size: 9.710418419765077px;" class="tag-cloud-link">TCP/IP</a>
     
-    <a href="/tags/Linux/" style="font-size: 11.47113495307406px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 9.549850034838087px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/python/" style="font-size: 14.63828750095308px;" class="tag-cloud-link">python</a>
+    <a href="/tags/regedit/" style="font-size: 15.243740490993748px;" class="tag-cloud-link">regedit</a>
     
-    <a href="/tags/regedit/" style="font-size: 19.537445969650282px;" class="tag-cloud-link">regedit</a>
+    <a href="/tags/python/" style="font-size: 16.6146777646152px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/Hexo/" style="font-size: 17.561609724115097px;" class="tag-cloud-link">Hexo</a>
+    <a href="/tags/Hexo/" style="font-size: 8.539355624774586px;" class="tag-cloud-link">Hexo</a>
     
-    <a href="/tags/NexT/" style="font-size: 14.630710738088588px;" class="tag-cloud-link">NexT</a>
+    <a href="/tags/NexT/" style="font-size: 11.87785621337183px;" class="tag-cloud-link">NexT</a>
     
-    <a href="/tags/Web/" style="font-size: 16.948915013064823px;" class="tag-cloud-link">Web</a>
+    <a href="/tags/net/" style="font-size: 16.98428523178735px;" class="tag-cloud-link">net</a>
     
-    <a href="/tags/net/" style="font-size: 12.645284631803216px;" class="tag-cloud-link">net</a>
+    <a href="/tags/Web/" style="font-size: 16.348172010965435px;" class="tag-cloud-link">Web</a>
     
 </div>
                 
