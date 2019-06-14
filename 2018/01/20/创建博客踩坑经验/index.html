@@ -131,11 +131,11 @@
                         
                         
                         <li>
-                            <a href="/categories/Hexo/">Hexo</a>
+                            <a href="/categories/Blog/">Blog</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/Blog/">Blog</a>
+                            <a href="/categories/Hexo/">Hexo</a>
                         </li>
                         
                         
@@ -156,15 +156,15 @@
                         
                         
                         <li>
-                            <a href="/tags/Linux/">Linux</a>
-                        </li>
-                        
-                        <li>
                             <a href="/tags/TCP-IP/">TCP/IP</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/regedit/">regedit</a>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/python/">python</a>
                         </li>
                         
                         
@@ -268,20 +268,20 @@
 <li>上线博客</li>
 </ol>
 <p><strong>注册githut账号，创建仓库</strong><br>(图不一样，仅供参考)</p>
-<p>进入<a target="self" href="https://www.github.com">github</a>官网,注册与登陆账号后，新建一个仓库 <code>create a repository</code><br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/新建仓库.png" alt="enter description here"><br>仓库名字要和用户名正确,例如我的是jshz,仓库名字就是<code>jshz.github.io</code><br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/新建仓库1.png" alt="enter description here"></p>
-<h6 id="gitbash设置Github账号、邮箱、ssh-key连接"><a href="#gitbash设置Github账号、邮箱、ssh-key连接" class="headerlink" title="gitbash设置Github账号、邮箱、ssh key连接"></a><strong>gitbash设置Github账号、邮箱、ssh key连接</strong></h6><h5 id="账号、邮箱"><a href="#账号、邮箱" class="headerlink" title="账号、邮箱"></a>账号、邮箱</h5><p>打开Git Bash,填写账号信息,输入 <code>git config --global user.name &quot;yourname&quot;</code>(xxx代表你的用户名)<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/登陆账号.png" alt="enter description here"></p>
-<p>接下来输入<code>git config --global uesr.email &quot;yourname@example.com&quot;</code>(填写你注册时候的邮箱)![enter <img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/登陆邮箱.png" alt="enter description here"></p>
+<p>进入<a target="self" href="https://www.github.com">github</a>官网,注册与登陆账号后，新建一个仓库 <code>create a repository</code><br><img src="http://pt2upb5u4.bkt.clouddn.com/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.png" alt="新建仓库"><br>仓库名字要和用户名正确,例如我的是jshz,仓库名字就是<code>jshz.github.io</code><br><img src="http://pt2upb5u4.bkt.clouddn.com/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%931.png" alt="新建仓库1"></p>
+<h6 id="gitbash设置Github账号、邮箱、ssh-key连接"><a href="#gitbash设置Github账号、邮箱、ssh-key连接" class="headerlink" title="gitbash设置Github账号、邮箱、ssh key连接"></a><strong>gitbash设置Github账号、邮箱、ssh key连接</strong></h6><h5 id="账号、邮箱"><a href="#账号、邮箱" class="headerlink" title="账号、邮箱"></a>账号、邮箱</h5><p>打开Git Bash,填写账号信息,输入 <code>git config --global user.name &quot;yourname&quot;</code>(xxx代表你的用户名)<br><img src="http://pt2upb5u4.bkt.clouddn.com/%E7%99%BB%E9%99%86%E8%B4%A6%E5%8F%B7.png" alt="登陆账号"></p>
+<p>接下来输入<code>git config --global uesr.email &quot;yourname@example.com&quot;</code>(填写你注册时候的邮箱)<img src="http://pt2upb5u4.bkt.clouddn.com/%E7%99%BB%E9%99%86%E9%82%AE%E7%AE%B1.png" alt="登陆邮箱"></p>
 <h5 id="ssh-key"><a href="#ssh-key" class="headerlink" title="ssh key"></a>ssh key</h5><p>查看C:\Users\用户 是否有 <code>.ssh</code>，如果有，就备份后删除。</p>
-<p>打开GitBash输入<code>ssh key-gen -t rsa -C &quot;yourname@example.com&quot;</code> 生成密钥，后面出现的三个问题都回车。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/创建ssh密钥.png" alt="enter description here"></p>
-<p>后面得到两个文件: id_rsa和id_rsa.pub, 打开id_rsa.pub文件, 复制里面的内容。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/创建ssh密钥1.png" alt="enter description here"></p>
-<p>打开<a href="https://www.github.com" target="_blank" rel="noopener">github</a>, 登陆你的账号，点击右上角的下箭头，选择<strong>setting</strong>,找到<strong>SSH and GPG keys</strong>,点击<strong>New SSH key</strong>。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/设置sshkey.png" alt="enter description here"><br><strong>提示</strong>:添加ssh后，如果不知道ssh是否添加，可以在Git bash使用<code>ssh -t git@github.com</code>测试ssh是否成功添加,如果显示Hi,则代表你成功添加。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/验证ssh是否成功.png" alt="enter description here"></p>
+<p>打开GitBash输入<code>ssh key-gen -t rsa -C &quot;yourname@example.com&quot;</code> 生成密钥，后面出现的三个问题都回车。<br><img src="http://pt2upb5u4.bkt.clouddn.com/%E5%88%9B%E5%BB%BAssh%E5%AF%86%E9%92%A5.png" alt="创建ssh密钥"></p>
+<p>后面得到两个文件: id_rsa和id_rsa.pub, 打开id_rsa.pub文件, 复制里面的内容。<br><img src="http://pt2upb5u4.bkt.clouddn.com/%E5%88%9B%E5%BB%BAssh%E5%AF%86%E9%92%A51.png" alt="创建ssh密钥1"></p>
+<p>打开<a href="https://www.github.com" target="_blank" rel="noopener">github</a>, 登陆你的账号，点击右上角的下箭头，选择<strong>setting</strong>,找到<strong>SSH and GPG keys</strong>,点击<strong>New SSH key</strong>。<br><img src="http://pt2upb5u4.bkt.clouddn.com/%E8%AE%BE%E7%BD%AEsshkey.png" alt="设置sshkey"><br><strong>提示</strong>:添加ssh后，如果不知道ssh是否添加，可以在Git bash使用<code>ssh -t git@github.com</code>测试ssh是否成功添加,如果显示Hi,则代表你成功添加。<br><img src="http://pt2upb5u4.bkt.clouddn.com/%E9%AA%8C%E8%AF%81ssh%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F.png" alt="验证ssh是否成功"></p>
 <blockquote>
 <p><strong>waring!!</strong><br>如果没有显示这则消息，那得重新弄一遍了。<br>在这之前，先把C:\User\用户 的.ssh删除。<br>github上的ssh密钥也需要清除。<br>接下来回到第二步–&gt;ssh</p>
 </blockquote>
-<h5 id="安装、创建hexo目录、上线博客"><a href="#安装、创建hexo目录、上线博客" class="headerlink" title="安装、创建hexo目录、上线博客"></a>安装、创建hexo目录、上线博客</h5><p>打开Git Bash, 进入你想要创建博客的文件夹位置, 例如 <code>cd d:/blog</code>,输入<code>npm install hexo -g</code>，开始安装hexo(这里本机已有hexo),输入 <code>hexo init</code>,开始初始化文件夹。<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/%E5%88%9D%E5%88%9B%E5%8D%9A%E5%AE%A2/%E5%88%9B%E5%BB%BAhexo.png" alt="enter description here"></p>
+<h5 id="安装、创建hexo目录、上线博客"><a href="#安装、创建hexo目录、上线博客" class="headerlink" title="安装、创建hexo目录、上线博客"></a>安装、创建hexo目录、上线博客</h5><p>打开Git Bash, 进入你想要创建博客的文件夹位置, 例如 <code>cd d:/blog</code>,输入<code>npm install hexo -g</code>，开始安装hexo(这里本机已有hexo),输入 <code>hexo init</code>,开始初始化文件夹。<br><img src="http://pt2upb5u4.bkt.clouddn.com/%E5%88%9B%E5%BB%BAhexo.png" alt="enter description here"></p>
 <p>完事之后，安装部署扩展 <code>npm install hexo-deployer-git --save</code><br>打开<code>d:\blog\_config</code>(配置文件)，找到deploy，修改配置如下:</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">	<span class="attribute">type</span>: git</span><br><span class="line">	<span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:Luxonext/LwJ.git	<span class="comment">//这个看下面</span></span><br><span class="line">	<span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
-<p>repo不用写入上面那行，因为这个是别人的，要填写应该填写你自己的仓库地址。(个人推荐ssh，但需要你的本机ssh与github账户连接才行！)<br><img src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/blog/初创博客/自己的repo.png" alt="enter description here"></p>
+<p>repo不用写入上面那行，因为这个是别人的，要填写应该填写你自己的仓库地址。(个人推荐ssh，但需要你的本机ssh与github账户连接才行！)<br><img src="http://pt2upb5u4.bkt.clouddn.com/%E8%87%AA%E5%B7%B1%E7%9A%84repo.png" alt="enter description here"></p>
 <p>填写好后，我们可以先预览一下博客<code>hexo s</code>，没有大碍后可以写入public <code>hexo g</code></p>
 <p>然后上线博客<code>hexo d</code><br><strong>优化与美化</strong>会在下一篇写出。</p>
 
@@ -420,13 +420,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
                 </span>
             </li>
             
@@ -438,13 +444,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
                 </span>
             </li>
             
@@ -463,18 +475,6 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
                 </span>
             </li>
             
@@ -507,21 +507,21 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 13.825518415805284px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/TCP-IP/" style="font-size: 17.552949253657154px;" class="tag-cloud-link">TCP/IP</a>
     
-    <a href="/tags/TCP-IP/" style="font-size: 14.474409991555774px;" class="tag-cloud-link">TCP/IP</a>
+    <a href="/tags/Linux/" style="font-size: 16.665079655204778px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/regedit/" style="font-size: 12.918621343654314px;" class="tag-cloud-link">regedit</a>
+    <a href="/tags/python/" style="font-size: 13.529405439288325px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/Hexo/" style="font-size: 15.556019758677657px;" class="tag-cloud-link">Hexo</a>
+    <a href="/tags/regedit/" style="font-size: 10.694054403143104px;" class="tag-cloud-link">regedit</a>
     
-    <a href="/tags/NexT/" style="font-size: 10.892193764813022px;" class="tag-cloud-link">NexT</a>
+    <a href="/tags/Hexo/" style="font-size: 18.111737650736995px;" class="tag-cloud-link">Hexo</a>
     
-    <a href="/tags/Web/" style="font-size: 14.216428658025368px;" class="tag-cloud-link">Web</a>
+    <a href="/tags/NexT/" style="font-size: 12.495552152155955px;" class="tag-cloud-link">NexT</a>
     
-    <a href="/tags/net/" style="font-size: 16.1870039014108px;" class="tag-cloud-link">net</a>
+    <a href="/tags/Web/" style="font-size: 12.043497933402055px;" class="tag-cloud-link">Web</a>
     
-    <a href="/tags/python/" style="font-size: 13.07435000154534px;" class="tag-cloud-link">python</a>
+    <a href="/tags/net/" style="font-size: 18.43062719525854px;" class="tag-cloud-link">net</a>
     
 </div>
                 
