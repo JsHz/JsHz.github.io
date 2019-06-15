@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Jshz">
+    
+    <meta name="description" content="JsHz博客，分享网络安全经验与经历。">
+    
+    
+    
+    
+    
+    
+    <title>day03(基本数据类型2) | JsHz&#39;s Blog</title>
+    <link href="”https://blog.jshz.top“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.png'
+        var previews = 'http://pt2upb5u4.bkt.clouddn.com/preview1.jpg,http://pt2upb5u4.bkt.clouddn.com/preview2.jpg,http://pt2upb5u4.bkt.clouddn.com/preview3.jpg,http://pt2upb5u4.bkt.clouddn.com/preview4.jpg,http://pt2upb5u4.bkt.clouddn.com/preview5.jpg,http://pt2upb5u4.bkt.clouddn.com/preview6.jpg,http://pt2upb5u4.bkt.clouddn.com/preview7.jpg,http://pt2upb5u4.bkt.clouddn.com/preview8.jpg,http://pt2upb5u4.bkt.clouddn.com/preview9.jpg,http://pt2upb5u4.bkt.clouddn.com/preview10.jpg,http://pt2upb5u4.bkt.clouddn.com/preview11.jpg,http://pt2upb5u4.bkt.clouddn.com/preview12.jpg,http://pt2upb5u4.bkt.clouddn.com/preview13.jpg,http://pt2upb5u4.bkt.clouddn.com/preview14.jpg,http://pt2upb5u4.bkt.clouddn.com/preview15.jpg,http://pt2upb5u4.bkt.clouddn.com/preview16.jpg,http://pt2upb5u4.bkt.clouddn.com/preview17.jpg,http://pt2upb5u4.bkt.clouddn.com/preview18.jpg,http://pt2upb5u4.bkt.clouddn.com/preview19.jpg,http://pt2upb5u4.bkt.clouddn.com/preview20.jpg,http://pt2upb5u4.bkt.clouddn.com/preview21.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://blog.jshz.top" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://blog.jshz.top">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">JsHz&#39;s Blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class>
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class>
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/Hexo/">Hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/Blog/">Blog</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/regedit/">regedit</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/TCP-IP/">TCP/IP</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class>
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://blog.jshz.top">JsHz&#39;s Blog</a>
+        >
+        <span>day03(基本数据类型2)</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/06/15/day3/">day03(基本数据类型2)</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/python/">python</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-06-15
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/06/15/day3/">day03(基本数据类型2)</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-06-15
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/python/">python</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>前言</p>
+<p>python学习基础的第三天</p>
+<p>tips: <strong>代码块</strong>里面的代码有些和<strong>其他代码块</strong>的代码是<strong>挂钩</strong>的，要注意了</p>
+<p>下面代码较多，很多解释都在注释里面</p>
+<a id="more"></a>
+<h2 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1.字符串"></a>1.字符串</h2><p>切片，步长，倒序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'Hello,TZ'</span></span><br><span class="line"><span class="comment">#   H(0)e(1)l(2)l(3)o(4),(5)T(6)Z(7)</span></span><br><span class="line">print(s[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># llo</span></span><br><span class="line">print(s[<span class="number">-6</span>:<span class="number">-3</span>]) <span class="comment"># ll0，从头往后切</span></span><br><span class="line">print(s[<span class="number">5</span>:<span class="number">2</span>]) <span class="comment"># 这里不能交叉取值</span></span><br><span class="line">print(s[<span class="number">0</span>]) <span class="comment"># 打印第一个： 0</span></span><br><span class="line">print(s[<span class="number">-8</span>]) <span class="comment"># 打印最后一个： Z</span></span><br><span class="line"></span><br><span class="line">print(s[<span class="number">0</span>:<span class="number">5</span>:<span class="number">1</span>]) <span class="comment"># 步长为一 打印出来的是Hello</span></span><br><span class="line">print(s[<span class="number">0</span>:<span class="number">5</span>:<span class="number">2</span>]) <span class="comment"># 步长为二 打印出来的是Hlo</span></span><br><span class="line"></span><br><span class="line">print(s[::<span class="number">-1</span>]) <span class="comment"># 这个为s的倒序</span></span><br><span class="line">print(s[::<span class="number">-2</span>]) <span class="comment"># 这个为s的倒序，但是这个是步长为-2</span></span><br></pre></td></tr></table></figure>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><h2 id="2-空白移除与切割"><a href="#2-空白移除与切割" class="headerlink" title="2.空白移除与切割"></a>2.空白移除与切割</h2><p>移除空白strip() 可以使用到left和right –&gt; lstrip、rstrip</p>
+<p><code>S.strip([chars]) -&gt; str</code> <del>这个我看不懂</del></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="string">' hello,tz '</span></span><br><span class="line">s = <span class="string">'hello, tz'</span></span><br><span class="line">print(s)</span><br><span class="line">print(s1)</span><br><span class="line">print(s1.strip()) <span class="comment"># 移除左右两边的空白</span></span><br><span class="line">print(s1.lstrip()) <span class="comment"># 移除左边的空白</span></span><br><span class="line">print(s1.rstrip()) <span class="comment"># 移除右边的空白</span></span><br><span class="line">print(s1.strip(<span class="string">'z'</span>)) <span class="comment"># 移除左右两边的 'z'</span></span><br></pre></td></tr></table></figure>
+<h3 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h3><h3 id="2-1切割"><a href="#2-1切割" class="headerlink" title="2.1切割"></a>2.1切割</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># S.split(sep=None, maxsplit = -1) -&gt; list of strings</span></span><br><span class="line"><span class="comment"># 切割是直接把指定数给删了然后从那里切割</span></span><br><span class="line">s = <span class="string">'hello,TZ'</span></span><br><span class="line">print(s.split(<span class="string">','</span>)) <span class="comment">#  ['hello','TZ']</span></span><br><span class="line">print(s.split()) <span class="comment"># 原封不动: ['hello,TZ']</span></span><br><span class="line">print(s.split(<span class="string">'l'</span>, <span class="number">1</span>)) <span class="comment"># 切一个 'l' : ['hel','lo,TZ']</span></span><br><span class="line">print(s.split(<span class="string">'l'</span>, <span class="number">2</span>)) <span class="comment"># 切两个 'l' : ['he','o,TZ']</span></span><br></pre></td></tr></table></figure>
+<h2 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h2><h2 id="3-列表-list"><a href="#3-列表-list" class="headerlink" title="3.列表(list)"></a>3.列表(list)</h2><p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%88%97%E8%A1%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.png" alt="enter description here"></p>
+<p>变量初始化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [] <span class="comment"># 空列表</span></span><br><span class="line">b = [<span class="number">1</span>, <span class="literal">True</span>, <span class="string">'abc'</span>, []] <span class="comment">#里面有 int, bool, str, list</span></span><br><span class="line">print(<span class="string">f'a的类型是: <span class="subst">&#123;type(a)&#125;</span>\nb的类型是: <span class="subst">&#123;type(b)&#125;</span>'</span>) <span class="comment"># a是list b也是list</span></span><br></pre></td></tr></table></figure>
+<p>索引</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">print(L[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>列表是有序的可变的元素集合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">L[<span class="number">0</span>] = <span class="string">'w'</span> <span class="comment"># 更换第一个数成 'w'</span></span><br><span class="line">print(L[<span class="number">0</span>]) <span class="comment"># 显示第一个元数</span></span><br><span class="line">print(L) <span class="comment"># 显示所有元素</span></span><br><span class="line">print(<span class="string">'='</span>*<span class="number">20</span>)</span><br><span class="line">S = <span class="string">'abc'</span></span><br><span class="line"><span class="comment"># print(S[0])</span></span><br><span class="line"><span class="comment"># S[0] = 'w' 由于这个是一个str，所以不能直接带入到0里面，会报错，只能替换整个str</span></span><br><span class="line"><span class="comment"># print(S[0])</span></span><br><span class="line"><span class="comment"># print(S)</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%88%97%E8%A1%A8-%E5%8A%9F%E8%83%BD%E9%9B%86.png" alt="enter description here"><br> <img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%88%97%E8%A1%A8-%E5%8A%9F%E8%83%BD%E9%9B%86%20%282%29.png" alt="enter description here"></p>
+<h3 id="3-1-长度len"><a href="#3-1-长度len" class="headerlink" title="3.1 长度len()"></a>3.1 长度len()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(len(L))</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面是切片</span></span><br><span class="line">L = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">print(L[:<span class="number">2</span>])</span><br><span class="line">print(L[<span class="number">-3</span>:<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>
+<h2 id="4-sort排序"><a href="#4-sort排序" class="headerlink" title="4. sort排序"></a>4. sort排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># L.sort(key=None, reverse=False) -&gt; None -- stable sort *IN PLACE*</span></span><br><span class="line">L = [<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</span><br><span class="line">L.sort() <span class="comment">#正常排序</span></span><br><span class="line">print(<span class="string">'正序1: '</span>, L)</span><br><span class="line">L.sort(reverse=<span class="literal">True</span>) <span class="comment"># 逆序</span></span><br><span class="line">print(<span class="string">'2 :'</span>, L)</span><br><span class="line">L.reverse() <span class="comment">#正常排序</span></span><br><span class="line">print(<span class="string">'3 :'</span>, L)</span><br><span class="line">print(<span class="string">'='</span>*<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="5-增删改查"><a href="#5-增删改查" class="headerlink" title="5.  增删改查"></a>5.  增删改查</h2><p><strong>内容较多</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 增删改查</span></span><br><span class="line"><span class="comment"># 增</span></span><br><span class="line">L = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="comment"># 追加：append</span></span><br><span class="line"><span class="comment"># 批量追加：extend</span></span><br><span class="line"><span class="comment"># 插入：insert</span></span><br><span class="line">L.append(<span class="string">'d'</span>)</span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line">L2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">L.extend(L2)</span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line">L.insert(<span class="number">1</span>, <span class="string">'w'</span>)</span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line"><span class="comment"># 删掉一个尾巴（后面的数），并把该尾巴可以赋值给另一个变量 --&gt; pop</span></span><br><span class="line"><span class="comment"># 删除指定索引元素：del</span></span><br><span class="line"><span class="comment"># 清空: clear</span></span><br><span class="line">a = L.pop()</span><br><span class="line">print(a)</span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line">L.append(<span class="string">'w'</span>) <span class="comment"># 在后面添加'w'</span></span><br><span class="line">print(L)</span><br><span class="line">L.remove(<span class="string">'w'</span>) <span class="comment"># 在后面删除'w'</span></span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span>(L[<span class="number">1</span>]) <span class="comment"># 指定删除元素</span></span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line">L.clear() <span class="comment"># 清空所有元素</span></span><br><span class="line">print(L)</span><br></pre></td></tr></table></figure>
+<h3 id="5-1-包含in-有关bool"><a href="#5-1-包含in-有关bool" class="headerlink" title="5.1 包含in (有关bool)"></a>5.1 包含in (有关bool)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(a <span class="keyword">in</span> L) <span class="comment"># True</span></span><br><span class="line">print(b <span class="keyword">in</span> L) <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-tuple-元组"><a href="#6-tuple-元组" class="headerlink" title="6. tuple 元组"></a>6. tuple 元组</h2><p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%85%83%E7%BB%84%E7%9A%84%E5%BA%94%E7%94%A8.png" alt="enter description here"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 变量初始化：元素可以是任何类型的数据</span></span><br><span class="line">a = () <span class="comment"># 空元组</span></span><br><span class="line">b = (<span class="number">1</span>, <span class="literal">False</span>, <span class="string">'ab'</span>, [], ())</span><br><span class="line">print(<span class="string">f'a的类型是: <span class="subst">&#123;type(a)&#125;</span>\nb的类型是: <span class="subst">&#123;type(b)&#125;</span>'</span>) <span class="comment"># 两个的类型都为tuple</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意：单元素元组要注意带上','</span></span><br><span class="line">f = (<span class="string">'hello'</span>)</span><br><span class="line">g = (<span class="string">'hello'</span>,)</span><br><span class="line">print(<span class="string">f'f的类型是: <span class="subst">&#123;type(f)&#125;</span>\ng的类型是<span class="subst">&#123;type(g)&#125;</span>'</span>) <span class="comment"># 第一个没有',' 类型是 str, 第二个有',' 类型是 tuple</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-1-索引"><a href="#6-1-索引" class="headerlink" title="6.1 索引"></a>6.1 索引</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">T = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br><span class="line">print(T[<span class="number">1</span>]) <span class="comment"># 通过索引去取值</span></span><br><span class="line"><span class="comment"># T.index(value, [start, [stop]]) -&gt; integer(整数)</span></span><br><span class="line">print(T.index(<span class="string">'b'</span>)) <span class="comment">#通过值去获取索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># T.count(value) -&gt; integer</span></span><br><span class="line">print(T.count(<span class="string">'b'</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-长度len"><a href="#6-2-长度len" class="headerlink" title="6.2 长度len()"></a>6.2 长度len()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(len(T))</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-切片"><a href="#6-3-切片" class="headerlink" title="6.3 切片"></a>6.3 切片</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(T[<span class="number">1</span>:])</span><br><span class="line">print(T[<span class="number">-2</span>:])</span><br></pre></td></tr></table></figure>
+<h3 id="6-4-包含"><a href="#6-4-包含" class="headerlink" title="6.4 包含"></a>6.4 包含</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">T = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br><span class="line">a = <span class="string">'c'</span></span><br><span class="line">b = <span class="string">'w'</span></span><br><span class="line">print(a <span class="keyword">in</span> T) <span class="comment"># a = 'c', c在T里面，所以结果是 T</span></span><br><span class="line">print(b <span class="keyword">in</span> T) <span class="comment"># b = 'w', w不在T里面，所以结果是 F</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%85%83%E7%BB%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.png" alt="enter description here"></p>
+<h2 id="7-dict-字典"><a href="#7-dict-字典" class="headerlink" title="7. dict(字典)"></a>7. dict(字典)</h2><p>dict 字典 是由键值对构成(key, value)的无序集合（不像字符串，列表和元组那样固定的位置）。</p>
+<p><code>1，&quot;a&quot;, [&#39;ab&#39;, 2, &#39;c&#39;], (&#39;ab&#39;, 2, &#39;c&#39;)</code></p>
+<p>姓名: xf, 密码: 123456</p>
+<p>{key: value}</p>
+<p>学习过的类型: <code>int/float/complex/bool/str/list/tuple/dict</code></p>
+<p>字典key一般使用数字或者字符串，也可以使用元组，value可以使用任何类型的数据类型</p>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%AD%97%E5%85%B8-%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD.png" alt="enter description here"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;&#125; <span class="comment"># 空字典</span></span><br><span class="line">print(<span class="string">f'a的数据类型是: <span class="subst">&#123;type(a)&#125;</span>'</span>) <span class="comment"># a的数据类型是 dict</span></span><br><span class="line">b = &#123;</span><br><span class="line">    <span class="number">1</span>: <span class="number">2</span>, <span class="comment"># key: 数字，value: 数字</span></span><br><span class="line">    <span class="string">'k1'</span>: <span class="string">'v1'</span>, <span class="comment"># key：字符串，value：字符串</span></span><br><span class="line">    <span class="literal">False</span>: <span class="literal">True</span>,</span><br><span class="line">    <span class="string">'k2'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="comment"># value: 列表</span></span><br><span class="line">    (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>): (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), <span class="comment"># key: 元组， value：元组</span></span><br><span class="line">    <span class="string">'k3'</span>: &#123;</span><br><span class="line">        <span class="string">'k2'</span> :<span class="string">'v2'</span>,</span><br><span class="line">        <span class="string">'k4'</span>: <span class="string">'v9'</span>,</span><br><span class="line">        <span class="string">'k5'</span>: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">print(<span class="string">f'b的数据类型是: <span class="subst">&#123;type(b)&#125;</span>'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%AD%97%E5%85%B8-%E5%8A%9F%E8%83%BD%E9%9B%86.png" alt="enter description here"><br><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%AD%97%E5%85%B8-%E5%8A%9F%E8%83%BD%E9%9B%86%20%282%29.png" alt="enter description here"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E5%AD%97%E5%85%B8%E6%80%BB%E7%BB%93.png" alt="enter description here"></p>
+<h3 id="7-1-常用功能-还不太懂fromkeys"><a href="#7-1-常用功能-还不太懂fromkeys" class="headerlink" title="7.1 常用功能 还不太懂fromkeys"></a>7.1 常用功能 <del>还不太懂fromkeys</del></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;</span><br><span class="line">    <span class="string">'k1'</span>: <span class="string">'v1'</span>,</span><br><span class="line">    <span class="string">'k2'</span>: <span class="string">'v2'</span>,</span><br><span class="line">    <span class="string">'k3'</span>: <span class="string">'v3'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># D1 = &#123;&#125;</span></span><br><span class="line"><span class="comment"># L = [1, 2, 3]</span></span><br><span class="line"><span class="comment"># print(D1.fromkeys(L))</span></span><br><span class="line"><span class="comment"># print(D1.fromkeys(L, 'v'))</span></span><br><span class="line"><span class="comment"># 长度len()</span></span><br><span class="line">print(len(D))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 键、值、键值对</span></span><br><span class="line">print(D.items()) <span class="comment"># dict_items(['k1', 'v1'), ('k2', 'v2'), ('k3', 'v3)])</span></span><br><span class="line">print(D.keys()) <span class="comment"># dict_keys(['k1', 'k2', 'k3'])</span></span><br><span class="line">print(D.values()) <span class="comment"># dict_values(['v1', 'v2', 'v3'])</span></span><br></pre></td></tr></table></figure>
+<h2 id="还未讲到的set"><a href="#还未讲到的set" class="headerlink" title="还未讲到的set"></a>还未讲到的set</h2><h3 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h3><p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E9%9B%86%E5%90%88-%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD.png" alt="enter description here"></p>
+<h3 id="功能集合"><a href="#功能集合" class="headerlink" title="功能集合"></a>功能集合</h3><p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E9%9B%86%E5%90%88-%E5%8A%9F%E8%83%BD%E9%9B%86.png" alt="enter description here"></p>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E9%9B%86%E5%90%88-%E5%8A%9F%E8%83%BD%E9%9B%86%20%282%29.png" alt="enter description here"></p>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E9%9B%86%E5%90%88-%E5%8A%9F%E8%83%BD%E9%9B%86.png" alt="enter description here"></p>
+<h3 id="集合总结"><a href="#集合总结" class="headerlink" title="集合总结"></a>集合总结</h3><p><img src="http://pt2upb5u4.bkt.clouddn.com/day02/%E9%9B%86%E5%90%88%E6%80%BB%E7%BB%93.png" alt="enter description here"></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get" action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Jshz
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.png" width="140" height="140" alt="个人头像" class="author-image">
+            <p class="author-description"></p><p>JsHz博客，分享网络安全经验与经历。</p>
+<p></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/15/day3/">day03(基本数据类型2)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/13/day1/">day01(开学典礼)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/13/Linux文件管理/">Linux系统管理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Windows注册表/">Windows注册表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/Netstat记录/">Netstat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/14/day2/">day02(基本数据类型1)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/15/day3/">day03(基本数据类型2)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/07/优化与美化/">优化与美化</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/18/内网hexo/">Hexo本地服务器创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/工作组和域的 Net 命令/">工作组和域的Net命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/01/20/创建博客踩坑经验/">初创博客经验</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/网络欺骗攻击/">网络欺骗攻击</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/06/15/day3/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/06/15/day3/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/06/15/day3/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 15.044977465700278px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/regedit/" style="font-size: 8.05581152353967px;" class="tag-cloud-link">regedit</a>
+    
+    <a href="/tags/TCP-IP/" style="font-size: 19.33066438196929px;" class="tag-cloud-link">TCP/IP</a>
+    
+    <a href="/tags/python/" style="font-size: 11.568113885630897px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 9.289183770138354px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/net/" style="font-size: 15.312077559429685px;" class="tag-cloud-link">net</a>
+    
+    <a href="/tags/NexT/" style="font-size: 17.10172255748195px;" class="tag-cloud-link">NexT</a>
+    
+    <a href="/tags/Web/" style="font-size: 14.461363790228217px;" class="tag-cloud-link">Web</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.jshz.top" target="_blank">jshz</a>
+    </li>
+    
+    <li>
+        <a href="https://www.mmgal.com" target="_blank">忧郁的弟弟</a>
+    </li>
+    
+    <li>
+        <a href="https://www.bilibili.com" target="_blank">蔡徐坤nmsl❤</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/jshz/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://space.bilibili.com/88458949" target="_blank">Bilibili</a>
+    </li>
+    
+    <li>
+        <a href="/" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Jshz Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'http://pt2upb5u4.bkt.clouddn.com/background',
+      ext: 'png',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+
+</html>
