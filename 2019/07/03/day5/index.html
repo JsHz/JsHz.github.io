@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="C81ztFabiVmMoaN5b3dA7zB6z4rPyu3R92OquMqBwkU">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "[object Object]"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言 python学习基础的第五天这个是最后一份基础类型">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day05(基本数据类型4)">
+<meta property="og:url" content="https://blog.jshz.top/2019/07/03/day5/index.html">
+<meta property="og:site_name" content="JsHz&#39;s Blog">
+<meta property="og:description" content="前言 python学习基础的第五天这个是最后一份基础类型">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T08:38:30.686Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="day05(基本数据类型4)">
+<meta name="twitter:description" content="前言 python学习基础的第五天这个是最后一份基础类型">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JsHz's Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://blog.jshz.top/2019/07/03/day5/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>day05(基本数据类型4) | JsHz's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JsHz's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.jshz.top/2019/07/03/day5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jshz">
+      <meta itemprop="description" content="JsHz博客，分享网络安全经验与经历。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JsHz's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">day05(基本数据类型4)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-07-03 15:43:10 / Updated at: 16:38:30" itemprop="dateCreated datePublished" datetime="2019-07-03T15:43:10+08:00">2019-07-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前言</p>
+<p>python学习基础的第五天<br>这个是最后一份基础类型</p>
+<a id="more"></a>
+<h2 id="基础数据类型四"><a href="#基础数据类型四" class="headerlink" title="基础数据类型四"></a>基础数据类型四</h2><p><code>s = &#39;北&#39;</code> 当程序执行时， 这个字符会以unicode形式保存到内存空间中(unicode)</p>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s1 = s.encode(<span class="string">'utf-8'</span>)</span><br><span class="line">s2 = s.encode(<span class="string">'GBK'</span>)</span><br><span class="line"></span><br><span class="line">print(s)</span><br><span class="line">print(s1)</span><br><span class="line">print(s2)</span><br><span class="line"></span><br><span class="line">print(type(s))	<span class="comment"># 字符串(str)</span></span><br><span class="line">print(type(s1))	<span class="comment"># bytes</span></span><br><span class="line">print(type(s2))	<span class="comment"># bytes</span></span><br></pre></td></tr></table></figure>
+<h3 id="巩固-指不要停下来啊"><a href="#巩固-指不要停下来啊" class="headerlink" title="巩固 (指不要停下来啊)"></a>巩固 (指不要停下来啊)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'你好啊北'</span></span><br><span class="line"><span class="comment"># unicode --&gt; GBK</span></span><br><span class="line"></span><br><span class="line">unicode_gkb = a.encode(<span class="string">'GBK'</span>)</span><br><span class="line">print(unicode_gkb)</span><br><span class="line"></span><br><span class="line"><span class="comment"># unicode --&gt; utf-8</span></span><br><span class="line">unicode_utf8 = a.encode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">print(unicode_utf8)</span><br><span class="line"></span><br><span class="line"><span class="comment"># gbk --&gt; utf-8  先解码, 在编码</span></span><br><span class="line">gbk_utf8 = unicode_gkb.decode(<span class="string">'GBK'</span>).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">print(gbk_utf8)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 总结:</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">1. 各个编码的互相转换都要先转换为unicode, 通过unicode再转其他编码</span></span><br><span class="line"><span class="string">2. GBK不止这一个 ↓</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">unicode_gbk = a.encode(<span class="string">'gb18030'</span>)</span><br><span class="line">print(unicode_gbk)</span><br><span class="line"></span><br><span class="line">res = unicode_gbk.decode(<span class="string">'gb18030'</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><p><strong>赋值: 只是创建一个变量, 该变量指向原来的内存地址</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n2 = n1</span><br><span class="line">n1[<span class="string">'k1'</span>] = <span class="string">'阿北'</span></span><br><span class="line">print(<span class="string">f'n1: <span class="subst">&#123;n1&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">f'n2: 赋值: <span class="subst">&#123;n2&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">'\n'</span>)	<span class="comment"># 这个是换行</span></span><br><span class="line"></span><br><span class="line">n1[<span class="string">'k3'</span>][<span class="number">0</span>] = <span class="string">'老蓝'</span></span><br><span class="line">print(<span class="string">f'赋值(dict)_修改: <span class="subst">&#123;n1&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;n2&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">'\n'</span>)	<span class="comment"># 这个是换行</span></span><br></pre></td></tr></table></figure>
+<h3 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h3><p><strong>在内存中只额外的创建第一层数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">n3 = copy.copy(n1)</span><br><span class="line"></span><br><span class="line">n1[<span class="string">'k1'</span>] = <span class="string">'北白'</span></span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;n1&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">f'浅复制_修改: <span class="subst">&#123;n2&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n4 = copy.deepcopy(n1)</span><br><span class="line">n4[<span class="string">'k1'</span>] = <span class="string">'白白'</span></span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;n1&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">f'深拷贝_修改: <span class="subst">&#123;n4&#125;</span>'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="bytes"><a href="#bytes" class="headerlink" title="bytes"></a>bytes</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">print(type(<span class="string">'ffff'</span>))     <span class="comment"># str</span></span><br><span class="line">print(type(<span class="string">b'ffff'</span>))    <span class="comment"># bytes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bytes是byte的序列, 字符串是字符的序列</span></span><br><span class="line"><span class="comment"># str --&gt; bytes</span></span><br><span class="line">s1 = <span class="string">'中'</span></span><br><span class="line">b1 = s1.encode(<span class="string">'utf-8'</span>)     <span class="comment"># 英文1个中文3个</span></span><br><span class="line">print(b1)</span><br><span class="line"><span class="comment"># bytes --&gt; str</span></span><br><span class="line">s2 = b1.decode(<span class="string">'utf-8'</span>)     <span class="comment"># 解码</span></span><br><span class="line">print(s2)</span><br></pre></td></tr></table></figure>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p><strong>str – bytes</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># str --&gt; bytes</span></span><br><span class="line">s = <span class="string">'老蓝天'</span></span><br><span class="line">b1 = bytes(s, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">b2 = bytes(s, encoding=<span class="string">'GBK'</span>)</span><br><span class="line">print(<span class="string">f'utf8: <span class="subst">&#123;b1&#125;</span>\nGBK: <span class="subst">&#123;b2&#125;</span>'</span>)</span><br><span class="line">print(type(b1))</span><br><span class="line">print(type(b2))</span><br></pre></td></tr></table></figure>
+<h3 id="bytes-–-gt-str"><a href="#bytes-–-gt-str" class="headerlink" title="bytes –&gt; str"></a>bytes –&gt; str</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bytes --&gt; str</span></span><br><span class="line">s1 = str(b1, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">s2 = str(b2, encoding=<span class="string">'GBK'</span>)</span><br><span class="line">print(<span class="string">f'utf8: <span class="subst">&#123;s1&#125;</span>\nGBK: <span class="subst">&#123;s2&#125;</span>'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="bytearray"><a href="#bytearray" class="headerlink" title="bytearray"></a>bytearray</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="string">'你好,阿北'</span></span><br><span class="line">b1 = bytearray(s1.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">print(b1)</span><br><span class="line">print(type(b1))</span><br><span class="line"></span><br><span class="line">print(b1.decode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">b1[:<span class="number">6</span>] = bytearray(<span class="string">'美丽'</span>, encoding=<span class="string">'utf-8'</span>)  <span class="comment"># 1-6</span></span><br><span class="line">print(b1)</span><br><span class="line">print(b1.decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="format-比较长"><a href="#format-比较长" class="headerlink" title="format (比较长)"></a>format (比较长)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">%是传统方法, format是python特有</span><br><span class="line"></span><br><span class="line">year = <span class="number">2019</span></span><br><span class="line">month = <span class="number">6</span></span><br><span class="line">day = <span class="number">18</span></span><br><span class="line"><span class="comment"># 格式化日期</span></span><br><span class="line">print(<span class="string">'%04d-%02d-%02d'</span> % (year, month, day))</span><br><span class="line"></span><br><span class="line">f = <span class="number">3.1415</span></span><br><span class="line">print(<span class="string">'%06.2f'</span> % f)     <span class="comment"># %06.2f 保留宽度为6位, 小数点2位的浮点数, 如果有空位则用0补足</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'%o'</span> % <span class="number">10</span>)</span><br><span class="line">print(<span class="string">'%02x'</span> % <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># format</span></span><br><span class="line">test = <span class="string">'name: %s, age:%d, nick_name: %s'</span> % (<span class="string">'阿北'</span>, <span class="number">18</span>, <span class="string">'老蓝'</span>)</span><br><span class="line">print(test)</span><br><span class="line">test = <span class="string">'name: &#123;&#125;, age:&#123;&#125;, nick_name: &#123;&#125;'</span>.format(<span class="string">'阿北'</span>, <span class="number">18</span>, <span class="string">'老蓝'</span>)</span><br><span class="line">print(test)</span><br><span class="line"></span><br><span class="line">test = <span class="string">'name: &#123;0&#125;, age:&#123;1&#125;, nick_name: &#123;0&#125;'</span>.format(<span class="string">'阿北'</span>, <span class="number">18</span>, <span class="string">'老蓝'</span>)</span><br><span class="line">print(test)</span><br><span class="line"></span><br><span class="line">test = <span class="string">'name: &#123;0&#125;, age:&#123;1&#125;, nick_name: &#123;0&#125;'</span>.format(*[<span class="string">'狐狸'</span>, <span class="number">18</span>]) <span class="comment"># 解包</span></span><br><span class="line">print(test)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'='</span>*<span class="number">20</span>)</span><br><span class="line">test = <span class="string">'name: &#123;name&#125;, age: &#123;age&#125;, nick_name: &#123;name&#125;'</span>.format(**&#123;<span class="string">'name'</span>:<span class="string">'老蓝'</span>, <span class="string">'age'</span>:<span class="string">'17'</span>&#125;)</span><br><span class="line">print(test)</span><br><span class="line"></span><br><span class="line">test = <span class="string">'number: &#123;:b&#125;, &#123;:o&#125;, &#123;:d&#125;, &#123;:x&#125;, &#123;:X&#125;, &#123;:%&#125;'</span>.format(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">print(test)</span><br><span class="line">test = <span class="string">'number: &#123;num:b&#125;, &#123;num:o&#125;, &#123;num:d&#125;, &#123;num:x&#125;, &#123;num:X&#125;, &#123;num:%&#125;'</span>.format(num=<span class="number">1</span>)</span><br><span class="line">print(test)</span><br><span class="line">test = <span class="string">'number: &#123;0:b&#125;, &#123;0:o&#125;, &#123;0:d&#125;, &#123;0:x&#125;, &#123;0:X&#125;, &#123;0:%&#125;'</span>.format(<span class="number">10</span>)</span><br><span class="line">print(test)</span><br><span class="line">print(<span class="string">'&#123;:.2f&#125;'</span>.format(<span class="number">3.1415926</span>))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+  <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/07/03/day5/">day05(基本数据类型4)</a></p>
+  <p><span>文章作者:</span><a href="jshz.github.io" title="访问JsHz的个人博客">JsHz</a></p>
+  <p><span>发布时间:</span>2019年07月03日 - 15:07</p>
+  <p><span>最后更新:</span>2019年07月03日 - 16:07</p>
+  <p><span>原始链接:</span><a href="/2019/07/03/day5/" title="day05(基本数据类型4)">https://blog.jshz.top/2019/07/03/day5/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.jshz.top/2019/07/03/day5/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"></a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+      
+</div>
+</div>
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/pay/wepay.jpg" alt="Jshz WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/pay/zfbpay.jpg" alt="Jshz Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/03/day4/" rel="next" title="day04(基本数据类型3)">
+                <i class="fa fa-chevron-left"></i> day04(基本数据类型3)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Jshz">
+            
+              <p class="site-author-name" itemprop="name">Jshz</p>
+              <p class="site-description motion-element" itemprop="description">JsHz博客，分享网络安全经验与经历。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">Kategorien</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">Tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/JsHz/jshz.github.io" title="GitHub &rarr; https://github.com/JsHz/jshz.github.io" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://space.bilibili.com/88458949?from=search&seid=10668360394870813040" title="https://space.bilibili.com/88458949?from=search&seid=10668360394870813040" rel="noopener" target="_blank">老蓝B站</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1391299672&site=qq&menu=yes" title="http://wpa.qq.com/msgrd?v=3&uin=1391299672&site=qq&menu=yes" rel="noopener" target="_blank">写文章的咸鱼</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=2479899651&site=qq&menu=yes" title="http://wpa.qq.com/msgrd?v=3&uin=2479899651&site=qq&menu=yes" rel="noopener" target="_blank">另一位咸鱼</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础数据类型四"><span class="nav-number">1.</span> <span class="nav-text">基础数据类型四</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码"><span class="nav-number">1.1.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#巩固-指不要停下来啊"><span class="nav-number">1.2.</span> <span class="nav-text">巩固 (指不要停下来啊)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值"><span class="nav-number">1.3.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浅复制"><span class="nav-number">1.4.</span> <span class="nav-text">浅复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝"><span class="nav-number">1.5.</span> <span class="nav-text">深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bytes"><span class="nav-number">1.6.</span> <span class="nav-text">bytes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓展"><span class="nav-number">1.7.</span> <span class="nav-text">拓展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bytes-–-gt-str"><span class="nav-number">1.8.</span> <span class="nav-text">bytes –&gt; str</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bytearray"><span class="nav-number">1.9.</span> <span class="nav-text">bytearray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#format-比较长"><span class="nav-number">1.10.</span> <span class="nav-text">format (比较长)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+	
+	<!--3D飘雪花特效 整理by yaxi.net-->
+	<!-- <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/src/snow.js"></script>
+	<style type="text/css">
+	.snow-container{
+	position:fixed;
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	pointer-events:none;
+	z-index:100001;
+	}
+	</style>-->
+	
+<div class="snow-container"></div>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<div class=" copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fas fa-heart" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jshz</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+
+
+
+-->
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共字</span>
+</div></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="js/src/fireworks.js"></script>
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>

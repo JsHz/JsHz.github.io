@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="C81ztFabiVmMoaN5b3dA7zB6z4rPyu3R92OquMqBwkU">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "[object Object]"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言 python学习基础的第四天笔记本拿去修了(6.18)修到了今天(7.3)才回来.. 内容关于列表、字典、元组和集合那些">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day04(基本数据类型3)">
+<meta property="og:url" content="https://blog.jshz.top/2019/07/03/day4/index.html">
+<meta property="og:site_name" content="JsHz&#39;s Blog">
+<meta property="og:description" content="前言 python学习基础的第四天笔记本拿去修了(6.18)修到了今天(7.3)才回来.. 内容关于列表、字典、元组和集合那些">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://pt2upb5u4.bkt.clouddn.com/preview15.jpg">
+<meta property="og:updated_time" content="2019-07-03T07:49:54.543Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="day04(基本数据类型3)">
+<meta name="twitter:description" content="前言 python学习基础的第四天笔记本拿去修了(6.18)修到了今天(7.3)才回来.. 内容关于列表、字典、元组和集合那些">
+<meta name="twitter:image" content="http://pt2upb5u4.bkt.clouddn.com/preview15.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JsHz's Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://blog.jshz.top/2019/07/03/day4/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>day04(基本数据类型3) | JsHz's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JsHz's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.jshz.top/2019/07/03/day4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jshz">
+      <meta itemprop="description" content="JsHz博客，分享网络安全经验与经历。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JsHz's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">day04(基本数据类型3)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-07-03 15:43:10 / Updated at: 15:49:54" itemprop="dateCreated datePublished" datetime="2019-07-03T15:43:10+08:00">2019-07-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前言</p>
+<p>python学习基础的第四天<br>笔记本拿去修了(6.18)<br>修到了今天(7.3)才回来..</p>
+<p>内容关于列表、字典、元组和集合那些<br><img src="http://pt2upb5u4.bkt.clouddn.com/preview15.jpg" alt="enter description here"><br><a id="more"></a></p>
+<h2 id="基本数据类型三"><a href="#基本数据类型三" class="headerlink" title="基本数据类型三"></a>基本数据类型三</h2><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;</span><br><span class="line">    <span class="string">'k1'</span>:<span class="string">'v1'</span>,</span><br><span class="line">    <span class="string">'k2'</span>:<span class="string">'v2'</span>,</span><br><span class="line">    <span class="string">'k3'</span>:<span class="string">'v3'</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#dict 字典</span></span><br><span class="line">print(D.items()) <span class="comment"># --&gt; dict_item([('k1':'v2'&#125;, ('k1':'v2'&#125;, ('k1':'v2'&#125;])	# 键值对</span></span><br><span class="line">print(D.keys()) <span class="comment"># --&gt; dict_keys(['k1', 'k2', 'k3])	# key值</span></span><br><span class="line">print(D.values()) <span class="comment"># --&gt; dict_values(['v1', 'v2', 'v3'])	# value值</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取值"><a href="#获取值" class="headerlink" title="获取值"></a>获取值</h3><p>第一种方法： 通过key值去取value值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">print(D[<span class="string">'k1'</span>])</span><br><span class="line"></span><br><span class="line">D = &#123;</span><br><span class="line">    <span class="string">'k1'</span>:<span class="string">'v1'</span>,</span><br><span class="line">    <span class="string">'k2'</span>:<span class="string">'v2'</span>,</span><br><span class="line">    <span class="string">'k3'</span>:<span class="string">'v3'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print(D[<span class="string">'k1'</span>])	<span class="comment">#	v1</span></span><br></pre></td></tr></table></figure>
+<p>第二种方法 get –&gt; <strong>D.get(k[,d]) -&gt; D[k] if k in D, else d.  d defaults to None.</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(D.get(<span class="string">'k3'</span>))</span><br><span class="line">print(D.get(<span class="string">'k4'</span>)) <span class="comment">#因为 k4 值不存在</span></span><br><span class="line">print(D)</span><br><span class="line">print(D.get(<span class="string">'k4'</span>, <span class="string">'false'</span>)) <span class="comment"># 若值不存在,然后就会返回False</span></span><br></pre></td></tr></table></figure>
+<p>第三种方法 setdefault –&gt; <strong>D.setdefault(k[,d]) -&gt; D.get(k,d), also set D[k]=d if k not in D</strong></p>
+<p>解释: 通过给定的<strong>key</strong>查找对应的<strong>value值</strong>, 如果给定的key==在字典中==,返回对应的==vaule==, 如果不在,返回默认值,同时,在字典中添加了key: 默认值的键对(默认为None,如果设置了d, 则使用d)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(D.setdefault(<span class="string">'k1'</span>))</span><br><span class="line">print(D.setdefault(<span class="string">'k4'</span>))</span><br><span class="line">print(D)</span><br><span class="line">print(D.setdefault(<span class="string">'k5'</span>, <span class="string">'v5'</span>))</span><br><span class="line">print(D)</span><br></pre></td></tr></table></figure>
+<h3 id="增-（两种）"><a href="#增-（两种）" class="headerlink" title="增 （两种）"></a>增 （两种）</h3><h4 id="第一种，-通过-key，-key有则改，-无则谓"><a href="#第一种，-通过-key，-key有则改，-无则谓" class="headerlink" title="第一种， 通过 key， key有则改， 无则谓"></a>第一种， 通过 key， key有则改， 无则谓</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;</span><br><span class="line">    <span class="string">'k1'</span>:<span class="string">'v1'</span>,</span><br><span class="line">    <span class="string">'k2'</span>:<span class="string">'v2'</span>,</span><br><span class="line">    <span class="string">'k3'</span>:<span class="string">'v3'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print(D[<span class="string">'k1'</span>])</span><br><span class="line">D[<span class="string">'k1'</span>] = <span class="string">'w'</span></span><br><span class="line">print(D[<span class="string">'k1'</span>])</span><br><span class="line">D[<span class="string">'k4'</span>] = <span class="string">'v4'</span></span><br><span class="line">print(D)</span><br></pre></td></tr></table></figure>
+<h4 id="第二种：-setdefault-k-d-–-gt-获取-不会改变"><a href="#第二种：-setdefault-k-d-–-gt-获取-不会改变" class="headerlink" title="第二种： setdefault([k].d) # – &gt; 获取, 不会改变"></a>第二种： setdefault([k].d) # – &gt; 获取, 不会改变</h4><p>key值有则获取， 无则新增</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(D.setdefault(<span class="string">'k3'</span>))</span><br><span class="line">print(D.setdefault(<span class="string">'k5'</span>, <span class="string">'v5'</span>))</span><br><span class="line">print(D)</span><br></pre></td></tr></table></figure>
+<h3 id="删除-–-gt-三种方法-pop-popitem-clear"><a href="#删除-–-gt-三种方法-pop-popitem-clear" class="headerlink" title="删除 –&gt; 三种方法 pop    popitem    clear"></a>删除 –&gt; 三种方法 pop    popitem    clear</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;</span><br><span class="line">    <span class="string">'k1'</span>:<span class="string">'v1'</span>,</span><br><span class="line">    <span class="string">'k2'</span>:<span class="string">'v2'</span>,</span><br><span class="line">    <span class="string">'k3'</span>:<span class="string">'v3'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a = D.pop(<span class="string">'k2'</span>)</span><br><span class="line">print(a)</span><br><span class="line">print(D)</span><br><span class="line"></span><br><span class="line"><span class="comment"># popitem 获取并在字典中移除最后一项</span></span><br><span class="line">b = D.popitem()</span><br><span class="line">print(b)</span><br><span class="line">print(D)</span><br><span class="line"></span><br><span class="line"><span class="comment"># clear(清空)</span></span><br><span class="line">D.clear()</span><br><span class="line">print(D)	<span class="comment"># &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>一个包含唯一元素的可变和无序的集合数据类型</p>
+<p>变量初始化， 同列表类似， 元素可以是任何数据类型（排除列表）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = set()</span><br><span class="line">print(<span class="string">'a的数据类型是:'</span>, type(a)) <span class="comment"># a的数据类型是set</span></span><br><span class="line"><span class="comment"># 注 a = &#123;&#125; 是空字典</span></span><br><span class="line">b = &#123;<span class="number">1</span>, <span class="string">'a'</span>, ()&#125;</span><br><span class="line">print(<span class="string">'b的数据类型是:'</span>, type(b))</span><br></pre></td></tr></table></figure>
+<h3 id="添加-add-update"><a href="#添加-add-update" class="headerlink" title="添加(add, update)"></a>添加(add, update)</h3><h4 id="add"><a href="#add" class="headerlink" title="add"></a>add</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SE = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line">SE.add(<span class="string">'hello'</span>)</span><br><span class="line">print(SE)</span><br></pre></td></tr></table></figure>
+<h4 id="update"><a href="#update" class="headerlink" title="update"></a>update</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SE.update(<span class="string">'hello'</span>)</span><br><span class="line">print(SE)</span><br></pre></td></tr></table></figure>
+<h3 id="删除-remove-pop-discrad"><a href="#删除-remove-pop-discrad" class="headerlink" title="删除(remove/pop/discrad)"></a>删除(remove/pop/discrad)</h3><h4 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h4><p>如果有， 直接删除， 如果无， 报错</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">se = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;</span><br><span class="line">se.remove(<span class="number">4</span>)</span><br><span class="line">print(se)</span><br></pre></td></tr></table></figure>
+<h4 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h4><p>随机删除一个集合中的元素， 如果集合没有元素就报错</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">se.pop()</span><br><span class="line">print(se)</span><br></pre></td></tr></table></figure>
+<h4 id="discrad"><a href="#discrad" class="headerlink" title="discrad"></a>discrad</h4><p>如果有， 直接删除， 如果没有， 不做任何的操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">se = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;</span><br><span class="line">se.discrad(<span class="number">3</span>)</span><br><span class="line">print(se)</span><br><span class="line">se.discrad(<span class="number">9</span>)</span><br><span class="line">print(se)</span><br></pre></td></tr></table></figure>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h4 id="交集-amp"><a href="#交集-amp" class="headerlink" title="交集(&amp;)"></a>交集(&amp;)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">S1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">10</span>&#125;</span><br><span class="line">S2 = &#123;<span class="number">2</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">3</span>&#125;</span><br><span class="line">S3 = S1 &amp; S2</span><br><span class="line">print(<span class="string">f'交集:\nS1值是:<span class="subst">&#123;S1&#125;</span>\nS2的值是<span class="subst">&#123;S2&#125;</span>\n交集的结果是<span class="subst">&#123;S3&#125;</span>\n'</span>) <span class="comment"># &#123;2, 10, 5&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="并集"><a href="#并集" class="headerlink" title="并集(|)"></a>并集(|)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">S1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">10</span>&#125;</span><br><span class="line">S2 = &#123;<span class="number">2</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">15</span>&#125;</span><br><span class="line">S4 = S1 | S2</span><br><span class="line">print(<span class="string">f'并集:\nS1值是:<span class="subst">&#123;S1&#125;</span>\nS2的值是<span class="subst">&#123;S2&#125;</span>\n交集的结果是<span class="subst">&#123;S4&#125;</span>\n'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="差集"><a href="#差集" class="headerlink" title="差集(-)"></a>差集(-)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">S1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">10</span>&#125;</span><br><span class="line">S2 = &#123;<span class="number">2</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">15</span>&#125;</span><br><span class="line">S5 = S1 - S2</span><br><span class="line">print(<span class="string">f'差集:\nS1值是:<span class="subst">&#123;S1&#125;</span>\nS2的值是<span class="subst">&#123;S2&#125;</span>\n交集的结果是<span class="subst">&#123;S5&#125;</span>\n'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="相对差集"><a href="#相对差集" class="headerlink" title="相对差集 ^"></a>相对差集 ^</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">S1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">10</span>&#125;</span><br><span class="line">S2 = &#123;<span class="number">2</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">15</span>&#125;</span><br><span class="line">S6 = (S1 ^ S2)</span><br><span class="line">print(<span class="string">f'相对差集:\nS1值是:<span class="subst">&#123;S1&#125;</span>\nS2的值是<span class="subst">&#123;S2&#125;</span>\n交集的结果是<span class="subst">&#123;S6&#125;</span>\n'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="去重（去掉重复，set就是去重的"><a href="#去重（去掉重复，set就是去重的" class="headerlink" title="去重（去掉重复，set就是去重的)"></a>去重（去掉重复，set就是去重的)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">T = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">7</span>)</span><br><span class="line">S1 = set(T) <span class="comment"># (1) 转换成 set 去重</span></span><br><span class="line">print(S1)</span><br><span class="line">L = list(S1) <span class="comment"># 转换成 list</span></span><br><span class="line">print(L)</span><br><span class="line">S2 = set(T) <span class="comment"># (2) 转换成 set 去重</span></span><br><span class="line">print(tuple(S2)) <span class="comment"># 然后打印转换成 tuple 的 S2</span></span><br></pre></td></tr></table></figure>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">20</span></span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;a+b&#125;</span>\n<span class="subst">&#123;a-b&#125;</span>\n<span class="subst">&#123;a*b&#125;</span>\n<span class="subst">&#123;a/b&#125;</span>\n<span class="subst">&#123;a%b&#125;</span>\n<span class="subst">&#123;a**b&#125;</span>\n<span class="subst">&#123;a//b&#125;</span>\n'</span>)</span><br><span class="line"><span class="comment"># 5 / 3 = 1..2</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">其中 % 是取余(返回除法的余数), ** 是幂, // 是整除(返回商的整除部分)</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4><p><strong>==, !=, &gt;, &lt;, &gt;=, &lt;=</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">20</span></span><br><span class="line">print(a == b) <span class="comment"># 等于, False</span></span><br><span class="line">print(a != b) <span class="comment"># 不等于, True</span></span><br><span class="line">print(a &gt; b) <span class="comment"># 大于, False</span></span><br><span class="line">print(a &lt; b) <span class="comment"># 小于, True</span></span><br><span class="line">print(a &gt;= b) <span class="comment"># 大于等于, False</span></span><br><span class="line">print(a &lt;= b) <span class="comment"># 小于等于, True</span></span><br></pre></td></tr></table></figure>
+<h4 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h4><p><code>=, +=, -=, *=, /=, **=, //=</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">c = a + b <span class="comment"># 赋值</span></span><br><span class="line">print(c)</span><br><span class="line">c += a <span class="comment"># --&gt; c = c + a 先c和a相加,然后再赋值给c</span></span><br><span class="line">print(c)</span><br><span class="line">c -= a <span class="comment"># --&gt; c = c - a</span></span><br><span class="line">print(c)</span><br><span class="line">c *= a <span class="comment"># 乘等于</span></span><br><span class="line">c /= a <span class="comment"># 除等于</span></span><br><span class="line">c %= a <span class="comment"># 取余等于</span></span><br><span class="line">c **= a <span class="comment"># 幂等于</span></span><br><span class="line">c //= a <span class="comment"># 取整除等于</span></span><br></pre></td></tr></table></figure>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p><strong>and, or, not</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(a <span class="keyword">and</span> b)</span><br><span class="line">print(a <span class="keyword">or</span> b)</span><br><span class="line">print(<span class="keyword">not</span> a) <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<h4 id="成员运算符"><a href="#成员运算符" class="headerlink" title="成员运算符"></a>成员运算符</h4><p><strong>in. not in</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">a = <span class="number">3</span></span><br><span class="line">print(a <span class="keyword">in</span> L) <span class="comment"># True</span></span><br><span class="line">print(a <span class="keyword">not</span> <span class="keyword">in</span> L) <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<h2 id="复习知识"><a href="#复习知识" class="headerlink" title="复习知识"></a>复习知识</h2><h3 id="list-tuple-dict-set"><a href="#list-tuple-dict-set" class="headerlink" title="list/tuple/dict/set/"></a>list/tuple/dict/set/</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list --&gt; 有序的， 可变， 允许重复的</span><br><span class="line">tuple --&gt; 有序的， 不可变的， 允许重复的</span><br><span class="line">dict --&gt; 无序的， 可变的， value允许重复， 但key值不能重复</span><br><span class="line">set --&gt; 无序的， 重要的 应 用去重</span><br></pre></td></tr></table></figure>
+<h3 id="数据类型的创建"><a href="#数据类型的创建" class="headerlink" title="数据类型的创建"></a>数据类型的创建</h3><h4 id="int"><a href="#int" class="headerlink" title="int"></a>int</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">122</span></span><br><span class="line">n = int(<span class="string">'122'</span>)</span><br><span class="line">print(type(n)) <span class="comment"># 8791180112496</span></span><br><span class="line"><span class="comment"># 为了优化内存,对于 -5 - -257范围内置, 不同变量共用一个内存地址的</span></span><br><span class="line">n = <span class="number">122</span></span><br><span class="line">n1 = int(<span class="number">122</span>)</span><br><span class="line">n2 = <span class="number">122</span></span><br><span class="line">print(id(n))</span><br><span class="line">print(id(n1))</span><br><span class="line">print(id(n2))</span><br></pre></td></tr></table></figure>
+<h4 id="str"><a href="#str" class="headerlink" title="str"></a>str</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">""</span></span><br><span class="line">s = str()</span><br><span class="line">s = <span class="string">"fei"</span></span><br><span class="line">s = str(<span class="string">'fei'</span>)</span><br><span class="line"></span><br><span class="line">print(type(s))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 补充:</span></span><br><span class="line"><span class="comment"># 1. 取消转义</span></span><br><span class="line">print(<span class="string">'after\\none'</span>)</span><br><span class="line">print(<span class="string">r'after\noon'</span>)</span><br><span class="line">print(<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. +</span></span><br><span class="line">s1 = <span class="string">"a"</span></span><br><span class="line">s2 = <span class="string">"b"</span></span><br><span class="line">s3 = s1 + s2</span><br><span class="line">print(s3)</span><br><span class="line">print(<span class="string">"1 :"</span> + s3)</span><br><span class="line">print(<span class="string">'1:'</span>, s3)</span><br></pre></td></tr></table></figure>
+<h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">li = []</span><br><span class="line">li = list()</span><br><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">li = list([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">print(<span class="string">f'li的type是<span class="subst">&#123;type(li)&#125;</span>'</span>)</span><br><span class="line">name = <span class="string">'老蓝天'</span></span><br><span class="line">li = list(name)</span><br><span class="line">print(li)</span><br></pre></td></tr></table></figure>
+<h4 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t = ()</span><br><span class="line">t = tuple()</span><br><span class="line">t = tuple([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">t = (<span class="number">11</span>, <span class="number">22</span>, [<span class="string">'fei'</span>, &#123;<span class="string">'k1'</span>:<span class="string">'v1'</span>&#125;])</span><br><span class="line">print(type(t))</span><br></pre></td></tr></table></figure>
+<h4 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;&#125;</span><br><span class="line">a = dict(k1=<span class="number">123</span>, k2=<span class="number">456</span>, k3=<span class="string">'v3'</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = set()</span><br><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">l = list(s)</span><br><span class="line">print(l)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+  <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/07/03/day4/">day04(基本数据类型3)</a></p>
+  <p><span>文章作者:</span><a href="jshz.github.io" title="访问JsHz的个人博客">JsHz</a></p>
+  <p><span>发布时间:</span>2019年07月03日 - 15:07</p>
+  <p><span>最后更新:</span>2019年07月03日 - 15:07</p>
+  <p><span>原始链接:</span><a href="/2019/07/03/day4/" title="day04(基本数据类型3)">https://blog.jshz.top/2019/07/03/day4/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.jshz.top/2019/07/03/day4/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"></a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+      
+</div>
+</div>
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/pay/wepay.jpg" alt="Jshz WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/pay/zfbpay.jpg" alt="Jshz Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/15/day3/" rel="next" title="day03(基本数据类型2)">
+                <i class="fa fa-chevron-left"></i> day03(基本数据类型2)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/03/day5/" rel="prev" title="day05(基本数据类型4)">
+                day05(基本数据类型4) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Jshz">
+            
+              <p class="site-author-name" itemprop="name">Jshz</p>
+              <p class="site-description motion-element" itemprop="description">JsHz博客，分享网络安全经验与经历。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">Kategorien</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">Tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/JsHz/jshz.github.io" title="GitHub &rarr; https://github.com/JsHz/jshz.github.io" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://space.bilibili.com/88458949?from=search&seid=10668360394870813040" title="https://space.bilibili.com/88458949?from=search&seid=10668360394870813040" rel="noopener" target="_blank">老蓝B站</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1391299672&site=qq&menu=yes" title="http://wpa.qq.com/msgrd?v=3&uin=1391299672&site=qq&menu=yes" rel="noopener" target="_blank">写文章的咸鱼</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=2479899651&site=qq&menu=yes" title="http://wpa.qq.com/msgrd?v=3&uin=2479899651&site=qq&menu=yes" rel="noopener" target="_blank">另一位咸鱼</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型三"><span class="nav-number">1.</span> <span class="nav-text">基本数据类型三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">2.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取值"><span class="nav-number">2.1.</span> <span class="nav-text">获取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增-（两种）"><span class="nav-number">2.2.</span> <span class="nav-text">增 （两种）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种，-通过-key，-key有则改，-无则谓"><span class="nav-number">2.2.1.</span> <span class="nav-text">第一种， 通过 key， key有则改， 无则谓</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种：-setdefault-k-d-–-gt-获取-不会改变"><span class="nav-number">2.2.2.</span> <span class="nav-text">第二种： setdefault([k].d) # – &gt; 获取, 不会改变</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-–-gt-三种方法-pop-popitem-clear"><span class="nav-number">2.3.</span> <span class="nav-text">删除 –&gt; 三种方法 pop    popitem    clear</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">3.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-add-update"><span class="nav-number">3.1.</span> <span class="nav-text">添加(add, update)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#add"><span class="nav-number">3.1.1.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#update"><span class="nav-number">3.1.2.</span> <span class="nav-text">update</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-remove-pop-discrad"><span class="nav-number">3.2.</span> <span class="nav-text">删除(remove/pop/discrad)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#remove"><span class="nav-number">3.2.1.</span> <span class="nav-text">remove</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pop"><span class="nav-number">3.2.2.</span> <span class="nav-text">pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#discrad"><span class="nav-number">3.2.3.</span> <span class="nav-text">discrad</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#交集-amp"><span class="nav-number">4.0.1.</span> <span class="nav-text">交集(&amp;)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并集"><span class="nav-number">4.0.2.</span> <span class="nav-text">并集(|)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#差集"><span class="nav-number">4.0.3.</span> <span class="nav-text">差集(-)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相对差集"><span class="nav-number">4.0.4.</span> <span class="nav-text">相对差集 ^</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#去重（去掉重复，set就是去重的"><span class="nav-number">4.0.5.</span> <span class="nav-text">去重（去掉重复，set就是去重的)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">4.1.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#比较运算符"><span class="nav-number">4.1.1.</span> <span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#赋值运算符"><span class="nav-number">4.1.2.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">4.1.3.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员运算符"><span class="nav-number">4.1.4.</span> <span class="nav-text">成员运算符</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#复习知识"><span class="nav-number">5.</span> <span class="nav-text">复习知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#list-tuple-dict-set"><span class="nav-number">5.1.</span> <span class="nav-text">list/tuple/dict/set/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型的创建"><span class="nav-number">5.2.</span> <span class="nav-text">数据类型的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#int"><span class="nav-number">5.2.1.</span> <span class="nav-text">int</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#str"><span class="nav-number">5.2.2.</span> <span class="nav-text">str</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">5.2.3.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tuple"><span class="nav-number">5.2.4.</span> <span class="nav-text">tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dict"><span class="nav-number">5.2.5.</span> <span class="nav-text">dict</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">5.2.6.</span> <span class="nav-text">set</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+	
+	<!--3D飘雪花特效 整理by yaxi.net-->
+	<!-- <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/src/snow.js"></script>
+	<style type="text/css">
+	.snow-container{
+	position:fixed;
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	pointer-events:none;
+	z-index:100001;
+	}
+	</style>-->
+	
+<div class="snow-container"></div>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<div class=" copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fas fa-heart" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jshz</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+
+
+
+-->
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共字</span>
+</div></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="js/src/fireworks.js"></script>
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
