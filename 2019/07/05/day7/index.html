@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="C81ztFabiVmMoaN5b3dA7zB6z4rPyu3R92OquMqBwkU">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "[object Object]"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言 今天是学习python的第七天（也不算把， 一次性写的， 详细原因请看 day04 前言哦) 今天是 函数作用域和匿名函数">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day07(函数作用域)">
+<meta property="og:url" content="https://blog.jshz.top/2019/07/05/day7/index.html">
+<meta property="og:site_name" content="JsHz&#39;s Blog">
+<meta property="og:description" content="前言 今天是学习python的第七天（也不算把， 一次性写的， 详细原因请看 day04 前言哦) 今天是 函数作用域和匿名函数">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://pt2upb5u4.bkt.clouddn.com/day07/%E5%87%BD%E6%95%B0%E5%B5%8C%E5%A5%97%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+<meta property="og:image" content="http://pt2upb5u4.bkt.clouddn.com/day07/%E9%97%AD%E5%8C%85%E7%9A%84%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+<meta property="og:image" content="http://pt2upb5u4.bkt.clouddn.com/day07/%E9%80%92%E5%BD%92.png">
+<meta property="og:updated_time" content="2019-07-05T08:23:07.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="day07(函数作用域)">
+<meta name="twitter:description" content="前言 今天是学习python的第七天（也不算把， 一次性写的， 详细原因请看 day04 前言哦) 今天是 函数作用域和匿名函数">
+<meta name="twitter:image" content="http://pt2upb5u4.bkt.clouddn.com/day07/%E5%87%BD%E6%95%B0%E5%B5%8C%E5%A5%97%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JsHz's Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://blog.jshz.top/2019/07/05/day7/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>day07(函数作用域) | JsHz's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JsHz's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.jshz.top/2019/07/05/day7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jshz">
+      <meta itemprop="description" content="JsHz博客，分享网络安全经验与经历。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JsHz's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">day07(函数作用域)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-07-05 16:10:58 / Updated at: 16:23:07" itemprop="dateCreated datePublished" datetime="2019-07-05T16:10:58+08:00">2019-07-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前言</p>
+<p>今天是学习python的第七天（也不算把， 一次性写的， 详细原因请看 day04 前言哦)</p>
+<p>今天是 函数作用域和匿名函数</p>
+<a id="more"></a>
+<h2 id="函数作用域和匿名函数"><a href="#函数作用域和匿名函数" class="headerlink" title="函数作用域和匿名函数"></a>函数作用域和匿名函数</h2><h3 id="简单函数"><a href="#简单函数" class="headerlink" title="简单函数"></a>简单函数</h3><h3 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">f = <span class="keyword">lambda</span> 变量名：返回值</span><br><span class="line">f()</span><br><span class="line">```</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span> <span class="comment"># 不带参数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1213</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line"></span><br><span class="line">f1 = <span class="keyword">lambda</span>: <span class="number">12123</span></span><br><span class="line">res = f1</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(a1, a2)</span>:</span>   <span class="comment"># 带参数</span></span><br><span class="line">    <span class="keyword">return</span> a1 + a2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line">f2 = <span class="keyword">lambda</span> a1,a2: a1 + a2</span><br><span class="line">res = f2</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p><code>filter(func, li)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> x &gt; <span class="number">0</span></span><br><span class="line">f1 = <span class="keyword">lambda</span> x: x &gt; <span class="number">0</span></span><br><span class="line"></span><br><span class="line">print(list(filter(<span class="keyword">lambda</span> x: x &gt; <span class="number">8</span>: ,li)))</span><br></pre></td></tr></table></figure>
+<h2 id="强化"><a href="#强化" class="headerlink" title="强化"></a>强化</h2><h4 id="如果我想要把下面这个函数转化成为匿名函数改怎么转换呢"><a href="#如果我想要把下面这个函数转化成为匿名函数改怎么转换呢" class="headerlink" title="如果我想要把下面这个函数转化成为匿名函数改怎么转换呢?"></a>如果我想要把下面这个函数转化成为匿名函数改怎么转换呢?</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(a, b)</span>:</span></span><br><span class="line">	result = a + b</span><br><span class="line">	<span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="comment"># 答案</span></span><br><span class="line">test = <span class="keyword">lambda</span> a, b: a + b</span><br><span class="line"></span><br><span class="line">num=test(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">print(num)</span><br></pre></td></tr></table></figure>
+<h4 id="这个没有分类，-不知道有什么用"><a href="#这个没有分类，-不知道有什么用" class="headerlink" title="这个没有分类， 不知道有什么用"></a>这个没有分类， 不知道有什么用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(a, b, func)</span>:</span></span><br><span class="line">    res = func(a, b)</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h4 id="匿名函数还可以这样用："><a href="#匿名函数还可以这样用：" class="headerlink" title="匿名函数还可以这样用："></a>匿名函数还可以这样用：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num = test(<span class="number">5</span>, <span class="number">6</span>, <span class="keyword">lambda</span> a, b: a + b)</span><br><span class="line">print(<span class="string">"加法："</span>, num)</span><br><span class="line">num = test(<span class="number">5</span>, <span class="number">6</span>, <span class="keyword">lambda</span> a, b: a - b)</span><br><span class="line">print(<span class="string">"减法："</span>, num)</span><br></pre></td></tr></table></figure>
+<h4 id="实现匿名函数的输入"><a href="#实现匿名函数的输入" class="headerlink" title="实现匿名函数的输入"></a>实现匿名函数的输入</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">func = input(<span class="string">"请输入一个匿名函数："</span>)</span><br><span class="line">print(func)</span><br><span class="line">print(type(func))</span><br><span class="line"><span class="comment"># eval:返回值/exec：没有返回值</span></span><br><span class="line">func = eval(func)</span><br><span class="line">num = test(<span class="number">11</span>, <span class="number">22</span>, func)</span><br><span class="line">print(num)</span><br></pre></td></tr></table></figure>
+<h4 id="实现输入函数循环执行"><a href="#实现输入函数循环执行" class="headerlink" title="实现输入函数循环执行"></a>实现输入函数循环执行</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:		<span class="comment"># 主要是这个 while True 无限循环</span></span><br><span class="line">    flag = input(<span class="string">"继续吗？如果继续请输入y，其他结束"</span>)</span><br><span class="line">    <span class="keyword">if</span> flag.lower() == <span class="string">'y'</span>:</span><br><span class="line">        func = input(<span class="string">"请输入一个匿名函数："</span>)</span><br><span class="line">        func = eval(func)</span><br><span class="line">        num = test(<span class="number">11</span>, <span class="number">22</span>, func)</span><br><span class="line">        print(num)</span><br><span class="line">    <span class="keyword">else</span>:		<span class="comment"># 如果输入的不是 y ， 那么这段代码结束执行</span></span><br><span class="line">        print(<span class="string">"结束运行"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p>作用域 变量作用的范围</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"><span class="number">1.</span>函数内部定义的变量是局部变量，函数外无法调用--局部作用域</span><br><span class="line"><span class="number">2.</span>函数外定义的变量是全局变量</span><br><span class="line">```</span><br><span class="line"></span><br><span class="line">num = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    num = <span class="number">200</span></span><br><span class="line">    print(<span class="string">'2:'</span>, num)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'1:'</span>,num) <span class="comment"># 未修改</span></span><br><span class="line">test()          <span class="comment"># 已经调用函数修改了全局变量 num</span></span><br><span class="line">print(<span class="string">'3:'</span>,num) <span class="comment"># 现在打印出来的是已经修改的数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># nonlocal:函数嵌套时，作用在内层函数的变量，可以修改外层函数的变量</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    num = <span class="number">66</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="comment"># num = 88</span></span><br><span class="line">        <span class="keyword">nonlocal</span> num</span><br><span class="line">        num += <span class="number">1</span></span><br><span class="line">        print(<span class="string">"1:"</span>, num)</span><br><span class="line"></span><br><span class="line">    f2()</span><br><span class="line">    print(<span class="string">"2:"</span>, num)</span><br><span class="line"><span class="comment"># 总结：</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">1.函数内部定义的为局部变量，其作用域是局部作用域，函数外无法调用的</span></span><br><span class="line"><span class="string">2.函数外定义的为全局变量，其作用域是全局作用域，如果在函数内想要进行修改，需要global</span></span><br><span class="line"><span class="string">3.外层函数的变量，如果想要在内层函数进行修改，需要nonlocal</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day07/%E5%87%BD%E6%95%B0%E5%B5%8C%E5%A5%97%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="enter description here"></p>
+<h3 id="闭包函数"><a href="#闭包函数" class="headerlink" title="闭包函数"></a>闭包函数</h3><h4 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'外层函数'</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">'内层函数'</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> f2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意：函数名（）----》函数调用，不带括号，函数名可以看做是一个变量</span></span><br><span class="line">res = f1()</span><br><span class="line">print(res)  <span class="comment"># &lt;function f1.&lt;locals&gt;.f2 at 0x00000238E3D4DBF8&gt;</span></span><br><span class="line">res()</span><br><span class="line"><span class="comment"># 函数里面嵌套函数，外层函数返回内层函数的函数名，这种情况称之为闭包</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(num1)</span>:</span></span><br><span class="line">    print(num1)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(num2)</span>:</span></span><br><span class="line">        res = num1 + num2</span><br><span class="line">        print(res)</span><br><span class="line">    <span class="keyword">return</span> f2</span><br><span class="line"></span><br><span class="line">res = f1(<span class="number">86</span>)</span><br><span class="line">print(res)</span><br><span class="line">res = (<span class="number">88</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">1.函数内的变量，函数外部访问不了</span></span><br><span class="line"><span class="string">2.函数执行完毕后，函数内的变量会被销毁</span></span><br><span class="line"><span class="string">3.应用场景：如果我们需要在执行完函数后，把函数中的某个变量保存下来</span></span><br><span class="line"><span class="string">4.操作：在函数内部去定义一个函数，用这个内部函数去引用这个变量，同时将内层函数的函数名当做返回值返回，不调用</span></span><br><span class="line"><span class="string">5.这个时候内层函数就讲需要保留的变量给包含在它的内存空间了，这就是闭包</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day07/%E9%97%AD%E5%8C%85%E7%9A%84%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="enter description here"><br><strong>外层函数的变量为了在函数执行后依然在内存中保存，我们把变量包在内层函数存放，内层函数不调用，不执行，不释放。</strong></p>
+<blockquote>
+<p>递归：函数自身调用自身</p>
+<p>函数嵌套：函数里面调用函数</p>
+<p>函数里面可以自身调用自身</p>
+<p>阶乘函数：5！ 1*2*3*4*5</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1*2*3*4*5 ---&gt;f(5) = f(4)*5</span><br><span class="line">1*2*3*4----&gt;f(4) = f(3)*4</span><br><span class="line">1*2*3----&gt;f(3) = f(2)*3</span><br><span class="line">1*2----&gt;f(2) = f(1)*2</span><br><span class="line">1---&gt;f(1) 终止</span><br></pre></td></tr></table></figure>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> f(n<span class="number">-1</span>) * n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = f(<span class="number">5</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day07/%E9%80%92%E5%BD%92.png" alt="enter description here"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+  <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/07/05/day7/">day07(函数作用域)</a></p>
+  <p><span>文章作者:</span><a href="jshz.github.io" title="访问JsHz的个人博客">JsHz</a></p>
+  <p><span>发布时间:</span>2019年07月05日 - 16:07</p>
+  <p><span>最后更新:</span>2019年07月05日 - 16:07</p>
+  <p><span>原始链接:</span><a href="/2019/07/05/day7/" title="day07(函数作用域)">https://blog.jshz.top/2019/07/05/day7/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.jshz.top/2019/07/05/day7/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"></a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+      
+</div>
+</div>
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/pay/wepay.jpg" alt="Jshz WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://raw.githubusercontent.com/JsHz/jshz.github.io/master/images/pay/zfbpay.jpg" alt="Jshz Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/04/python3内置函数/" rel="next" title="python3函数大全">
+                <i class="fa fa-chevron-left"></i> python3函数大全
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Jshz">
+            
+              <p class="site-author-name" itemprop="name">Jshz</p>
+              <p class="site-description motion-element" itemprop="description">JsHz博客，分享网络安全经验与经历。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">Kategorien</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">Tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/JsHz/jshz.github.io" title="GitHub &rarr; https://github.com/JsHz/jshz.github.io" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://space.bilibili.com/88458949?from=search&seid=10668360394870813040" title="https://space.bilibili.com/88458949?from=search&seid=10668360394870813040" rel="noopener" target="_blank">老蓝B站</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1391299672&site=qq&menu=yes" title="http://wpa.qq.com/msgrd?v=3&uin=1391299672&site=qq&menu=yes" rel="noopener" target="_blank">写文章的咸鱼</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=2479899651&site=qq&menu=yes" title="http://wpa.qq.com/msgrd?v=3&uin=2479899651&site=qq&menu=yes" rel="noopener" target="_blank">另一位咸鱼</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数作用域和匿名函数"><span class="nav-number">1.</span> <span class="nav-text">函数作用域和匿名函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单函数"><span class="nav-number">1.1.</span> <span class="nav-text">简单函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda"><span class="nav-number">1.2.</span> <span class="nav-text">lambda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强化"><span class="nav-number">2.</span> <span class="nav-text">强化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如果我想要把下面这个函数转化成为匿名函数改怎么转换呢"><span class="nav-number">2.0.1.</span> <span class="nav-text">如果我想要把下面这个函数转化成为匿名函数改怎么转换呢?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这个没有分类，-不知道有什么用"><span class="nav-number">2.0.2.</span> <span class="nav-text">这个没有分类， 不知道有什么用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名函数还可以这样用："><span class="nav-number">2.0.3.</span> <span class="nav-text">匿名函数还可以这样用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现匿名函数的输入"><span class="nav-number">2.0.4.</span> <span class="nav-text">实现匿名函数的输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现输入函数循环执行"><span class="nav-number">2.0.5.</span> <span class="nav-text">实现输入函数循环执行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数作用域"><span class="nav-number">2.1.</span> <span class="nav-text">函数作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包函数"><span class="nav-number">2.2.</span> <span class="nav-text">闭包函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套函数"><span class="nav-number">2.2.1.</span> <span class="nav-text">嵌套函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归"><span class="nav-number">2.3.</span> <span class="nav-text">递归</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+	
+	<!--3D飘雪花特效 整理by yaxi.net-->
+	<!-- <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/src/snow.js"></script>
+	<style type="text/css">
+	.snow-container{
+	position:fixed;
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	pointer-events:none;
+	z-index:100001;
+	}
+	</style>-->
+	
+<div class="snow-container"></div>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<div class=" copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fas fa-heart" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jshz</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+
+
+
+-->
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共字</span>
+</div></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="js/src/fireworks.js"></script>
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
