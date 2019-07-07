@@ -303,7 +303,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
         
@@ -320,7 +320,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
 
@@ -410,14 +410,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-07-07 01:21:47 / Updated at: 16:48:37" itemprop="dateCreated datePublished" datetime="2019-07-07T01:21:47+08:00">2019-07-07</time>
+              <time title="Created: 2019-07-07 01:21:47 / Modified: 18:15:26" itemprop="dateCreated datePublished" datetime="2019-07-07T01:21:47+08:00">2019-07-07</time>
             
 
             
@@ -436,7 +436,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -475,24 +475,21 @@
 
       
         
-          
-            <p>前言</p>
+          <p>前言</p>
 <p>今天是学习python的第八天</p>
-<p>是 类定义，属性和初始化</p>
-<h2 id="面向过程编程：程序按照流程一步步往下走"><a href="#面向过程编程：程序按照流程一步步往下走" class="headerlink" title="面向过程编程：程序按照流程一步步往下走"></a>面向过程编程：程序按照流程一步步往下走</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tu = &#123;&apos;bei&apos;, &apos;17&apos;, 176&#125;</span><br><span class="line">di = &#123;&apos;name&apos;:&apos;blue&apos;, &apos;age&apos;:&apos;17&apos;, &apos;height&apos;:&apos;165&apos;&#125;</span><br><span class="line"></span><br><span class="line">print (dict(zip(di.keys(), tu)))    # &#123;&apos;name&apos;: 16, &apos;age&apos;: 170, &apos;height&apos;: &apos;bei&apos;&#125;</span><br><span class="line">print(tuple(di.values()))   # (&apos;blue&apos;, &apos;17&apos;, &apos;165&apos;)</span><br></pre></td></tr></table></figure>
-<p>面向编程函数：将不同的功能设置成不同的函数， 在需要的时候随时调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def func(tu, di):</span><br><span class="line">    return dict(zip(di.keys(), tu)), tuple(di.values())</span><br><span class="line"></span><br><span class="line">x, y = func(tu, di)</span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br></pre></td></tr></table></figure>
-<p>面向对象编程：<strong>类</strong></p>
-<p>一切事物皆<strong>为对象</strong></p>
-<p>面向对象最重要的概念是<strong>类(class)和实例(instance)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span>:</span>  <span class="comment"># 命名要遵循大驼峰</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    这是一个猫类</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">pass</span>    <span class="comment"># 里面为空白， 为防止出错， 可以先使用pass</span></span><br><span class="line"><span class="comment"># class 关键字</span></span><br><span class="line"><span class="comment"># Cat是类名 大驼峰命名法</span></span><br><span class="line"><span class="comment"># """这是一个猫类"""  是 解释类的用途</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化对象</span></span><br><span class="line">Orange = Cat()</span><br></pre></td></tr></table></figure>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>python中一切<strong>皆对象</strong></p>
-<p>新建一个对象的过程就叫做实例化， 而对象是这个<strong>类的实例</strong></p>
-<h2 id="attrubite"><a href="#attrubite" class="headerlink" title="attrubite"></a>attrubite</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    <span class="string">"""这是一个狗类"""</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">hot = Dog()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用句点法给实例赋值属性</span></span><br><span class="line">hot.color = <span class="string">'pink'</span></span><br><span class="line">hot.eat = <span class="string">'meat'</span></span><br><span class="line"></span><br><span class="line">print(hot)</span><br><span class="line">print(hot.color)    <span class="comment"># hot.color: 寻找hot所引用的应用的对象， 并获取color里边的值</span></span><br></pre></td></tr></table></figure>
+<p>是 类定义，属性和初始化<br>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/07/day8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
 
@@ -588,14 +585,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-07-05 16:10:58 / Updated at: 16:23:07" itemprop="dateCreated datePublished" datetime="2019-07-05T16:10:58+08:00">2019-07-05</time>
+              <time title="Created: 2019-07-05 16:10:58 / Modified: 16:23:07" itemprop="dateCreated datePublished" datetime="2019-07-05T16:10:58+08:00">2019-07-05</time>
             
 
             
@@ -614,7 +611,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -660,7 +657,7 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/07/05/day7/#more" rel="contents">
-                Weiterlesen &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -763,14 +760,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-07-04 17:13:54" itemprop="dateCreated datePublished" datetime="2019-07-04T17:13:54+08:00">2019-07-04</time>
+              <time title="Created: 2019-07-04 17:13:54" itemprop="dateCreated datePublished" datetime="2019-07-04T17:13:54+08:00">2019-07-04</time>
             
 
             
@@ -787,7 +784,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2019-07-05 13:31:23" itemprop="dateModified" datetime="2019-07-05T13:31:23+08:00">2019-07-05</time>
+                <time title="Modified: 2019-07-05 13:31:23" itemprop="dateModified" datetime="2019-07-05T13:31:23+08:00">2019-07-05</time>
               
             
           </span>
@@ -801,7 +798,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -846,7 +843,7 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/07/04/python3内置函数/#more" rel="contents">
-                Weiterlesen &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -949,14 +946,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-07-04 10:42:30 / Updated at: 11:37:31" itemprop="dateCreated datePublished" datetime="2019-07-04T10:42:30+08:00">2019-07-04</time>
+              <time title="Created: 2019-07-04 10:42:30 / Modified: 11:37:31" itemprop="dateCreated datePublished" datetime="2019-07-04T10:42:30+08:00">2019-07-04</time>
             
 
             
@@ -975,7 +972,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -1020,7 +1017,7 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/07/04/day6/#more" rel="contents">
-                Weiterlesen &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1123,14 +1120,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-07-04 09:43:10 / Updated at: 17:05:26" itemprop="dateCreated datePublished" datetime="2019-07-04T09:43:10+08:00">2019-07-04</time>
+              <time title="Created: 2019-07-04 09:43:10 / Modified: 17:05:26" itemprop="dateCreated datePublished" datetime="2019-07-04T09:43:10+08:00">2019-07-04</time>
             
 
             
@@ -1149,7 +1146,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -1194,7 +1191,7 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/07/04/day5/#more" rel="contents">
-                Weiterlesen &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1297,14 +1294,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-07-03 13:43:10" itemprop="dateCreated datePublished" datetime="2019-07-03T13:43:10+08:00">2019-07-03</time>
+              <time title="Created: 2019-07-03 13:43:10" itemprop="dateCreated datePublished" datetime="2019-07-03T13:43:10+08:00">2019-07-03</time>
             
 
             
@@ -1321,7 +1318,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2019-07-04 16:59:13" itemprop="dateModified" datetime="2019-07-04T16:59:13+08:00">2019-07-04</time>
+                <time title="Modified: 2019-07-04 16:59:13" itemprop="dateModified" datetime="2019-07-04T16:59:13+08:00">2019-07-04</time>
               
             
           </span>
@@ -1335,7 +1332,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -1381,7 +1378,7 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/07/03/day4/#more" rel="contents">
-                Weiterlesen &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1484,14 +1481,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-06-15 15:45:38" itemprop="dateCreated datePublished" datetime="2019-06-15T15:45:38+08:00">2019-06-15</time>
+              <time title="Created: 2019-06-15 15:45:38" itemprop="dateCreated datePublished" datetime="2019-06-15T15:45:38+08:00">2019-06-15</time>
             
 
             
@@ -1508,7 +1505,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2019-06-17 14:31:14" itemprop="dateModified" datetime="2019-06-17T14:31:14+08:00">2019-06-17</time>
+                <time title="Modified: 2019-06-17 14:31:14" itemprop="dateModified" datetime="2019-06-17T14:31:14+08:00">2019-06-17</time>
               
             
           </span>
@@ -1522,7 +1519,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -1569,7 +1566,7 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/06/15/day3/#more" rel="contents">
-                Weiterlesen &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1669,7 +1666,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
               
@@ -1686,7 +1683,7 @@
                       
                     
                     <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">Kategorien</span>
+                    <span class="site-state-item-name">categories</span>
                   
                 </div>
               
@@ -1715,7 +1712,7 @@
                       
                     
                     <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">Tags</span>
+                    <span class="site-state-item-name">tags</span>
                   
                 </div>
               
@@ -1825,7 +1822,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
