@@ -175,18 +175,18 @@
 
 
 
-  <meta name="description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化 面向过程编程：程序按照流程一步步往下走12345tu = &amp;#123;&apos;bei&apos;, &apos;17&apos;, 176&amp;#125;di = &amp;#123;&apos;name&apos;:&apos;blue&apos;, &apos;age&apos;:&apos;17&apos;, &apos;height&apos;:&apos;165&apos;&amp;#125;print (dict(zip(di.keys(), tu)))    # &amp;#123;&apos;name&apos;: 1">
+  <meta name="description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="day08(类定义，属性和初始化)">
 <meta property="og:url" content="https://blog.jshz.top/2019/07/07/day8/index.html">
 <meta property="og:site_name" content="JsHz&#39;s Blog">
-<meta property="og:description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化 面向过程编程：程序按照流程一步步往下走12345tu = &amp;#123;&apos;bei&apos;, &apos;17&apos;, 176&amp;#125;di = &amp;#123;&apos;name&apos;:&apos;blue&apos;, &apos;age&apos;:&apos;17&apos;, &apos;height&apos;:&apos;165&apos;&amp;#125;print (dict(zip(di.keys(), tu)))    # &amp;#123;&apos;name&apos;: 1">
+<meta property="og:description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-08T02:12:14.623Z">
+<meta property="og:updated_time" content="2019-07-08T02:33:22.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="day08(类定义，属性和初始化)">
-<meta name="twitter:description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化 面向过程编程：程序按照流程一步步往下走12345tu = &amp;#123;&apos;bei&apos;, &apos;17&apos;, 176&amp;#125;di = &amp;#123;&apos;name&apos;:&apos;blue&apos;, &apos;age&apos;:&apos;17&apos;, &apos;height&apos;:&apos;165&apos;&amp;#125;print (dict(zip(di.keys(), tu)))    # &amp;#123;&apos;name&apos;: 1">
+<meta name="twitter:description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化">
 
 
 
@@ -304,7 +304,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Accueil</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
 
   </li>
         
@@ -321,7 +321,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
 
   </li>
 
@@ -409,7 +409,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2019-07-08 10:12:14" itemprop="dateModified" datetime="2019-07-08T10:12:14+08:00">2019-07-08</time>
+                <time title="Updated at: 2019-07-08 10:33:22" itemprop="dateModified" datetime="2019-07-08T10:33:22+08:00">2019-07-08</time>
               
             
           </span>
@@ -447,7 +447,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -494,7 +494,7 @@
       
         <p>前言</p>
 <p>今天是学习python的第八天</p>
-<p>是 类定义，属性和初始化</p>
+<p>是 类定义，属性和初始化<br><a id="more"></a></p>
 <h2 id="面向过程编程：程序按照流程一步步往下走"><a href="#面向过程编程：程序按照流程一步步往下走" class="headerlink" title="面向过程编程：程序按照流程一步步往下走"></a>面向过程编程：程序按照流程一步步往下走</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tu = &#123;<span class="string">'bei'</span>, <span class="string">'17'</span>, <span class="number">176</span>&#125;</span><br><span class="line">di = &#123;<span class="string">'name'</span>:<span class="string">'blue'</span>, <span class="string">'age'</span>:<span class="string">'17'</span>, <span class="string">'height'</span>:<span class="string">'165'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (dict(zip(di.keys(), tu)))    <span class="comment"># &#123;'name': 16, 'age': 170, 'height': 'bei'&#125;</span></span><br><span class="line">print(tuple(di.values()))   <span class="comment"># ('blue', '17', '165')</span></span><br></pre></td></tr></table></figure>
 <p>面向编程函数：将不同的功能设置成不同的函数， 在需要的时候随时调用</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(tu, di)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> dict(zip(di.keys(), tu)), tuple(di.values())</span><br><span class="line"></span><br><span class="line">x, y = func(tu, di)</span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br></pre></td></tr></table></figure>
@@ -684,10 +684,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table Des Matières
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Ensemble
+            Übersicht
           </li>
         </ul>
       
@@ -710,7 +710,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">articles</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -727,7 +727,7 @@
                       
                     
                     <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">Kategorien</span>
                   
                 </div>
               
@@ -756,7 +756,7 @@
                       
                     
                     <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">Tags</span>
                   
                 </div>
               
@@ -883,7 +883,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -891,7 +891,7 @@
 
 
 
-  <div class="theme-info">Thème – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
 
 
 
