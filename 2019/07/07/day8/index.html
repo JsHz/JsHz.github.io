@@ -175,18 +175,18 @@
 
 
 
-  <meta name="description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化">
+  <meta name="description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化 面向过程编程：程序按照流程一步步往下走12345tu = &amp;#123;&apos;bei&apos;, &apos;17&apos;, 176&amp;#125;di = &amp;#123;&apos;name&apos;:&apos;blue&apos;, &apos;age&apos;:&apos;17&apos;, &apos;height&apos;:&apos;165&apos;&amp;#125;print (dict(zip(di.keys(), tu)))    # &amp;#123;&apos;name&apos;: 1">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="day08(类定义，属性和初始化)">
 <meta property="og:url" content="https://blog.jshz.top/2019/07/07/day8/index.html">
 <meta property="og:site_name" content="JsHz&#39;s Blog">
-<meta property="og:description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化">
+<meta property="og:description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化 面向过程编程：程序按照流程一步步往下走12345tu = &amp;#123;&apos;bei&apos;, &apos;17&apos;, 176&amp;#125;di = &amp;#123;&apos;name&apos;:&apos;blue&apos;, &apos;age&apos;:&apos;17&apos;, &apos;height&apos;:&apos;165&apos;&amp;#125;print (dict(zip(di.keys(), tu)))    # &amp;#123;&apos;name&apos;: 1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-07T10:15:26.812Z">
+<meta property="og:updated_time" content="2019-07-08T02:12:14.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="day08(类定义，属性和初始化)">
-<meta name="twitter:description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化">
+<meta name="twitter:description" content="前言 今天是学习python的第八天 是 类定义，属性和初始化 面向过程编程：程序按照流程一步步往下走12345tu = &amp;#123;&apos;bei&apos;, &apos;17&apos;, 176&amp;#125;di = &amp;#123;&apos;name&apos;:&apos;blue&apos;, &apos;age&apos;:&apos;17&apos;, &apos;height&apos;:&apos;165&apos;&amp;#125;print (dict(zip(di.keys(), tu)))    # &amp;#123;&apos;name&apos;: 1">
 
 
 
@@ -304,7 +304,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Accueil</a>
 
   </li>
         
@@ -409,19 +409,31 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-07-07 01:21:47 / Modified: 18:15:26" itemprop="dateCreated datePublished" datetime="2019-07-07T01:21:47+08:00">2019-07-07</time>
+              <time title="Post created: 2019-07-07 01:21:47" itemprop="dateCreated datePublished" datetime="2019-07-07T01:21:47+08:00">2019-07-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2019-07-08 10:12:14" itemprop="dateModified" datetime="2019-07-08T10:12:14+08:00">2019-07-08</time>
               
             
           </span>
@@ -482,10 +494,10 @@
       
         <p>前言</p>
 <p>今天是学习python的第八天</p>
-<p>是 类定义，属性和初始化<br><a id="more"></a></p>
-<h2 id="面向过程编程：程序按照流程一步步往下走"><a href="#面向过程编程：程序按照流程一步步往下走" class="headerlink" title="面向过程编程：程序按照流程一步步往下走"></a>面向过程编程：程序按照流程一步步往下走</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tu = &#123;&apos;bei&apos;, &apos;17&apos;, 176&#125;</span><br><span class="line">di = &#123;&apos;name&apos;:&apos;blue&apos;, &apos;age&apos;:&apos;17&apos;, &apos;height&apos;:&apos;165&apos;&#125;</span><br><span class="line"></span><br><span class="line">print (dict(zip(di.keys(), tu)))    # &#123;&apos;name&apos;: 16, &apos;age&apos;: 170, &apos;height&apos;: &apos;bei&apos;&#125;</span><br><span class="line">print(tuple(di.values()))   # (&apos;blue&apos;, &apos;17&apos;, &apos;165&apos;)</span><br></pre></td></tr></table></figure>
+<p>是 类定义，属性和初始化</p>
+<h2 id="面向过程编程：程序按照流程一步步往下走"><a href="#面向过程编程：程序按照流程一步步往下走" class="headerlink" title="面向过程编程：程序按照流程一步步往下走"></a>面向过程编程：程序按照流程一步步往下走</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tu = &#123;<span class="string">'bei'</span>, <span class="string">'17'</span>, <span class="number">176</span>&#125;</span><br><span class="line">di = &#123;<span class="string">'name'</span>:<span class="string">'blue'</span>, <span class="string">'age'</span>:<span class="string">'17'</span>, <span class="string">'height'</span>:<span class="string">'165'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (dict(zip(di.keys(), tu)))    <span class="comment"># &#123;'name': 16, 'age': 170, 'height': 'bei'&#125;</span></span><br><span class="line">print(tuple(di.values()))   <span class="comment"># ('blue', '17', '165')</span></span><br></pre></td></tr></table></figure>
 <p>面向编程函数：将不同的功能设置成不同的函数， 在需要的时候随时调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def func(tu, di):</span><br><span class="line">    return dict(zip(di.keys(), tu)), tuple(di.values())</span><br><span class="line"></span><br><span class="line">x, y = func(tu, di)</span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(tu, di)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> dict(zip(di.keys(), tu)), tuple(di.values())</span><br><span class="line"></span><br><span class="line">x, y = func(tu, di)</span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br></pre></td></tr></table></figure>
 <p>面向对象编程：<strong>类</strong></p>
 <p>一切事物皆<strong>为对象</strong></p>
 <p>面向对象最重要的概念是<strong>类(class)和实例(instance)</strong></p>
@@ -493,6 +505,21 @@
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>python中一切<strong>皆对象</strong></p>
 <p>新建一个对象的过程就叫做实例化， 而对象是这个<strong>类的实例</strong></p>
 <h2 id="attrubite"><a href="#attrubite" class="headerlink" title="attrubite"></a>attrubite</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    <span class="string">"""这是一个狗类"""</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">hot = Dog()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用句点法给实例赋值属性</span></span><br><span class="line">hot.color = <span class="string">'pink'</span></span><br><span class="line">hot.eat = <span class="string">'meat'</span></span><br><span class="line"></span><br><span class="line">print(hot)</span><br><span class="line">print(hot.color)    <span class="comment"># hot.color: 寻找hot所引用的应用的对象， 并获取color里边的值</span></span><br></pre></td></tr></table></figure>
+<h3 id="init"><a href="#init" class="headerlink" title="__init__"></a>__init__</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    <span class="string">"""这是一个狗类"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, color, eat)</span>:</span></span><br><span class="line">        self.color = color  <span class="comment"># 实例属性： 记录是具体对象的特征</span></span><br><span class="line">        self.eat = eat</span><br><span class="line">        print(<span class="string">'内部调用:'</span>, self.color)  <span class="comment"># 内部调用： 需要加上self</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hot = Dog(<span class="string">'pink'</span>, <span class="string">'meat'</span>)   <span class="comment"># hot, 'pink', 'meat'</span></span><br><span class="line">print(hot.color)</span><br><span class="line"></span><br><span class="line">black = Dog(<span class="string">'black'</span>, <span class="string">'food'</span>)    <span class="comment"># black, 'black', 'food'</span></span><br><span class="line">print(black.color)  <span class="comment"># 外部调用：实例名， 属性</span></span><br></pre></td></tr></table></figure>
+<h3 id="类属性"><a href="#类属性" class="headerlink" title="类属性"></a>类属性</h3><p>记录与类相关的特征</p>
+<p>在__init__外初始化的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    <span class="string">"""这是一个狗类"""</span></span><br><span class="line">    count = <span class="number">0</span>   <span class="comment"># 这是类属性</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, color, eat)</span>:</span></span><br><span class="line">        self.color = color  <span class="comment"># 实例属性： 记录是具体对象的特征</span></span><br><span class="line">        self.eat = eat</span><br><span class="line">        <span class="comment"># 计数</span></span><br><span class="line">        Dog.count   += <span class="number">1</span>  <span class="comment"># 内部的调用： 类名.类属性名</span></span><br><span class="line"><span class="comment"># 实例化对象</span></span><br><span class="line">hot = Dog(<span class="string">'pink'</span>, <span class="string">'meat'</span>)</span><br><span class="line">black = Dog(<span class="string">'black'</span>, <span class="string">'food'</span>)</span><br><span class="line">fat = Dog(<span class="string">'blue'</span>, <span class="string">'milk'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出创建对象的个数</span></span><br><span class="line">print(<span class="string">f'现在创建了<span class="subst">&#123;Dog.count&#125;</span>只狗'</span>)    <span class="comment"># 外部调用： 类.类属性名</span></span><br><span class="line">print(hot.count)</span><br></pre></td></tr></table></figure>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p><strong>实例可以访问实例属性， 实例可以访问类属性</strong></p>
+<h2 id="类和函数"><a href="#类和函数" class="headerlink" title="类和函数"></a>类和函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span>:</span></span><br><span class="line">    <span class="string">"""这是一个猫类"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, color, age)</span>:</span></span><br><span class="line">        self.color = color</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">kitty = Cat(<span class="string">'while'</span>, <span class="number">2</span>)</span><br><span class="line">orange = Cat(<span class="string">'orange'</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>以上部分， 我们实现了， 创建猫类， <strong>实例化了两个对象</strong> kitty &amp; orange</p>
+<p><strong>接下来， 我们创建一个函数， 实现上面两只猫猫的年龄求和后的新属性， 给第三只猫</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_cat</span><span class="params">(name, c1, c2)</span>:</span></span><br><span class="line">    cat = Cat(name, c1.age + c2.age)</span><br><span class="line">    <span class="keyword">return</span> cat</span><br><span class="line"></span><br><span class="line">yellow = add_cat(<span class="string">'yellow'</span>, kitty, orange)   <span class="comment"># 写入实参</span></span><br><span class="line">print(yellow)</span><br><span class="line">print(yellow.age)</span><br></pre></td></tr></table></figure>
+<p>方法：和某个特定的类相关联的函数函数</p>
+<p><strong>函数 –&gt; 方法： 只需要将函数的定义移动到类的定义中即可</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span>:</span></span><br><span class="line">    <span class="string">"""这是一个猫类"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, color, age)</span>:</span></span><br><span class="line">        self.color = color</span><br><span class="line">        self.age = age</span><br><span class="line">	</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_cat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">f'<span class="subst">&#123;self.color&#125;</span>-<span class="subst">&#123;self.age&#125;</span>'</span>)</span><br><span class="line">        </span><br><span class="line">kitty = Cat(<span class="string">'white'</span>, <span class="number">2</span>)</span><br><span class="line">orange = Cat(<span class="string">'orange'</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print_cat 的 调用</span></span><br><span class="line">Cat.print_cat(kitty)</span><br><span class="line">Cat.print_cat(orange)</span><br></pre></td></tr></table></figure>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>self指向对象， 在对象中封装数据， 对类进行优化的方法， 就叫封装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span>:</span></span><br><span class="line">	count = <span class="number">0</span>	<span class="comment"># 类属性</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, color, eat, age)</span>:</span></span><br><span class="line">        self.eat = eat</span><br><span class="line">        self.name = name	<span class="comment"># 实例对象</span></span><br><span class="line">        self._color = color	<span class="comment"># 外部可以访问私有属性</span></span><br><span class="line">        self.__age = age	<span class="comment"># 外部不可以访问私有属性</span></span><br><span class="line">        Cat.count += <span class="number">1</span>	<span class="comment">#内部调用： 类名， 类属性名</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">print_cat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">f'<span class="subst">&#123;self._color&#125;</span>-<span class="subst">&#123;self.__age&#125;</span>-<span class="subst">&#123;self.name&#125;</span>'</span>)</span><br><span class="line">        </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__get_none</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 私有方法， 不可以被实例和类直接调用</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"我是私有方法"</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__get_none()</span><br><span class="line">        </span><br><span class="line">kitty = Cat(<span class="string">'kitty'</span>, <span class="string">'white'</span>, <span class="string">'milk'</span>, <span class="number">2</span>)</span><br><span class="line">print(kitty.eat)</span><br><span class="line">print(Cat.count)</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -523,7 +550,7 @@
   <p><span>本文标题:</span><a href="/2019/07/07/day8/">day08(类定义，属性和初始化)</a></p>
   <p><span>文章作者:</span><a href="jshz.github.io" title="访问JsHz的个人博客">JsHz</a></p>
   <p><span>发布时间:</span>2019年07月07日 - 01:07</p>
-  <p><span>最后更新:</span>2019年07月07日 - 18:07</p>
+  <p><span>最后更新:</span>2019年07月08日 - 10:07</p>
   <p><span>原始链接:</span><a href="/2019/07/07/day8/" title="day08(类定义，属性和初始化)">https://blog.jshz.top/2019/07/07/day8/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.jshz.top/2019/07/07/day8/" aria-label="复制成功！"></i></span>
   </p>
@@ -657,10 +684,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Ensemble
           </li>
         </ul>
       
@@ -683,7 +710,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">articles</span>
                   </a>
                 </div>
               
@@ -808,7 +835,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向过程编程：程序按照流程一步步往下走"><span class="nav-number">1.</span> <span class="nav-text">面向过程编程：程序按照流程一步步往下走</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.0.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#attrubite"><span class="nav-number">2.</span> <span class="nav-text">attrubite</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向过程编程：程序按照流程一步步往下走"><span class="nav-number">1.</span> <span class="nav-text">面向过程编程：程序按照流程一步步往下走</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.0.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#attrubite"><span class="nav-number">2.</span> <span class="nav-text">attrubite</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#init"><span class="nav-number">2.1.</span> <span class="nav-text">__init__</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类属性"><span class="nav-number">2.2.</span> <span class="nav-text">类属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和函数"><span class="nav-number">3.</span> <span class="nav-text">类和函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装"><span class="nav-number">4.</span> <span class="nav-text">封装</span></a></li></div>
             
 
           </div>
@@ -864,7 +891,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+  <div class="theme-info">Thème – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
 
 
 
