@@ -184,8 +184,8 @@
 <meta property="og:description" content="前言 今天是学习python的第九天 继承、多继承、魔法方法">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://pt2upb5u4.bkt.clouddn.com/day09/%E5%A4%9A%E7%BB%A7%E6%89%BF%E4%BC%98%E5%85%88%E7%BA%A7%282%29.png">
-<meta property="og:image" content="http://pt2upb5u4.bkt.clouddn.com/day09/多继承优先级(2">
-<meta property="og:updated_time" content="2019-07-12T08:23:08.686Z">
+<meta property="og:image" content="http://pt2upb5u4.bkt.clouddn.com/day09/%E5%A4%9A%E7%BB%A7%E6%89%BF%E4%BC%98%E5%85%88%E7%BA%A7.png">
+<meta property="og:updated_time" content="2019-07-13T05:14:58.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="day09(继承、多继承、魔法方法)">
 <meta name="twitter:description" content="前言 今天是学习python的第九天 继承、多继承、魔法方法">
@@ -307,7 +307,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Accueil</a>
 
   </li>
         
@@ -324,7 +324,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
 
@@ -412,7 +412,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
 
               
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2019-07-12 16:23:08" itemprop="dateModified" datetime="2019-07-12T16:23:08+08:00">2019-07-12</time>
+                <time title="Updated at: 2019-07-13 13:14:58" itemprop="dateModified" datetime="2019-07-13T13:14:58+08:00">2019-07-13</time>
               
             
           </span>
@@ -450,7 +450,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
@@ -502,7 +502,7 @@
 <h2 id="多继承的优先级-1"><a href="#多继承的优先级-1" class="headerlink" title="多继承的优先级(1)"></a>多继承的优先级(1)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">    <span class="comment"># def f(self):</span></span><br><span class="line">    <span class="comment">#     print('A')</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'B'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">    <span class="comment"># def f(self):</span></span><br><span class="line">    <span class="comment">#     print('C')</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(B)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">    <span class="comment"># def f(self):</span></span><br><span class="line">    <span class="comment">#     print('D')</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span><span class="params">(C, D)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">    <span class="comment"># def f(self):</span></span><br><span class="line">    <span class="comment">#     print('E')</span></span><br><span class="line"></span><br><span class="line">e = E() <span class="comment"># 此时类中的self始终指向的是e， 所有方法选择的有优先级始终是从E开始判断的</span></span><br><span class="line">e.f()   <span class="comment"># E没有 --&gt; C(没有) --&gt; A ， A没有 --&gt; D(没有) --&gt; B</span></span><br></pre></td></tr></table></figure>
 <p><img src="http://pt2upb5u4.bkt.clouddn.com/day09/%E5%A4%9A%E7%BB%A7%E6%89%BF%E4%BC%98%E5%85%88%E7%BA%A7%282%29.png" alt="enter description here"></p>
 <h2 id="多继承的优先级（2）"><a href="#多继承的优先级（2）" class="headerlink" title="多继承的优先级（2）"></a>多继承的优先级（2）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">F</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'OK'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">H</span><span class="params">(F)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(F)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(B)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">G</span><span class="params">(H)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span><span class="params">(G)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(C, E)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">d = D()</span><br><span class="line">d.f()</span><br></pre></td></tr></table></figure>
-<p><img src="http://pt2upb5u4.bkt.clouddn.com/day09/多继承优先级(2" alt="enter description here">.png)</p>
+<p><img src="http://pt2upb5u4.bkt.clouddn.com/day09/%E5%A4%9A%E7%BB%A7%E6%89%BF%E4%BC%98%E5%85%88%E7%BA%A7.png" alt="enter description here"></p>
 <h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span>:</span>   <span class="comment"># 编写了一个 Animal</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'A构造方法'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Owner</span>:</span>    <span class="comment"># 编写了一个Owner</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'C构造方法'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span><span class="params">(Owner, Animal)</span>:</span>   <span class="comment">#</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'B构造方法'</span>)</span><br><span class="line"></span><br><span class="line">kitty = Cat</span><br></pre></td></tr></table></figure>
 <h2 id="魔术方法"><a href="#魔术方法" class="headerlink" title="魔术方法"></a>魔术方法</h2><h3 id="1-运算方法"><a href="#1-运算方法" class="headerlink" title="1.运算方法"></a>1.运算方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">    <span class="string">"""这是一个测试类"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">        res = self.num + other.num</span><br><span class="line">        print(res)</span><br><span class="line">        <span class="comment"># return res 这个是一个返回</span></span><br><span class="line"></span><br><span class="line">a = Test(<span class="number">88</span>)</span><br><span class="line">b = Test(<span class="number">66</span>)</span><br><span class="line"></span><br><span class="line">a + b</span><br><span class="line"><span class="comment"># res = a + b</span></span><br><span class="line"><span class="comment"># print(res)</span></span><br></pre></td></tr></table></figure>
 <h3 id="str-和-repr"><a href="#str-和-repr" class="headerlink" title="__str__ 和  __repr__"></a>__str__ 和  __repr__</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"你好"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span></span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对象地址---&gt; __str__ --&gt; __repr__</span></span><br></pre></td></tr></table></figure>
@@ -541,7 +541,7 @@
   <p><span>本文标题:</span><a href="/2019/07/11/day9/">day09(继承、多继承、魔法方法)</a></p>
   <p><span>文章作者:</span><a href="jshz.github.io" title="访问JsHz的个人博客">JsHz</a></p>
   <p><span>发布时间:</span>2019年07月11日 - 16:07</p>
-  <p><span>最后更新:</span>2019年07月12日 - 16:07</p>
+  <p><span>最后更新:</span>2019年07月13日 - 13:07</p>
   <p><span>原始链接:</span><a href="/2019/07/11/day9/" title="day09(继承、多继承、魔法方法)">https://blog.jshz.top/2019/07/11/day9/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.jshz.top/2019/07/11/day9/" aria-label="复制成功！"></i></span>
   </p>
@@ -675,10 +675,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Ensemble
           </li>
         </ul>
       
@@ -701,7 +701,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">18</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-name">articles</span>
                   </a>
                 </div>
               
@@ -718,7 +718,7 @@
                       
                     
                     <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">Kategorien</span>
+                    <span class="site-state-item-name">categories</span>
                   
                 </div>
               
@@ -747,7 +747,7 @@
                       
                     
                     <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">Tags</span>
+                    <span class="site-state-item-name">tags</span>
                   
                 </div>
               
@@ -874,7 +874,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -882,7 +882,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+  <div class="theme-info">Thème – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
 
 
 
